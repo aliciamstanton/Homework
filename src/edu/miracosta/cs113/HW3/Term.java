@@ -65,6 +65,42 @@ public  class Term
 	}
 	
 	// Equals
+	@Override
+	public boolean equals(Object other)
+	{
+		// Self Check - if this is true, then the objects are equal 
+		if(this == other)
+		{
+			return true;
+		}
+		
+		// Null Check - if the comparing object is null, then they can't be the same
+		if(other == null)
+		{
+			return false;
+		}
+		
+		// Type/Class Check - if these aren't the same class type, then they can't be the same 
+		if(this.getClass() != other.getClass())
+		{
+			return false;
+		}
+		
+		// Typecast - so that we can perform property check 
+		Term t = (Term) other;
+		
+		// Property Check 
+		if((this.exponent == t.exponent) && this.coefficient == t.coefficient)
+		{
+			return true;
+		}
+		else
+		{
+		
+			return false;
+		
+		}
+	}
 	
 	// ToString 
 	
