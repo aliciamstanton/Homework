@@ -20,7 +20,6 @@ package edu.miracosta.cs113.HW3;
 	 */
 
 	
-
 	import org.junit.Test;
 	import static org.junit.Assert.*;
 
@@ -106,7 +105,7 @@ package edu.miracosta.cs113.HW3;
 	                            new Term(4, 1),
 	                            new Term(2, 0),
 	                            new Term(-2, -1),
-	    };
+	    }; 
 
 
 	    @Test
@@ -308,5 +307,7 @@ package edu.miracosta.cs113.HW3;
 	     * - anything else you can think of testing!
 	     */
 	}
+	
+	
 
 
