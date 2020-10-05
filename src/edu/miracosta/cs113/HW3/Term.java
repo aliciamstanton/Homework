@@ -30,6 +30,15 @@ public  class Term
 	}
 	
 	// Copy Constructor
+	Term(Term object)
+	{
+		// Want to take the exponent from the first object and set it to the calling object
+		this.exponent = object.getExponent();
+		
+		// Take the Coefficient from the argument and copy it to the calling object
+		this.coefficient = object.getCoefficient();
+		
+	}
 	
 	// Getter - Exponent
 	int getExponent()
