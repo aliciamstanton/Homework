@@ -20,6 +20,14 @@ public class Driver
 			System.out.println(polyTerm2.getExponent());
 			System.out.println(polyTerm2.getCoefficient());
 			
+			// Want to test out the toString method with a term that has exp at zero
+			Term polyTerm3 = new Term(0,3);
+			
+			System.out.println(polyTerm3.getExponent());
+			
+			// Now test the toString method
+			System.out.println(polyTerm3.toString());
+			
 			
 			
 

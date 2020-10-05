@@ -103,6 +103,18 @@ public  class Term
 	}
 	
 	// ToString 
+	public String toString()
+	{
+		// Create an empty string to hold the term we will return
+		String fullTerm = "";
+		
+		if(this.exponent == 0)
+		{
+			fullTerm += "" + this.getCoefficient();
+		}
+			
+		return fullTerm;
+	}
 	
 	
 	
