@@ -3,7 +3,7 @@
 package edu.miracosta.cs113.HW3;
 
 // Definition of Class Term which implements the Comparable Interface 
-public  class Term 
+public  class Term implements Comparable
 {
 	
 	// Private Member variables
@@ -40,6 +40,12 @@ public  class Term
 		
 	}
 	
+	// String Constructor
+	Term(String term)
+	{
+		
+	}
+	
 	// Getter - Exponent
 	int getExponent()
 	{
@@ -62,6 +68,26 @@ public  class Term
 	void setCoefficient(int coefficient)
 	{
 		this.coefficient = coefficient;
+	}
+	
+	
+	// Clone Method 
+	@Override
+	void clone()
+	{
+		
+	}
+	
+	// Replace All
+	void replaceAll(String thing1, String thing2)
+	{
+		
+	}
+	
+	// Set All
+	void setAll(int exponent, int coefficient)
+	{
+		
 	}
 	
 	// Equals
@@ -116,27 +142,17 @@ public  class Term
 		return fullTerm;
 	}
 	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 
-
-	/*@Override
-	public int compareTo(Object o) {
+	// Must be implemented in order to use the Comparable Interface 
+	@Override
+	public int compareTo(Object o)
+	{
 		// TODO Auto-generated method stub
 		return 0;
 	}
 	
 	
-	 */
+	 
 	
 
 }
