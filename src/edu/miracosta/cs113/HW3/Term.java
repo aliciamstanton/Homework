@@ -146,15 +146,28 @@ public  class Term implements Comparable
 	
 
 	// Must be implemented in order to use the Comparable Interface 
+	// Goal is to make sure that the exponents are ordered correctly 
 	@Override
-	public int compareTo(Object o)
+	public int compareTo(Object other)
 	{
-		// TODO Auto-generated method stub
-		return 0;
+		// Type cast to the respective class
+		Term termCompare = (Term) other;
+		
+		if(this.exponent > termCompare.getExponent()) 
+		{
+			return 1;
+		}
+		else if(this.exponent < termCompare.getExponent()) 
+		{
+			return - 1;
+		}
+		else 
+		{
+			return 0;
+		}
+	
+	
 	}
-	
-	
-	 
 	
 
 }
