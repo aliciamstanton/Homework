@@ -23,7 +23,7 @@ public  class Term implements Comparable
 	}
 	
 	// Full Constructor
-	Term(int exponent, int coefficient)
+	Term(int coefficient, int exponent)
 	{
 		this.exponent = exponent;
 		this.coefficient = coefficient;
@@ -85,9 +85,11 @@ public  class Term implements Comparable
 	}
 	
 	// Set All
-	void setAll(int exponent, int coefficient)
+	void setAll(int coefficient, int exponent)
 	{
-		
+		// Set the coefficient 
+		this.setCoefficient(coefficient);
+		this.setExponent(exponent);	
 	}
 	
 	// Equals
