@@ -3,7 +3,7 @@
 package edu.miracosta.cs113.HW3;
 
 // Definition of Class Term which implements the Comparable Interface 
-public  class Term implements Comparable
+public class Term implements Comparable, Cloneable
 {
 	
 	// Private Member variables
@@ -16,7 +16,7 @@ public  class Term implements Comparable
 	
 	
 	// Default Constructor
-	Term()
+	public Term()
 	{
 		this.exponent = 1;
 		this.coefficient = 1;
@@ -30,14 +30,14 @@ public  class Term implements Comparable
 	} */
 	
 	// Secondary Full Constructor - using setAll Method
-	Term(int coefficient, int exponent)
+	public Term(int coefficient, int exponent)
 	{
 		this.setAll(coefficient, exponent);
 		
 	}
 	
 	// Copy Constructor
-	Term(Term object)
+	public Term(Term object)
 	{
 		// Want to take the exponent from the first object and set it to the calling object
 		this.exponent = object.getExponent();
@@ -48,31 +48,31 @@ public  class Term implements Comparable
 	}
 	
 	// String Constructor
-	Term(String term)
+	public Term(String term)
 	{
 		
 	}
 	
 	// Getter - Exponent
-	int getExponent()
+	public int getExponent()
 	{
 		return this.exponent;
 	}
 	
 	// Getter - Coefficient
-	int getCoefficient()
+	public int getCoefficient()
 	{
 		return this.coefficient;
 	}
 	
 	// Setter - Exponent
-	void setExponent(int exponent)
+	public void setExponent(int exponent)
 	{
 		this.exponent = exponent;
 	}
 	
 	// Setter - Coefficient
-	void setCoefficient(int coefficient)
+	public void setCoefficient(int coefficient)
 	{
 		this.coefficient = coefficient;
 	}
@@ -80,19 +80,19 @@ public  class Term implements Comparable
 	
 	// Clone Method 
 	@Override
-	void clone()
+	public void clone()
 	{
 		
 	}
 	
 	// Replace All
-	void replaceAll(String thing1, String thing2)
+	public void replaceAll(String thing1, String thing2)
 	{
 		
 	}
 	
 	// Set All
-	void setAll(int coefficient, int exponent)
+	public void setAll(int coefficient, int exponent)
 	{
 		// Set the coefficient 
 		this.setCoefficient(coefficient);
