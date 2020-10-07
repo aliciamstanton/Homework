@@ -110,7 +110,24 @@ public class Polynomial
 	@Override
 	public String toString()
 	{
+		// Create a temprorary string for this method 
+		String temp = "";
 		
+		// If the list has nothing in it, or is null, then print zero 
+		if(this.polyTerm == null || this.polyTerm.size() == 0)
+		{
+			temp += "0";
+		}
+		else
+		{
+			for(Term singleTerm : polyTerm)
+			{
+				temp += singleTerm.toString() + "+";
+			}
+		}
+		
+		// Return the temp value
+		return temp;
 	}
 	
 	
