@@ -23,6 +23,23 @@ public class Polynomial
 	// Copy Constructor
 	public Polynomial(Polynomial object)
 	{
+		// Create a new instance of the linked List 
+		this.polyTerm = new LinkedList<Term>();
+		
+		// If the polynomial is null - then there is nothing to copy 
+		if(object != null)
+		{
+			// Iterate over each term in the argument polynomial
+			for(int index = 0; index < object.getNumTerms(); index++)
+			{
+				// Create a temp term 
+				Term tempTerm;
+				tempTerm = object.getTerm(index);
+				
+				// Then add it to the calling object
+				polyTerm.add(tempTerm);
+			}
+		}
 		
 	}
 	
