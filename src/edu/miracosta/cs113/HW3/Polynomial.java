@@ -68,6 +68,41 @@ public class Polynomial
 	@Override
 	public boolean equals(Object obj)
 	{
+		
+		// Null Check
+		if(obj == null)
+		{
+			return false;
+		}
+		
+		// Self Check
+		if(this == obj)
+		{
+			return true;
+		}
+		
+		// Class Check
+		if(this.getClass() != obj.getClass())
+		{
+			return false;
+		}
+		
+		// Typecast 
+		Polynomial currentPoly = (Polynomial) obj;
+		
+		// If they don't have the same number of terms, then they can't be the same 
+		if(this.getNumTerms() != currentPoly.getNumTerms())
+		{
+			return false;
+		}
+		
+		// Assuming that they have the same number of terms, then we need to iterate 
+		// and compare each term individually - TO DO
+		else
+		{
+			
+		}
+		
 		return false;
 	}
 	
