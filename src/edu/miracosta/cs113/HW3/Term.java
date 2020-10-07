@@ -136,9 +136,25 @@ public  class Term implements Comparable
 		// Create an empty string to hold the term we will return
 		String fullTerm = "";
 		
+		
+		// If there is no exponent, then we can just return the coefficient 
 		if(this.exponent == 0)
 		{
 			fullTerm += "" + this.getCoefficient();
+		}
+		
+		// If the exponent is 1, this can be implictly shown 
+		else if(this.exponent == 1)
+		{
+			fullTerm += this.getCoefficient() + "x";
+			
+		}
+		
+		// If the exponent is anything from 2 or greater, then we need to show it explictly 
+		else
+		{
+			fullTerm += this.getCoefficient() + "x^" + this.getExponent();
+			
 		}
 			
 		return fullTerm;
