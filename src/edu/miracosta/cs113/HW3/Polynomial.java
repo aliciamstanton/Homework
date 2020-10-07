@@ -57,9 +57,10 @@ public class Polynomial
 		
 	}
 	
-	// Clear method
+	// Clear method - Clears the entire polynomial 
 	public void clear()
 	{
+		this.polyTerm.clear();
 		
 	}
 	
