@@ -2,6 +2,9 @@
 // Package declaration for the Polynomial Class 
 package edu.miracosta.cs113.HW3;
 
+// Can use the predefined Linked List in the Java Library - implemented here 
+import java.util.LinkedList;
+
 
 // Class Definition of Polynomial Class 
 public class Polynomial 
