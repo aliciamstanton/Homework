@@ -36,7 +36,12 @@ public class Polynomial
 	// Getter for a Specific term
 	public Term getTerm(int index)
 	{
-		return Term;
+		// Create a temp term to show the one you want to access 
+		Term tempTerm;
+		
+		tempTerm = this.polyTerm.get(index);
+		
+		return tempTerm;
 	}
 	
 	// Replace all items into a string format 
