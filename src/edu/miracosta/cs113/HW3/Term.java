@@ -22,11 +22,18 @@ public  class Term implements Comparable
 		this.coefficient = 1;
 	}
 	
-	// Full Constructor
+	/*// Full Constructor
 	Term(int coefficient, int exponent)
 	{
 		this.exponent = exponent;
 		this.coefficient = coefficient;
+	} */
+	
+	// Secondary Full Constructor - using setAll Method
+	Term(int coefficient, int exponent)
+	{
+		this.setAll(coefficient, exponent);
+		
 	}
 	
 	// Copy Constructor
