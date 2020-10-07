@@ -58,7 +58,7 @@ public class Polynomial
 	
 	// Equals Method
 	@Override
-	public bool equals(Object obj)
+	public boolean equals(Object obj)
 	{
 		return false;
 	}
