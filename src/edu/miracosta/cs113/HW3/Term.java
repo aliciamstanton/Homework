@@ -78,11 +78,19 @@ public class Term implements Comparable, Cloneable
 	}
 	
 	
-	// Clone Method 
+	// Clone Method - Want to call to super 
 	@Override
-	public void clone()
+	public Object clone()
 	{
-		
+		try
+		{
+			return super.clone();
+		}
+		catch(CloneNotSupportedException e)
+		{
+			return null;
+		}
+			
 	}
 	
 	// Replace All
