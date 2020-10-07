@@ -26,10 +26,10 @@ public class Polynomial
 		
 	}
 	
-	// Getter for Number of Terms
+	// Getter for Number of Terms - Just returns the size of the linked list
 	public int getNumTerms()
 	{
-		return 0;
+		return this.polyTerm.size();
 		
 	};
 	
