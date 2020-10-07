@@ -10,9 +10,13 @@ import java.util.LinkedList;
 public class Polynomial 
 {
 	
-	// Default Constructor
+	// Single Data Member - not initialized with a size 
+	private LinkedList<Term> polyTerm;
+	
+	// Default Constructor - initialize polyTerm as empty Linked List 
 	public Polynomial()
 	{
+		this.polyTerm = new LinkedList<Term>();
 		
 	}
 	
