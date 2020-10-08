@@ -62,10 +62,11 @@ public class Polynomial
 	}
 	
 	// Replace all items into a string format 
-	public void replaceAll(String thing1, String thing2)
+	/*public void replaceAll(String thing1, String thing2)
 	{
 		
 	}
+	*/
 	
 	// Add a Term
 	public void addTerm(Term termT)
