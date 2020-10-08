@@ -76,16 +76,19 @@ public class Term implements Comparable, Cloneable
 				exponent = 0;
 				
 				// Parse the string as is 
-				coefficient = Integer.parseInt(term);
-					
+				coefficient = Integer.parseInt(term);		
 			}
 			
-			
-			
 			// Need to consider if the term has an exponent or not
-			
-			
-			
+			else 
+			{
+				
+				
+				
+				
+				
+			}
+				
 		}
 		
 		
