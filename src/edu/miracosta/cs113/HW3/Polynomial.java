@@ -76,6 +76,12 @@ public class Polynomial
 	// Add Entire Polynomials
 	public void add(Polynomial p)
 	{
+		// Need to iterate over the argument poly to know how many terms to add
+		for(int index = 0; index < p.getNumTerms(); index++)
+		{
+			this.polyTerm.addTerm(p.getTerm(index));
+			
+		}
 		
 	}
 	
