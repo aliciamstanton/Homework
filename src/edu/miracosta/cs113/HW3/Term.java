@@ -50,7 +50,22 @@ public class Term implements Comparable, Cloneable
 	// String Constructor
 	public Term(String term)
 	{
+		// Create local variables that will hold the exponent and coefficient 
+		int exponent = 0;
+		int coefficient = 0;
 		
+		// If the term has nothing in it, then both the exponent and coefficient are zero
+		if(term.isEmpty())
+		{
+			exponent = 0;
+			coefficient = 0;
+			
+		}
+		
+		
+		
+		// Call the setAll method to set both the coefficient and exponent for the Term object
+		this.setAll(coefficient, exponent);
 	}
 	
 	// Getter - Exponent
