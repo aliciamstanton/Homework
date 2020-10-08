@@ -58,10 +58,35 @@ public class Term implements Comparable, Cloneable
 		if(term.isEmpty())
 		{
 			exponent = 0;
-			coefficient = 0;
-			
+			coefficient = 0;	
 		}
 		
+		// If the term is not empty, then we need to consider how to deal with it
+		else 
+		{
+			// Create a variable index that will hold where 'x' is found, if it exists in the string
+			int variableIndex = 0;
+			
+			// If 'x' is not found in the term, then we have only a coefficient and no exponent
+			variableIndex = term.indexOf('x');
+			
+			if(variableIndex == -1)
+			{
+				// Need to set the coefficient, but don't need to set the exponent
+				exponent = 0;
+				
+				// Parse the string as is 
+				coefficient = Integer.parseInt(term);
+					
+			}
+			
+			
+			
+			// Need to consider if the term has an exponent or not
+			
+			
+			
+		}
 		
 		
 		// Call the setAll method to set both the coefficient and exponent for the Term object
