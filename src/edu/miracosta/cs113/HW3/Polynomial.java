@@ -160,22 +160,6 @@ public class Polynomial
 		
 		
 		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-	}
 	
 	// Add Entire Polynomials
 	public void add(Polynomial p)
@@ -183,7 +167,7 @@ public class Polynomial
 		// Need to iterate over the argument poly to know how many terms to add
 		for(int index = 0; index < p.getNumTerms(); index++)
 		{
-			this.polyTerm.addTerm(p.getTerm(index));
+			 this.addTerm(p.getTerm(index));
 			
 		}
 		
