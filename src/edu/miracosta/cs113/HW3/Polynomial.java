@@ -71,6 +71,9 @@ public class Polynomial
 	// Add a Term
 	public void addTerm(Term termT)
 	{
+		// Local Term variables to work through 
+		Term currentTerm;
+		
 		// If the list size is zero, then we just add the term 
 		if(this.polyTerm.size() == 0)
 		{
@@ -80,6 +83,54 @@ public class Polynomial
 		// Otherwise, we need to compare exponents to see where the term should go 
 		else
 		{
+			// Want to iterate over the entire polynomial and find 
+			// if there are any places where the exponents match
+			for(int index = 0; index < this.getNumTerms() - 1; index++)
+			{
+				// Take the term at the index, so that we can work with it
+				currentTerm = this.polyTerm.get(index);
+				
+				
+				// What should we do if the exponent is bigger than the current term - add it
+				// The compareTo method is already testing exponents 
+				if(termT.compareTo(currentTerm) == 1)
+				{
+					polyTerm.add(index, termT);	
+					return;
+				}
+				
+				// If the exponents match, then we want to add the coefficients 
+				else if(termT.compareTo(currentTerm) == 0)
+				{
+					// Get the coefficient of the term we want to add
+					int termToAddCoeff = termT.getCoefficient();
+					
+					// Get the coefficient of the current term in the list
+					int currentTermCoeff = currentTerm.getCoefficient();
+					
+					// Create an int that will hold the sum of the two coefficients
+					int sumCoeff = termToAddCoeff + currentTermCoeff;
+					
+					// Then we want to reset the coefficient for the current term
+					// to account for this, as we aren't adding a new position
+					currentTerm.setCoefficient(sumCoeff);
+				}
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+			}
 			
 		}
 		
