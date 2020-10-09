@@ -207,7 +207,7 @@ public class Term implements Comparable, Cloneable
 	}
 	
 	// ToString 
-	public String toString()
+	public String ToString()
 	{
 		// Create an empty string to hold the term we will return
 		String fullTerm = "";
