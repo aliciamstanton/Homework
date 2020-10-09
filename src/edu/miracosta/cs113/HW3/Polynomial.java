@@ -98,7 +98,7 @@ public class Polynomial
 			if(termT.compareTo(lastTerm) == -1)
 			{
 				polyTerm.addLast(termT);
-				return;
+				
 			}
 			
 			
@@ -119,7 +119,7 @@ public class Polynomial
 				if(termT.compareTo(currentTerm) == 1)
 				{
 					polyTerm.add(index, termT);	
-					return;
+					
 				}
 				
 				// If the exponents match, then we want to add the coefficients 
@@ -138,7 +138,6 @@ public class Polynomial
 					// to account for this, as we aren't adding a new position
 					currentTerm.setCoefficient(sumCoeff);
 					
-					return;
 				}
 				
 				// Need to consider if the term we want to add has an exponent
@@ -150,7 +149,7 @@ public class Polynomial
 					// its higher than
 					polyTerm.add((index + 1), termT);
 					
-					return;
+					
 				}
 					
 			}
