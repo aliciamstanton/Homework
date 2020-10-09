@@ -71,7 +71,17 @@ public class Polynomial
 	// Add a Term
 	public void addTerm(Term termT)
 	{
+		// If the list size is zero, then we just add the term 
+		if(this.polyTerm.size() == 0)
+		{
+			this.polyTerm.add(termT);
+		}
 		
+		// Otherwise, we need to compare exponents to see where the term should go 
+		else
+		{
+			
+		}
 		
 		
 		
