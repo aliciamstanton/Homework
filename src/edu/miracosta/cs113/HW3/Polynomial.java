@@ -72,7 +72,7 @@ public class Polynomial
 	public void addTerm(Term termT)
 	{
 		// Local Term variables to work through 
-		Term currentTerm;
+		Term currentTerm, adjacentTerm, lastTerm;
 		
 		// If the list size is zero, then we just add the term 
 		if(this.polyTerm.size() == 0)
@@ -83,12 +83,34 @@ public class Polynomial
 		// Otherwise, we need to compare exponents to see where the term should go 
 		else
 		{
+			// An easy addition occurs if the term to add has a smaller exponent
+			// than the last element already in the polynomial. We don't need to
+			// iterate over the entire LinkedList. 
+			
+			// Get the lastTerm in the list 
+			int lastItemIndex = this.getNumTerms() - 1;
+			
+			// Get the term at the last index in the list
+			lastTerm = this.getTerm(lastItemIndex);
+			
+			// If the term we want to add has a smaller exponent than the end 
+			// we can just add it at the end 
+			if(termT.compareTo(lastTerm) == -1)
+			{
+				
+			}
+			
+			
+			else 
+			{
 			// Want to iterate over the entire polynomial and find 
 			// if there are any places where the exponents match
 			for(int index = 0; index < this.getNumTerms() - 1; index++)
 			{
 				// Take the term at the index, so that we can work with it
 				currentTerm = this.polyTerm.get(index);
+				
+				adjacentTerm = this.polyTerm.get(index + 1);
 				
 				
 				// What should we do if the exponent is bigger than the current term - add it
@@ -118,23 +140,23 @@ public class Polynomial
 					return;
 				}
 				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
+				// Need to consider if the term we want to add has an exponent
+				// less than the current term, however, this will return -1 multiple
+				// times - need to check the next term 
+				else if(termT.compareTo(currentTerm) == -1 && termT.compareTo(adjacentTerm) == 1)
+				{
+					// We can add it after the index its lower than, but before the index
+					// its higher than
+					polyTerm.add((index + 1), termT);
+					
+					return;
+				}
+					
 			}
-			
 		}
+			
+	}
+	}
 		
 		
 		
