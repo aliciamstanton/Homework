@@ -97,7 +97,8 @@ public class Polynomial
 			// we can just add it at the end 
 			if(termT.compareTo(lastTerm) == -1)
 			{
-				
+				polyTerm.addLast(termT);
+				return;
 			}
 			
 			
