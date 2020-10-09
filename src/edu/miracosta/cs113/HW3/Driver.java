@@ -11,10 +11,7 @@ public class Driver
 		
 		Polynomial B = new Polynomial();
 		
-		// Print out the polynomial
-		System.out.println(A.toString());
 		
-		System.out.println(B.toString());
 			
 			
 			
