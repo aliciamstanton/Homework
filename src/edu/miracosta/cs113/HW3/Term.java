@@ -50,6 +50,10 @@ public class Term implements Comparable, Cloneable
 	// String Constructor
 	public Term(String term)
 	{
+		
+		// Create a string value to hold the coefficient portion and the exponent portion
+		String coeffPortion = "";
+		String expPortion = "";
 		// Create local variables that will hold the exponent and coefficient 
 		int exponent = 0;
 		int coefficient = 0;
@@ -83,8 +87,26 @@ public class Term implements Comparable, Cloneable
 			else 
 			{
 				
+				// We want to iterate up to where the 'X' is found to get the coefficient 
+				for(int index = 0; index < variableIndex; index++)
+				{
+					coeffPortion += term.charAt(index);
+				}
 				
+				// Then we want to parse this to be an integer value
+				coefficient = Integer.parseInt(coeffPortion);
 				
+				// Now we want to find the index of the "^" to determine what the exponent is
+				int caratIndex = term.indexOf("^");
+				
+				// Iterate over the string to find the last portion
+				for(int loopIndex = caratIndex + 1; loopIndex < term.length(); loopIndex++)
+				{
+					expPortion += term.charAt(loopIndex);
+				}
+				
+				// Now we want to parse this to be an integer
+				exponent  = Integer.parseInt(expPortion);
 				
 				
 			}
