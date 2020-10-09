@@ -114,6 +114,8 @@ public class Polynomial
 					// Then we want to reset the coefficient for the current term
 					// to account for this, as we aren't adding a new position
 					currentTerm.setCoefficient(sumCoeff);
+					
+					return;
 				}
 				
 				
