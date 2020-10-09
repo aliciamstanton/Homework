@@ -55,7 +55,7 @@ public class Term implements Comparable, Cloneable
 		String coeffPortion = "";
 		String expPortion = "";
 		// Create local variables that will hold the exponent and coefficient 
-		int exponent = 0;
+		int exponent = 0 ;
 		int coefficient = 0;
 		
 		// If the term has nothing in it, then both the exponent and coefficient are zero
