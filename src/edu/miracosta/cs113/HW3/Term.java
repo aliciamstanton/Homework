@@ -136,11 +136,7 @@ public class Term implements Comparable, Cloneable
 			
 	}
 	
-	// Replace All
-	/*public void replaceAll(String thing1, String thing2)
-	{
-		
-	} */
+	
 	
 	// Set All
 	public void setAll(int coefficient, int exponent)
