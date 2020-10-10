@@ -1,0 +1,48 @@
+// Name: Alicia Stanton
+// Lab: 8
+// Date: October 10, 2020
+
+// Class: CS 113 - Data Structures
+
+
+
+
+
+// Algorithm to print all items in a Queue using queue operations
+
+ - Can use either poll() or remove() to iterate over items in the Queue
+ 
+ public void printQueue(Queue queue)
+ {
+ 	while(!queue.isEmpty())
+ 	{	
+ 		System.out.println(queue.poll());
+ 	}
+ }
+ 
+ 
+ 
+ Question 2: s is a Stack<String> and q is a Queue<String>
+ 
+ 	Code Fragment Loop 1:
+ 	
+ 	String item;				// Create a String Item 
+ 	while(!s.isEmpty())			// Iterate while the Stack is not empty 
+ 	{
+ 		item = s.pop;			// Take the item and remove it from the stack, place it in "item"
+ 		q.offer(item);			// Place it at the end of the Queue
+ 	}
+ 	
+ 	
+ 	Code Fragment Loop 2:
+ 	
+ 	while(!q.isEmpty())			// Iterate over the Queue while it is not empty 
+ 	{
+ 		item = q.remove();		// Remove it from the queue and place it in "item"
+ 		s.push(item);			// Push it top the top of the stack 
+ 	}
+ 	
+ 	
+ 	A) After the first loop, the stack is now empty and then the items are put into the stack in the same order
+ 	B) After the second loop, queue is now empty and the stack is full but the items are in the reverse order 
+ 		from where they originally started.
