@@ -239,6 +239,14 @@ public class Polynomial
 			{
 				temp += singleTerm.toString();
 			}
+			
+			
+ 			if (temp.charAt(0) == '+')
+            {
+                temp = temp.substring(1);
+            }
+			
+			
 		}
 		
 		// Return the temp value
