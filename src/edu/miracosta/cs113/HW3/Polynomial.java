@@ -20,6 +20,8 @@ public class Polynomial
 		
 	}
 	
+	
+	
 	// Copy Constructor
 	public Polynomial(Polynomial object)
 	{
@@ -33,11 +35,11 @@ public class Polynomial
 			for(int index = 0; index < object.getNumTerms(); index++)
 			{
 				// Create a temp term 
-				Term tempTerm;
+				Term tempTerm = new Term();
 				tempTerm = object.getTerm(index);
 				
 				// Then add it to the calling object
-				polyTerm.add(tempTerm);
+				polyTerm.add(new Term(tempTerm));
 			}
 		}
 		
