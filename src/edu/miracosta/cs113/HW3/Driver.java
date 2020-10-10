@@ -12,6 +12,7 @@ public class Driver
 		System.out.println("Welcome to the Polynomial Creater");
 		
 		String userChoice;
+		Scanner input = new Scanner(System.in);
 		
 		Polynomial PolyA = new Polynomial();
 		Polynomial PolyB = new Polynomial();
@@ -19,6 +20,9 @@ public class Driver
 		
 
 		System.out.println("Please choose an option below: ");
+		
+		do
+		{
 		System.out.println("1. Create Polynomial A");
 		System.out.println("2. Create Polynomial B");
 		System.out.println("3. Add Term to Polynomial A");
@@ -28,7 +32,7 @@ public class Driver
 		System.out.println("7. Add Polynomial A to Polynomial B");
 		System.out.println("8. Exit Program");
 		
-		Scanner input = new Scanner(System.in);
+		
 		
 		
 		// Create a string response to hold the user response
@@ -161,7 +165,7 @@ public class Driver
 				}
 		}
 		
-			
+		} while(userChoice != "8");	
 
 	}
 
