@@ -50,76 +50,7 @@ public class Term implements Comparable, Cloneable
 		
 	}
 	
-	/*// String Constructor
-	public Term(String term)
-	{
-		
-		// Create a string value to hold the coefficient portion and the exponent portion
-		String coeffPortion = "";
-		String expPortion = "";
-		// Create local variables that will hold the exponent and coefficient 
-		int exponent = 0 ;
-		int coefficient = 0;
-		
-		// If the term has nothing in it, then both the exponent and coefficient are zero
-		if(term.isEmpty())
-		{
-			exponent = 0;
-			coefficient = 0;	
-		}
-		
-		// If the term is not empty, then we need to consider how to deal with it
-		else 
-		{
-			// Create a variable index that will hold where 'x' is found, if it exists in the string
-			int variableIndex = 0;
-			
-			// If 'x' is not found in the term, then we have only a coefficient and no exponent
-			variableIndex = term.indexOf('x');
-			
-			if(variableIndex == -1)
-			{
-				// Need to set the coefficient, but don't need to set the exponent
-				exponent = 0;
-				
-				// Parse the string as is 
-				coefficient = Integer.parseInt(term);		
-			}
-			
-			// Need to consider if the term has an exponent or not
-			else 
-			{
-				
-				// We want to iterate up to where the 'X' is found to get the coefficient 
-				for(int index = 0; index < variableIndex; index++)
-				{
-					coeffPortion += term.charAt(index);
-				}
-				
-				// Then we want to parse this to be an integer value
-				coefficient = Integer.parseInt(coeffPortion);
-				
-				// Now we want to find the index of the "^" to determine what the exponent is
-				int caratIndex = term.indexOf("^");
-				
-				// Iterate over the string to find the last portion
-				for(int loopIndex = caratIndex + 1; loopIndex < term.length(); loopIndex++)
-				{
-					expPortion += term.charAt(loopIndex);
-				}
-				
-				// Now we want to parse this to be an integer
-				exponent  = Integer.parseInt(expPortion);
-				
-				
-			}
-				
-		}
-		
-		
-		// Call the setAll method to set both the coefficient and exponent for the Term object
-		this.setAll(coefficient, exponent);
-	}*/
+	
 	
 	
 	public Term(String term)
@@ -128,7 +59,7 @@ public class Term implements Comparable, Cloneable
         int coefficient = 0, exponent = 0;
         
         
-        // AS IMPLEMENTATION 
+     
         if(term.isEmpty())
         {
         	exponent = 0;
@@ -137,7 +68,7 @@ public class Term implements Comparable, Cloneable
         
         
         
-       // AS Implementation - got rid of parse methods 
+ 
         else 
         {
 
@@ -205,10 +136,6 @@ public class Term implements Comparable, Cloneable
         
         this.setAll(coefficient, exponent);
     }
-	
-	
-	
-	
 	
 	
 	
@@ -308,27 +235,7 @@ public class Term implements Comparable, Cloneable
 		String fullTerm = "";
 		
 		
-		/*// If there is no exponent, then we can just return the coefficient 
-		if(this.exponent == 0)
-		{
-			fullTerm += "" + this.getCoefficient();
-		}
-		
-		// If the exponent is 1, this can be implictly shown 
-		else if(this.exponent == 1)
-		{
-			fullTerm += this.getCoefficient() + "x";
-			
-		}
-		
-		// If the exponent is anything from 2 or greater, then we need to show it explictly 
-		else
-		{
-			fullTerm += this.getCoefficient() + "x^" + this.getExponent();
-			
-		}
-			
-		return fullTerm; */
+	
 		
 		
 		// Will not run if coefficient is zero
@@ -360,7 +267,7 @@ public class Term implements Comparable, Cloneable
             }
             
          
-            // Handles Exponent - AS CODE BELOW 
+            // Handles Exponent - 
             if (this.exponent != 0)
             {
             	
