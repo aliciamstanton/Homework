@@ -68,7 +68,7 @@ public class Polynomial
 	
 	
 	// Add a Term
-	public void addTerm(Term termT)
+	/*public void addTerm(Term termT)
 	{
 		// Local Term variables to work through 
 		Term currentTerm, adjacentTerm, lastTerm;
@@ -158,7 +158,145 @@ public class Polynomial
 	}
 		
 		
-		
+		*/
+	
+	
+	
+	public void addTerm(Term termToAdd)
+    {
+        // local variable
+        Term lastTerm, currentTerm, nextTerm;
+        
+        int lastIndex;
+
+        // If list is empty, add term to index 0
+        if (this.polyTerm.size() == 0)
+        {
+            this.polyTerm.add(termToAdd);
+        }
+      
+        else  // there is more then 1 element in list
+        {
+        	
+        	if (this.polyTerm.size() == 1)
+            {
+                lastTerm = polyTerm.get(0);
+                
+                if (termToAdd.compareTo(lastTerm) == 1)
+                {
+                    polyTerm.add(0, termToAdd);
+                }
+                
+                else
+                {
+                    polyTerm.add(termToAdd);
+                }
+       
+            } 
+        	
+        	else 
+        	{
+            // loop up too last index
+            for (int i = 0; i < this.getNumTerms() - 1; i++)
+            {
+                currentTerm = this.getTerm(i);
+                nextTerm = this.getTerm(i + 1);
+
+                // if term to add exponent bigger then current term's exponent
+                if (termToAdd.compareTo(currentTerm) == 1)
+                {
+                    polyTerm.add(i, termToAdd);
+                    return;
+                }
+
+                // else if term to Add Exponent matches current term's exponent
+                else if (termToAdd.compareTo(currentTerm) == 0)
+                {
+                
+                	 Term temp = null;
+                	 
+                	 
+         	        int coefficientSum;
+
+         	        
+         	            // Add both coefficients
+         	            coefficientSum = termToAdd.getCoefficient() + currentTerm.getCoefficient();
+
+         	            if (coefficientSum == 0)
+         	            {
+         	                polyTerm.remove(i);
+         	            }
+         	            else
+         	            {
+         	                temp = new Term(coefficientSum, termToAdd.getExponent());
+         	            }
+         	        
+                   
+                    if (temp != null)
+                    {
+                        polyTerm.set(i, temp);
+                    }
+                    
+                    
+                    return;
+                }
+
+                // if term to add exponent is smaller then current term exponent
+                // and larger then the next term exponent
+                if (termToAdd.compareTo(currentTerm) == -1
+                        && termToAdd.compareTo(nextTerm) == 1)
+                {
+                    // Insert term in between current and next
+                    polyTerm.add(i + 1, termToAdd);
+                    return;
+                }
+            }
+
+            // reached last index
+            lastIndex = this.getNumTerms() - 1;
+            lastTerm = this.getTerm(lastIndex);
+
+            
+            // Exponents are the same - want to add coefficients 
+            if (termToAdd.compareTo(lastTerm) == 0)
+            {
+            	
+            	Term temporary = null;
+            	
+            	int sumOfCoefficients;
+            	
+            	// Want to add both coefficients - to avoid repetitive terms 
+            	sumOfCoefficients = termToAdd.getCoefficient() + lastTerm.getCoefficient();
+            	
+            	
+            	if (sumOfCoefficients == 0)
+ 	            {
+ 	                polyTerm.remove(lastTerm);
+ 	            }
+ 	            else
+ 	            {
+ 	                temporary = new Term(sumOfCoefficients, termToAdd.getExponent());
+ 	            }
+                
+                
+                if (temporary != null)
+                {
+                    polyTerm.set(lastIndex, temporary);
+                }
+                
+            }
+            
+            else
+            {
+                polyTerm.add(termToAdd);
+            } 
+        }
+        } 
+    } 
+ 	
+	
+
+	
 	
 	// Add Entire Polynomials
 	public void add(Polynomial p)
