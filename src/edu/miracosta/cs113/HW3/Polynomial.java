@@ -45,6 +45,8 @@ public class Polynomial
 		
 	}
 	
+	
+	
 	// Getter for Number of Terms - Just returns the size of the linked list
 	public int getNumTerms()
 	{
@@ -63,12 +65,7 @@ public class Polynomial
 		return tempTerm;
 	}
 	
-	// Replace all items into a string format 
-	/*public void replaceAll(String thing1, String thing2)
-	{
-		
-	}
-	*/
+	
 	
 	// Add a Term
 	public void addTerm(Term termT)
