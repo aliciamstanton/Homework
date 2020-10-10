@@ -12,7 +12,9 @@ public class Driver
 		System.out.println("Welcome to the Polynomial Creater");
 		
 		String userChoice;
-		Polynomial PolyA, PolyB;
+		
+		Polynomial PolyA = new Polynomial();
+		Polynomial PolyB = new Polynomial();
 		Term termA, termB;
 		
 
@@ -39,8 +41,10 @@ public class Driver
 				// Case 1 - Create Poly A 
 				case "1":
 				{
+					// Notify the user that they are creating the polynomial 
 					System.out.println("You've created the first polynomial: ");
-					PolyA = new Polynomial();
+					
+					// Clarify that it has no terms at this time 
 					System.out.println("The polynomial right now has: " + PolyA.getNumTerms() + " terms.");
 					break;
 			
@@ -49,8 +53,10 @@ public class Driver
 				// Case 2 - Create Poly B 
 				case "2":
 				{
+					// Notify the user that they are creating another polynomial 
 					System.out.println("You've created the second polynomial: ");
-					PolyB = new Polynomial();
+					
+					// Notify that there are no terms at this time 
 					System.out.println("The polynomial right now has: " + PolyB.getNumTerms() + " terms");
 					break;
 				}
@@ -58,15 +64,41 @@ public class Driver
 				// Case 3 - Add Term Poly A
 				case "3":
 				{
+					// Notify the user that they are adding a new term and ask them for it 
 					System.out.println("Adding a term to Polynomial A.");
+					System.out.println("Please enter the term: ");
+					String userTermA = input.next();
 					
-				
+					// Use the string constructor to create the new temr 
+					termA = new Term(userTermA);
+					
+					// Add the term to the polynomial 
+					PolyA.addTerm(termA);
+					
+					// Print out the number of terms in the polynomial 
+					System.out.println("The polynomial now has: " + PolyA.getNumTerms() + " term(s).");
+					
+					
 					break;
 				}
 				
 				// Case 4 - Add Term Poly B
 				case "4":
 				{
+					// Notify the user that they are adding a new term and ask them for it
+					System.out.println("Adding a term to Polynomial B");
+					System.out.println("Please etner the term: ");
+					String userTermB = input.next();
+					
+					// Use the string constructor to convert it to a term we can work with
+					termB = new Term(userTermB);
+					
+					// Add the term to the polynomial
+					PolyB.addTerm(termB);
+					
+					// Print out the number of terms in the second polynomial
+					System.out.println("The polynomial now has: " + PolyB.getNumTerms() + " term(s).");
+					
 					break;
 				}
 				
