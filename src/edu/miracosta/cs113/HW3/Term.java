@@ -29,6 +29,9 @@ public class Term implements Comparable, Cloneable
 		this.coefficient = coefficient;
 	} */
 	
+	
+	
+	
 	// Secondary Full Constructor - using setAll Method
 	public Term(int coefficient, int exponent)
 	{
@@ -47,7 +50,7 @@ public class Term implements Comparable, Cloneable
 		
 	}
 	
-	// String Constructor
+	/*// String Constructor
 	public Term(String term)
 	{
 		
@@ -116,7 +119,99 @@ public class Term implements Comparable, Cloneable
 		
 		// Call the setAll method to set both the coefficient and exponent for the Term object
 		this.setAll(coefficient, exponent);
-	}
+	}*/
+	
+	
+	public Term(String term)
+    {
+		
+        int coefficient = 0, exponent = 0;
+        
+        
+        // AS IMPLEMENTATION 
+        if(term.isEmpty())
+        {
+        	exponent = 0;
+        	coefficient = 0;
+        }
+        
+        
+        
+       // AS Implementation - got rid of parse methods 
+        else 
+        {
+
+            // Term contains variable
+            if (term.indexOf("x") != -1)
+            {
+                // Split string in between X variable
+            	
+            	String[] splitTerm = term.split("x");
+            	
+            	
+            	String coeffPortion = "";
+            	
+            	// Portion before the X 
+            	
+            	coeffPortion = splitTerm[0];
+            	
+            	
+            	// If the string portion for the coefficient is longer than 1
+            	// it means that the coefficient is not a positive or negative 1
+            	
+            	if(coeffPortion.length() > 1)
+            	{
+            		coefficient = Integer.parseInt(coeffPortion);
+            	}
+            	else if(coeffPortion.length() == 1)
+            	{
+            		if(coeffPortion.charAt(0) == '-')
+            		{
+            			coefficient = -1;
+            		}
+            		else
+            		{
+            			coefficient = 1;
+            		}
+            	}
+            	
+            	
+            	
+            	if(splitTerm.length > 1)
+                {
+            		
+            		String exponentPortion = "";
+            		
+            		exponentPortion = splitTerm[1].substring(1);
+            		
+            		exponent = Integer.parseInt(exponentPortion);
+            		
+                }
+                else
+                {
+                    exponent = 1;
+                }
+            }
+            
+            else
+            { 
+            	// Term does not contain variable - there is no exponent 
+            	coefficient = Integer.parseInt(term);
+                exponent = 0;
+            } 
+
+        }
+        
+        
+        this.setAll(coefficient, exponent);
+    }
+	
+	
+	
+	
+	
+	
+	
 	
 	// Getter - Exponent
 	public int getExponent()
@@ -213,7 +308,7 @@ public class Term implements Comparable, Cloneable
 		String fullTerm = "";
 		
 		
-		// If there is no exponent, then we can just return the coefficient 
+		/*// If there is no exponent, then we can just return the coefficient 
 		if(this.exponent == 0)
 		{
 			fullTerm += "" + this.getCoefficient();
@@ -233,10 +328,58 @@ public class Term implements Comparable, Cloneable
 			
 		}
 			
-		return fullTerm;
-	}
-	
+		return fullTerm; */
+		
+		
+		// Will not run if coefficient is zero
+        if (this.coefficient != 0)
+        { 
 
+            // Handles Coefficient
+            if (coefficient > 0)
+            { // Adds plus symbol where needed
+                fullTerm += "+";
+                if (coefficient > 1)
+                {
+                    fullTerm += this.coefficient;
+                }
+            }
+            else if(coefficient < 0)
+            {
+            	
+            	// Add minus symbol where needed
+                if (coefficient == -1)
+                {
+                    fullTerm += "-";
+                } 
+                else
+                {
+                	
+                    fullTerm += this.coefficient;
+                }
+            }
+            
+         
+            // Handles Exponent - AS CODE BELOW 
+            if (this.exponent != 0)
+            {
+            	
+            	if(this.exponent == 1)
+            	{
+            	
+            		fullTerm += "x";
+            	}
+
+            	else
+                {
+                    fullTerm +=  "x^" + this.exponent;
+                }
+            }
+        }
+        return fullTerm;
+    }
+		
+		
 	// Must be implemented in order to use the Comparable Interface 
 	// Goal is to make sure that the exponents are ordered correctly 
 	@Override
