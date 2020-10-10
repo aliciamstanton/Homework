@@ -105,44 +105,66 @@ public class Driver
 				// Case 5 - Clear Poly A
 				case "5":
 				{
+					System.out.println("You have selected to clear the first polynomial.");
+					System.out.println("Clearing...");
+					
+					// Clear the polynomial
+					PolyA.clear();
+					
+					// Check that all terms have been removed - should provide zero
+					System.out.println("The polynomial now has " + PolyA.getNumTerms() + " term(s).");
 					break;
 				}
 				
 				// Case 6 - Clear Poly B
 				case "6":
 				{
+					
+					System.out.println("You have selected to clear the second polynomial.");
+					System.out.println("Clearing...");
+					
+					// Clear the polynomial
+					PolyB.clear();
+					
+					// Check that the terms have been removed - should provide zero
+					System.out.println("The polynomial now has " + PolyB.getNumTerms() + " term(s).");
 					break;
 				}
 				
 				// Case 7 - Add Poly A and Poly B 
 				case "7":
 				{
+					System.out.println("Adding the first polynomial to the second polynomial");
+					System.out.println("Please wait...");
+					
+					// Add the two polynomials together
+					PolyA.add(PolyB);
+					
+					// Print out the Polynomial
+					System.out.println("Your new polynomial is: " + PolyA.toString());
 					break;
 				}
 		
 				// Case 8 - Exit the program 
 				case "8":
 				{
+					System.out.println("Thank you for creating and adding polynomials!");
+					System.out.println("Goodbye!");
 					break;
 				}
 		
 				default:
 				{
 					System.out.println("None of the choices were valid.");
+					System.exit(0);
 					break;
 				}
 		}
 		
-		
-		
-		
-		
-			
-			
-			
-			
 			
 
 	}
+
+	
 
 }
