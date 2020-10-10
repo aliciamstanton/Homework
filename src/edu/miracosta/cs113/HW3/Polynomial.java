@@ -103,6 +103,7 @@ public class Polynomial
         	
         	else 
         	{
+        		
             // loop up too last index
             for (int i = 0; i < this.getNumTerms() - 1; i++)
             {
@@ -119,20 +120,25 @@ public class Polynomial
                 // else if term to Add Exponent matches current term's exponent
                 else if (termToAdd.compareTo(currentTerm) == 0)
                 {
-                
+                	 // Create a temporary term 
                 	 Term temp = null;
                 	 
-                	 
+                	 // Create an integer that can hold the sum of the coefficients 
          	        int coefficientSum;
 
          	        
          	            // Add both coefficients
          	            coefficientSum = termToAdd.getCoefficient() + currentTerm.getCoefficient();
 
+         	            // If the sum cancels eachother out, we can just remove it from the list 
          	            if (coefficientSum == 0)
          	            {
          	                polyTerm.remove(i);
          	            }
+         	            
+         	            // Otherwise we want to add it, we can use either tue current term 
+         	            // or termToAdd to get the exponent since we have already concluded that they
+         	            // are the same 
          	            else
          	            {
          	                temp = new Term(coefficientSum, termToAdd.getExponent());
@@ -167,7 +173,7 @@ public class Polynomial
             // Exponents are the same - want to add coefficients 
             if (termToAdd.compareTo(lastTerm) == 0)
             {
-            	
+            	// Same process as above, by creating empty term and a sum to hold coefficients 
             	Term temporary = null;
             	
             	int sumOfCoefficients;
