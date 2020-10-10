@@ -175,7 +175,7 @@ public class Polynomial
 	// Clear method - Clears the entire polynomial 
 	public void clear()
 	{
-		this.clear();
+		this.polyTerm.clear();
 		
 	}
 	
