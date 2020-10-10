@@ -10,6 +10,12 @@ public class Driver
 		
 		// Create a Menu to show the user
 		System.out.println("Welcome to the Polynomial Creater");
+		
+		String userChoice;
+		Polynomial PolyA, PolyB;
+		Term termA, termB;
+		
+
 		System.out.println("Please choose an option below: ");
 		System.out.println("1. Create Polynomial A");
 		System.out.println("2. Create Polynomial B");
@@ -24,7 +30,7 @@ public class Driver
 		
 		
 		// Create a string response to hold the user response
-		String userChoice = input.next();
+		 userChoice = input.next();
 		
 		// Create a switch statement that will run each item in the list
 		switch(userChoice)
@@ -33,7 +39,9 @@ public class Driver
 				// Case 1 - Create Poly A 
 				case "1":
 				{
-					
+					System.out.println("You've created the first polynomial: ");
+					PolyA = new Polynomial();
+					System.out.println("The polynomial right now has: " + PolyA.getNumTerms() + " terms.");
 					break;
 			
 				}
@@ -41,14 +49,18 @@ public class Driver
 				// Case 2 - Create Poly B 
 				case "2":
 				{
-					
+					System.out.println("You've created the second polynomial: ");
+					PolyB = new Polynomial();
+					System.out.println("The polynomial right now has: " + PolyB.getNumTerms() + " terms");
 					break;
 				}
 				
 				// Case 3 - Add Term Poly A
 				case "3":
 				{
+					System.out.println("Adding a term to Polynomial A.");
 					
+				
 					break;
 				}
 				
