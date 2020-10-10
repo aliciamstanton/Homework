@@ -52,38 +52,40 @@ public class Term implements Comparable, Cloneable
 	
 	
 	
-	
+	// String Constructor of Term 
 	public Term(String term)
     {
 		
+		// Preset the coefficient and exponent to make sure that they have a value
         int coefficient = 0, exponent = 0;
         
         
-     
+        
+        // If the term we are passing is empty, then we can set the exponent and coefficient to zero 
         if(term.isEmpty())
         {
         	exponent = 0;
         	coefficient = 0;
         }
         
-        
-        
- 
+     
+        // Otherwise we want to split the term into pieces to change the coefficient 
+        // and exponent from a string to an integer 
         else 
         {
+        	
 
-            // Term contains variable
+            // If the term contains 'x' then we should have a coefficient and exponent 
             if (term.indexOf("x") != -1)
             {
                 // Split string in between X variable
-            	
             	String[] splitTerm = term.split("x");
             	
             	
+            	// Create a coefficient Portion to hold the value before the X 
             	String coeffPortion = "";
             	
             	// Portion before the X 
-            	
             	coeffPortion = splitTerm[0];
             	
             	
@@ -94,6 +96,8 @@ public class Term implements Comparable, Cloneable
             	{
             		coefficient = Integer.parseInt(coeffPortion);
             	}
+            	
+            	// If the coeffPortion is 1, then it should be a positive or negative one 
             	else if(coeffPortion.length() == 1)
             	{
             		if(coeffPortion.charAt(0) == '-')
@@ -107,14 +111,17 @@ public class Term implements Comparable, Cloneable
             	}
             	
             	
-            	
+            	// If the term splits on the x into more than one term, then we should
+            	// have an exponent and coefficient 
             	if(splitTerm.length > 1)
                 {
-            		
+            		// Create a string to hold the exponent portion 
             		String exponentPortion = "";
             		
+            		// Want to strip off the carat symbol to only get the number portion of the exponent 
             		exponentPortion = splitTerm[1].substring(1);
             		
+            		// Then parse this into an integer 
             		exponent = Integer.parseInt(exponentPortion);
             		
                 }
@@ -133,7 +140,7 @@ public class Term implements Comparable, Cloneable
 
         }
         
-        
+        // Use the setAll method to set the coefficient and the exponent 
         this.setAll(coefficient, exponent);
     }
 	
