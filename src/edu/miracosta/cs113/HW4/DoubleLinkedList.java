@@ -2,6 +2,8 @@
 // Homework 4 can be found in the HW4 Package 
 package edu.miracosta.cs113.HW4;
 
+import java.util.ListIterator;
+
 // Class Definition 
 public class DoubleLinkedList 
 {
@@ -24,16 +26,22 @@ public class DoubleLinkedList
 	
 	
 	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+	// Inner class that implements the ListIterator Interface
+	// Specific methods need to be implemented in order to use the interface 
+	private class DoubleIterator implements ListIterator<E>
+	{
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	}
 	
 	
 	
