@@ -32,14 +32,68 @@ public class DoubleLinkedList
 	{
 		
 		
+		// Inserts element into the list 
+		@Override
+		public void add(E e)
+		{
+			
+		}
 		
+		// Returns true if there is another element when traversing in the forward direction
+		@Override
+		public boolean hasNext() 
+		{
+			
+		}
 		
+		// Returns true if there is another element when traversing in the reverse direction
+		@Override
+		public boolean hasPrevious()
+		{
+			
+		}
 		
+		// Returns the next element in the list and advances the cursor position
+		@Override
+		public E next()
+		{
+			
+		}
 		
+		// Returns index of the element that would occur after another call to next()
+		@Override 
+		public int nextIndex()
+		{
+			
+		}
 		
+		// Retrieves the previous element and decrements the index backwards
+		@Override
+		public E previous()
+		{
+			
+		}
 		
+		// Returns the index of the element that would occur after another call to previous
+		@Override
+		public int previousIndex()
+		{
+			
+		}
 		
+		// Removes an element from the list
+		@Override
+		public void remove()
+		{
+			
+		}
 		
+		// Replaces a specific element
+		@Override 
+		public void set(E e)
+		{
+			
+		}	
 		
 	}
 	
