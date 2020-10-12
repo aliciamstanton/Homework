@@ -2,12 +2,30 @@
 // Homework 4 can be found in the HW4 Package 
 package edu.miracosta.cs113.HW4;
 
+import java.util.List;
 import java.util.ListIterator;
 
-// Class Definition 
-public class DoubleLinkedList 
+// Class Definition - Must add and override specific methods required through 
+// implementation of the List Interface 
+public class DoubleLinkedList<E> implements List<E>
 {
 	
+	// Default Constructor
+	
+	// Full Constructor
+	
+	// Copy Constructor
+	
+	// Getter
+	
+	// Setter
+	
+	// Equals
+	
+	// toString
+	
+	
+	// Overridden and Required methods for List Interface 
 	
 	
 	
