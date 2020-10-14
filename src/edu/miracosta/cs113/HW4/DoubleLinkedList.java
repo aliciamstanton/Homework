@@ -72,8 +72,11 @@ public class DoubleLinkedList<E> extends AbstractSequentialList<E>
   // Return the size of the double-linked list 
   public int size() 
   {  
-	  return -1; 
-  } // Fill Here
+	  
+	  return this.size();
+	  
+	 // return -1; 
+  } 
 
   
   // Remove the element at a specific index 
