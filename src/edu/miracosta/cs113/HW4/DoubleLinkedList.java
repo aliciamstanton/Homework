@@ -101,6 +101,53 @@ public class DoubleLinkedList<E> extends AbstractSequentialList<E>
         
         return returnValue;
   }
+  
+  
+  // Equals method for DoubleLinkedList Class
+  public boolean equals(Object other)
+  {
+	  // Self check 
+	  if(this == other)
+	  {
+		  return true;
+	  }
+	  
+	  // Null check
+	  if(other == null)
+	  {
+		  return false;
+	  }
+	  
+	  // Class check 
+	  if(this.getClass() != other.getClass())
+	  {
+		  return false;
+	  }
+	  
+	  // Typecast
+	  DoubleLinkedList d = (DoubleLinkedList) other;
+	  
+	  return false;
+  }
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
 
   
   public Iterator<E> iterator() 
