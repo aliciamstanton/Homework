@@ -26,9 +26,10 @@ public class DoubleLinkedList<E> extends AbstractSequentialList<E>
     	}
    
    // Adds element at a specific index within the double-linked list 
+
   public void add(int index, E obj)
   { 
-	  // Fill Here 
+	  listIterator(index).add(obj); // taken from text 
   }
   
   
@@ -95,25 +96,25 @@ public class DoubleLinkedList<E> extends AbstractSequentialList<E>
   }
 
   
-  public Iterator iterator() 
+  public Iterator<E> iterator() 
   { 
 	  return new ListIter(0); 
   }
   
   
-  public ListIterator listIterator() 
+  public ListIterator<E> listIterator() 
   { 
 	  return new ListIter(0);  
   }
   
   
-  public ListIterator listIterator(int index)
+  public ListIterator<E> listIterator(int index)
   {
 	  return new ListIter(index);
   }
   
   
-  public ListIterator listIterator(ListIterator iter)
+  public ListIterator<E> listIterator(ListIterator<E> iter)
   {     
 	  return new ListIter( (ListIter) iter);  
   }
