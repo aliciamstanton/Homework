@@ -14,25 +14,29 @@ public class DoubleLinkedList<E> extends AbstractSequentialList<E>
     	private Node<E> tail = null;   //points to the tail of the list
     	private int size = 0;    // the number of items in the list
   
-    	
+   
+   // Adds element at a specific index within the double-linked list 
   public void add(int index, E obj)
   { 
 	  // Fill Here 
   }
   
   
+  // Adds an element at the beginning of the double-linked list 
   public void addFirst(E obj) 
   { 
 	  // Fill Here 
 	  
   }
   
-  
+
+  // Adds an element at the end of the double-linked list 
   public void addLast(E obj) 
   { 
 	  // Fill Here
   }
 
+  // Returns the element at a specified index 
   public E get(int index) 
   { 	
 	  ListIterator<E> iter = listIterator(index); 
@@ -40,23 +44,28 @@ public class DoubleLinkedList<E> extends AbstractSequentialList<E>
   }
   
   
+  // Get the element located at the first position in the list 
   public E getFirst() 
   { 
 	  return head.data;  
   }
   
   
+  // Get the element at the last position in the list 
   public E getLast() 
   { 
 	  return tail.data;  
   }
 
+  
+  // Return the size of the double-linked list 
   public int size() 
   {  
 	  return -1; 
   } // Fill Here
 
   
+  // Remove the element at a specific index 
   public E remove(int index)
   {    
 	  E returnValue = null;
