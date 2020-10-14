@@ -171,9 +171,13 @@ public class DoubleLinkedList<E> extends AbstractSequentialList<E>
     } // Fill Here
     
     
+    // Will return true if there is a previous element and no exception will be thrown 
     public boolean hasPrevious()
     {   
-    	return false;  
+    	return (nextItem == null && size != 0) || nextItem.prev != null;
+    	
+    	
+    	//return false;  
     } // Fill Here
     
     
@@ -222,7 +226,9 @@ public class DoubleLinkedList<E> extends AbstractSequentialList<E>
     	
         //return lastItemReturned.data; // Fill Here 
     }
-
+    
+    
+    
     public E previous() 
     {  
     	return lastItemReturned.data; // Fill Here 
