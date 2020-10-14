@@ -36,7 +36,8 @@ public class DoubleLinkedList<E> extends AbstractSequentialList<E>
   // Adds an element at the beginning of the double-linked list 
   public void addFirst(E obj) 
   { 
-	  // Fill Here 
+	 // Can use the list iterator, similar to above and specify the index as zero
+	  listIterator(0).add(obj);
 	  
   }
   
