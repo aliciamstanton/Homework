@@ -45,7 +45,10 @@ public class DoubleLinkedList<E> extends AbstractSequentialList<E>
   // Adds an element at the end of the double-linked list 
   public void addLast(E obj) 
   { 
-	  // Fill Here
+	  // Can use the list iterator, similiar to add method and specify the index using size
+	  int currentSize = size();
+	  
+	  listIterator(currentSize - 1).add(obj);
   }
 
   // Returns the element at a specified index 
