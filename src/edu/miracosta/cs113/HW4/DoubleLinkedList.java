@@ -199,10 +199,28 @@ public class DoubleLinkedList<E> extends AbstractSequentialList<E>
     {
     	
     }      // not implemented
-
+    
+    // Provides the next element in the double-linked list
+    // if no such element exists, then an exception is thrown - taken from text
+    
     public E next()
     {  
-        return lastItemReturned.data; // Fill Here 
+    	// If there is no other element - throw exception 
+    	if(!hasNext())
+    	{
+    		throw new NoSuchElementException();
+    	}
+    	
+    	// If another element exists, update the iterator and the index 
+    	else 
+    	{
+    		lastItemReturned = nextItem;
+    		nextItem = nextItem.next;
+    		index++;
+    		return lastItemReturned.data;
+    	}
+    	
+        //return lastItemReturned.data; // Fill Here 
     }
 
     public E previous() 
