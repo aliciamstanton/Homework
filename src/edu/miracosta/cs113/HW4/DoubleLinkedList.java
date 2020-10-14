@@ -168,7 +168,7 @@ public class DoubleLinkedList<E> extends AbstractSequentialList<E>
     	return nextItem != null;
     	
     	
-    } // Fill Here
+    } 
     
     
     // Will return true if there is a previous element and no exception will be thrown 
@@ -178,7 +178,7 @@ public class DoubleLinkedList<E> extends AbstractSequentialList<E>
     	
     	
     	//return false;  
-    } // Fill Here
+    } 
     
     
     public int previousIndex()
@@ -224,14 +224,45 @@ public class DoubleLinkedList<E> extends AbstractSequentialList<E>
     		return lastItemReturned.data;
     	}
     	
-        //return lastItemReturned.data; // Fill Here 
+        //return lastItemReturned.data; 
     }
     
     
-    
+    // Returns the previous element in the double-linked list
+    // If no element exists, then a new exception is thrown - taken from text 
     public E previous() 
     {  
-    	return lastItemReturned.data; // Fill Here 
+    	
+    	if(!hasPrevious())
+    	{
+    		throw new NoSuchElementException();
+    	}
+    	
+    	// If the next item is null, then we are at the tail 
+    	if(nextItem == null)
+    	{
+    		nextItem = tail;
+    	}
+    	
+    	// Otherwise, we can iterate backwards 
+    	else
+    	{
+    		nextItem = nextItem.prev;
+    	}
+    	
+    	// Update the lastItemReturned 
+    	lastItemReturned = nextItem;
+    	
+    	// Decrement the iterator index 
+    	index--;
+    	
+    	// Return the data in the item to be returned 
+    	return lastItemReturned.data;
+    	
+    	
+    	
+    	//return lastItemReturned.data; 
+
     }
 
     public void add(E obj)
