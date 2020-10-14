@@ -183,14 +183,19 @@ public class DoubleLinkedList<E> extends AbstractSequentialList<E>
     
     public int previousIndex()
     {  
-    	return 0;   
-    } // Fill Here
+    	
+    	return index - 1;
+    	
+    	//return 0;   
+    } 
     
     
     public int nextIndex() 
     { 
-    	return 0;   
-    } // Fill here
+    	return index;
+    	
+    	//return 0;   
+    } 
     
     
     public void set(E o)  
