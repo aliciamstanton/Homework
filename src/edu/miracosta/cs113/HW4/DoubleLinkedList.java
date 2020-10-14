@@ -160,9 +160,14 @@ public class DoubleLinkedList<E> extends AbstractSequentialList<E>
     }
     
 
+    // Returns true, if a call to next will not throw an exception - taken from text 
     public boolean hasNext() 
     {   
-    	return true;   
+    	//return true; 
+    	
+    	return nextItem != null;
+    	
+    	
     } // Fill Here
     
     
