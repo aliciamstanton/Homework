@@ -14,6 +14,16 @@ public class DoubleLinkedList<E> extends AbstractSequentialList<E>
     	private Node<E> tail = null;   //points to the tail of the list
     	private int size = 0;    // the number of items in the list
   
+    	
+    	
+    	
+   // Default Constructor
+    	public DoubleLinkedList()
+    	{
+    		this.head = head;
+    		this.tail = tail;
+    		this.size = size;
+    	}
    
    // Adds element at a specific index within the double-linked list 
   public void add(int index, E obj)
