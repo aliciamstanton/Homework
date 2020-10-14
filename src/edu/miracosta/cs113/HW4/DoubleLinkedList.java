@@ -259,16 +259,76 @@ public class DoubleLinkedList<E> extends AbstractSequentialList<E>
     	// Return the data in the item to be returned 
     	return lastItemReturned.data;
     	
-    	
-    	
     	//return lastItemReturned.data; 
 
     }
 
+    
+    // Adds a new item between the item that will be returned through next and the item
+    // that would be returned through previous. 
     public void add(E obj)
     {
+    	
+    	// First determine if the double linked list is empty - if so, it becomes the head 
+    	if(head == null)
+    	{
+    		head = new Node<E>(obj);
+    		tail = head;
+    	}
+    	
+    	// If the nextItem would be the head, then we are adding new elements at the head 
+    	else if(nextItem == head)
+    	{
+    		// Create a new node
+    		Node<E> newNode = new Node<E>(obj);
+    		
+    		// Link it to the nextItem
+    		newNode.next = nextItem;
+    		
+    		// Link nextItem to the new node
+    		nextItem.prev = newNode;
+    		
+    		// The new node is now the head
+    		head = newNode;
+    	}
+    	
+    	// If nextItem is null, then the insertion as at the tail of the double-linked list
+    	else if(nextItem == null)
+    	{
+    		// Create a new node
+    		Node<E> newNode = new Node<E>(obj);
+    		
+    		// Link the tail to the new node
+    		tail.next = newNode;
+    		
+    		// Link the new node to the tail
+    		newNode.prev = tail;
+    		
+    		// The new node is the new tail
+    		tail = newNode;
+    	}
+    	
+    	// If none of the above is true, then the item is being added at NEITHER the head or tail
+    	else
+    	{
+    		// Create a new node
+    		Node<E> newNode = new Node<E>(obj);
+    		
+    		// Link it to nextItem.prev
+    		newNode.prev = nextItem.prev;
+    		nextItem.prev.next = newNode;
+    		
+    		// Link it to the next item
+    		newNode.next = nextItem;
+    		nextItem.prev = newNode;
+    	}
+    	
+    	// Make sure to increase the size, the current index and set the lastItemReturned
+    	size++;
+    	index++;
+    	lastItemReturned = null;
 
-    		// Fill Here
+    		
     }
     
   }// end of inner class ListIter
