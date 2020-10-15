@@ -38,6 +38,7 @@ public class DoubleLinkedList<E> extends AbstractSequentialList<E>
   { 
 	 // Can use the list iterator, similar to above and specify the index as zero
 	  listIterator(0).add(obj);
+	  size++;
 	  
   }
   
@@ -49,6 +50,8 @@ public class DoubleLinkedList<E> extends AbstractSequentialList<E>
 	  int currentSize = size();
 	  
 	  listIterator(currentSize - 1).add(obj);
+	  
+	  size++;
   }
 
   // Returns the element at a specified index 
@@ -188,6 +191,8 @@ public class DoubleLinkedList<E> extends AbstractSequentialList<E>
   }  // end class Node
   
   
+  
+  // Beginning of implementation for ListIterator<E> interface 
 
   public class ListIter implements ListIterator<E> 
   {
@@ -218,6 +223,7 @@ public class DoubleLinkedList<E> extends AbstractSequentialList<E>
     }  // end constructor
 
     
+    // Copy Constructor for ListIter class 
     public ListIter(ListIter other)
     {  
     	nextItem = other.nextItem;
@@ -273,6 +279,8 @@ public class DoubleLinkedList<E> extends AbstractSequentialList<E>
     {
     	
     }      // not implemented
+    
+    
     
     // Provides the next element in the double-linked list
     // if no such element exists, then an exception is thrown - taken from text
