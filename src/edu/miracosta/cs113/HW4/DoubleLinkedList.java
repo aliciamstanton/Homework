@@ -132,26 +132,20 @@ public class DoubleLinkedList<E> extends AbstractSequentialList<E>
 	  return false;
   }
   
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
+  // Implementing toString
+  public String toString()
+  {
+	  
+	  
+	  
+	  
+	  
+	  
+  }
   
   
   
 
-  
   public Iterator<E> iterator() 
   { 
 	  return new ListIter(0); 
