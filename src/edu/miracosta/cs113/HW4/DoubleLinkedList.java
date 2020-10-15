@@ -38,7 +38,7 @@ public class DoubleLinkedList<E> extends AbstractSequentialList<E>
   { 
 	 // Can use the list iterator, similar to above and specify the index as zero
 	  listIterator(0).add(obj);
-	  size++;
+	  
 	  
   }
   
@@ -50,8 +50,7 @@ public class DoubleLinkedList<E> extends AbstractSequentialList<E>
 	  int currentSize = size();
 	  
 	  listIterator(currentSize - 1).add(obj);
-	  
-	  size++;
+	 
   }
 
   // Returns the element at a specified index 
