@@ -20,9 +20,9 @@ public class DoubleLinkedList<E> extends AbstractSequentialList<E>
    // Default Constructor
     	public DoubleLinkedList()
     	{
-    		this.head = head;
-    		this.tail = tail;
-    		this.size = size;
+    		head = null;
+    		tail = null;
+    		size = 0;
     	}
    
    // Adds element at a specific index within the double-linked list 
