@@ -137,9 +137,30 @@ public class DoubleLinkedList<E> extends AbstractSequentialList<E>
   {
 	  
 	  
+	  // Create a string that we can use to print content
+	  String currentPosition = " ";
+	  
+	  // Iterate over the loop while there is still another list item
+	  while(listIterator().hasNext())
+	  {
+		  
+		  // Append to the currentPosition
+		  currentPosition += listIterator().next().toString();
+		  
+		  // Want to make sure that there is space/differentiation between variables if another exists
+		  if(listIterator().hasNext()) 
+		  {
+			  
+			  // Add space 
+			  currentPosition += ", ";
+			  
+		  }
+		  
+	  }
 	  
 	  
-	  
+	  // Return the string statement 
+	  return currentPosition;  
 	  
   }
   
