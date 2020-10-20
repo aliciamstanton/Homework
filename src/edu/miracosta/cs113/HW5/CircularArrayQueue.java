@@ -38,6 +38,7 @@ public class CircularArrayQueue<E> extends AbstractQueue<E> implements Queue<E>
 	
 	
 	// Second Constructor - Can be used to implement the array with a specific capacity 
+	@SuppressWarnings("unchecked")
 	public CircularArrayQueue(int initialCapacity) 
 	{
 		// Redefine the capacity
@@ -86,9 +87,39 @@ public class CircularArrayQueue<E> extends AbstractQueue<E> implements Queue<E>
 		
 		return true;
 	}
-
-	private void reallocate() {
-		// TODO Auto-generated method stub
+	
+	// Method to increase the capacity of the circular array 
+	@SuppressWarnings("unchecked")
+	private void reallocate() 
+	{
+		// Define a new capacity that is double the current capacity
+		int newCapacity = capacity * 2;
+		
+		// Create a second array, initialized to the new capacity
+		E[] newData = (E[]) new Object[newCapacity];
+		
+		// Copy all the elements from the original array to the new (bigger) array 
+		int j = front;
+		
+		for(int i = 0; i < size; i++)
+		{
+			// Copy element by element 
+			newData[i] = theData[j];
+			
+			j = (j + 1) % capacity;
+		}
+		
+		// Re-assign the front to zero 
+		front = 0;
+		
+		// Re-assign the back to the new size of the array less 1
+		back = size - 1;
+		
+		// Re-define the capacity
+		capacity = newCapacity;
+		
+		// Re-assign the array 
+		theData = newData;
 		
 	}
 
