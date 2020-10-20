@@ -151,10 +151,6 @@ public class CircularArrayQueue<E> extends AbstractQueue<E> implements Queue<E>
 		return null;
 	}
 
-	@Override
-	public int size() {
-		// TODO Auto-generated method stub
-		return 0;
-	}
+	
 
 }
