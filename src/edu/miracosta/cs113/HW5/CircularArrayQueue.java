@@ -123,11 +123,33 @@ public class CircularArrayQueue<E> extends AbstractQueue<E> implements Queue<E>
 		
 	}
 
-
+	
+	// Method that removes entry at the front and returns it unless the entire array is empty 
 	@Override
-	public E poll() {
-		// TODO Auto-generated method stub
-		return null;
+	public E poll() 
+	{
+		// If there is nothing in the array, i.e. the size is zero, then return null
+		if(size == 0)
+		{
+			return null;
+		}
+		else
+		{
+			// Get the element at the front
+			E result = theData[front];
+			
+			// Re-define the front of the array 
+			front = (front + 1) % capacity;
+			
+			// Decrement the size 
+			size--;
+			
+			// Return the item that was removed from the array 
+			
+			return result;
+		}
+		
+		
 	}
 
 	
