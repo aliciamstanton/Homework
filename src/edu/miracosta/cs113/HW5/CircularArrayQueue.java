@@ -167,8 +167,8 @@ public class CircularArrayQueue<E> extends AbstractQueue<E> implements Queue<E>
 
 	// Required in order to fully implement the Queue Interface 
 	@Override
-	public Iterator<E> iterator() {
-		// TODO Auto-generated method stub
+	public Iterator<E> iterator() 
+	{
 		return null;
 	}
 
@@ -178,6 +178,26 @@ public class CircularArrayQueue<E> extends AbstractQueue<E> implements Queue<E>
 	{
 		
 		return this.size;
+	}
+	
+	
+	// As clarified in text - must implement the Iterator<E> interface in order to fully implement the Queue<E> interface 
+	@SuppressWarnings("unused")
+	private class Iter implements Iterator<E>
+	{
+
+		@Override
+		public boolean hasNext() {
+			// TODO Auto-generated method stub
+			return false;
+		}
+
+		@Override
+		public E next() {
+			// TODO Auto-generated method stub
+			return null;
+		}
+		
 	}
 
 	
