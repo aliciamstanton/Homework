@@ -182,7 +182,7 @@ public class CircularArrayQueue<E> extends AbstractQueue<E> implements Queue<E>
 	
 	
 	// As clarified in text - must implement the Iterator<E> interface in order to fully implement the Queue<E> interface 
-	@SuppressWarnings("unused")
+	
 	private class Iter implements Iterator<E>
 	{
 		
