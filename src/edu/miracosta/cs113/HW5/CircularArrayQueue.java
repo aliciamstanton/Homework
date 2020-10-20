@@ -179,13 +179,39 @@ public class CircularArrayQueue<E> extends AbstractQueue<E> implements Queue<E>
 	}
 	
 	
-	// Other methods that need to be implemented - TO DO 
-	public boolean add(E e)
+	// Other methods that need to be implemented 
+	
+	// Inserts a specific element into the queue (can use offer) if possible 
+	// If there is no space and the underlying array is at capacity then throw
+	// an IllegalStateException 
+	public boolean add(E item)
 	{
-		return false;
+		
+		// First check that the underlying array is not at capacity 
+		if(size == capacity)
+		{
+			return IllegalStateException();
+		}
+		
+		// If there is room in the underlying array then we can use offer method 
+		else
+		{
+			this.offer(item);
+			
+			// Return true to indicate that this addition was successful 
+			return true;	
+		}
+	
+		
 		
 	}
 	
+	private boolean IllegalStateException() 
+	{
+		return true;
+	}
+
+
 	// Retrieves an element but does not remove it from the head of the queue - TO DO 
 	public E element()
 	{
