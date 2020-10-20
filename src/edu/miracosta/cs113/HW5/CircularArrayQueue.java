@@ -37,7 +37,7 @@ public class CircularArrayQueue<E> extends AbstractQueue<E> implements Queue<E>
 	}
 	
 	
-
+	// Second Constructor - Can be used to implement the array with a specific capacity 
 	public CircularArrayQueue(int initialCapacity) 
 	{
 		// TODO Auto-generated constructor stub
