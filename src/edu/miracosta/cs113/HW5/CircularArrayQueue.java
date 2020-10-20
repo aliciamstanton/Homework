@@ -211,10 +211,15 @@ public class CircularArrayQueue<E> extends AbstractQueue<E> implements Queue<E>
 	}
 
 
-	// Retrieves an element but does not remove it from the head of the queue - TO DO 
+	// Retrieves an element but does not remove it from the head of the queue 
+	// Should be able to use peek, since this does not remove the element from the array 
 	public E element()
 	{
-		return null;
+		// Call the peek method to see if there is an item in the array 
+		E elementToReturn = peek();
+		
+		// If so, return it, otherwise it will return null 
+		return elementToReturn;
 	}
 	
 	// Removes an element from the head of the queue - TO DO 
