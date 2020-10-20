@@ -1,29 +1,54 @@
 package edu.miracosta.cs113.HW5;
 
-public class ArrayListStack implements StackInterface<Integer> {
+public class ArrayListStack<E> implements StackInterface<E> 
+{
 
-	@Override
-	public boolean empty() {
-		// TODO Auto-generated method stub
-		return false;
-	}
+    /**
+     * Returns true if the stack is empty; otherwise, returns false
+     *
+     * @return true if empty, false otherwise
+     */
+    public boolean empty() 
+    {
+    	return false;
+    	
+    }
+    	
 
-	@Override
-	public Integer peek() {
-		// TODO Auto-generated method stub
-		return null;
-	}
+    /**
+     * Returns the object at the top of the stack without removing it
+     *
+     * @return reference (shallow copy) of object at top of stack
+     */
+    public E peek()
+    {
+    	
+    	return null;
+    	
+    }
 
-	@Override
-	public Integer pop() {
-		// TODO Auto-generated method stub
-		return null;
-	}
+    /**
+     * Returns the object at the top of the stack and removes it
+     *
+     * @return reference of removed object from top of stack
+     */
+    public E pop()
+    {
+    	
+    	return null;
+    	
+    }
 
-	@Override
-	public Integer push(Integer obj) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
+    /**
+     * Pushes an item onto the top of the stack and returns the item pushed.
+     *
+     * @param obj object to push onto top of stack
+     * @return item that was pushed
+     */
+    public E push(E obj)
+    {
+    	
+    	return null;
+    	
+    }
 }
