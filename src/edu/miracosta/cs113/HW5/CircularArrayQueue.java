@@ -200,11 +200,11 @@ public class CircularArrayQueue<E> extends AbstractQueue<E> implements Queue<E>
 			index = front;
 		}
 		
-
+		// Returns true if we are not at the end of the array/queue yet 
 		@Override
-		public boolean hasNext() {
-			// TODO Auto-generated method stub
-			return false;
+		public boolean hasNext() 
+		{
+			return counter < size;
 		}
 
 		@Override
