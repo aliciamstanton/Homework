@@ -151,6 +151,14 @@ public class CircularArrayQueue<E> extends AbstractQueue<E> implements Queue<E>
 		return null;
 	}
 
+
+	@Override
+	public int size() 
+	{
+		
+		return this.size;
+	}
+
 	
 
 }
