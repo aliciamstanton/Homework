@@ -53,16 +53,45 @@ public class CircularArrayQueue<E> extends AbstractQueue<E> implements Queue<E>
 		back = capacity - 1;
 		
 		// Define the initial size as zero (no elements)
-		size = 0;
+		size = 0;	
 		
+	}
+	
+	// Will place an item at the back of the queue (insert essentially at the end of the underlying array)
+	// Should always return true, according to text 
+
+	@Override
+	public boolean offer(E item) 
+	{
+		// First need to check that the array isn't already full 
+		if(size == capacity)
+		{
+			reallocate();
+		}
+		
+		// If the underlying array has room, then we can just add at the end as normal
+		else
+		{
+			// Increment the size 
+			size++;
+			
+			// Redefine the end of the array
+			back = (back + 1) % capacity;
+			
+			// Assign the item being passed in to the back of the array based on its current size
+			theData[back] = item;
+			
+		}
+		
+		
+		return true;
+	}
+
+	private void reallocate() {
+		// TODO Auto-generated method stub
 		
 	}
 
-	@Override
-	public boolean offer(E e) {
-		// TODO Auto-generated method stub
-		return false;
-	}
 
 	@Override
 	public E poll() {
