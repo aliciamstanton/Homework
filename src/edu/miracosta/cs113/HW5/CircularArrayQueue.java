@@ -29,6 +29,13 @@ public class CircularArrayQueue<E> extends AbstractQueue<E> implements Queue<E>
 	
 	
 	
+	// Default Constructor
+	public CircularArrayQueue()
+	{
+		// Initialize using the default capacity
+		this(DEFAULT_CAPACITY);
+	}
+	
 	
 
 	public CircularArrayQueue(int initialCapacity) 
