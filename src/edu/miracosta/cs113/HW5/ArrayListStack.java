@@ -1,5 +1,8 @@
 package edu.miracosta.cs113.HW5;
 
+// Import statement
+import java.util.*;
+
 public class ArrayListStack<E> implements StackInterface<E> 
 {
 
