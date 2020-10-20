@@ -40,7 +40,22 @@ public class CircularArrayQueue<E> extends AbstractQueue<E> implements Queue<E>
 	// Second Constructor - Can be used to implement the array with a specific capacity 
 	public CircularArrayQueue(int initialCapacity) 
 	{
-		// TODO Auto-generated constructor stub
+		// Redefine the capacity
+		capacity = initialCapacity;
+		
+		// Assign the generic array to this capacity 
+		theData = (E[]) new Object[capacity];
+		
+		// Define the front as index zero
+		front = 0;
+		
+		// Define the rear as one minus the full capacity
+		back = capacity - 1;
+		
+		// Define the initial size as zero (no elements)
+		size = 0;
+		
+		
 	}
 
 	@Override
