@@ -169,7 +169,7 @@ public class CircularArrayQueue<E> extends AbstractQueue<E> implements Queue<E>
 	@Override
 	public Iterator<E> iterator() 
 	{
-		return null;
+		return new Iter();
 	}
 
 
@@ -185,6 +185,21 @@ public class CircularArrayQueue<E> extends AbstractQueue<E> implements Queue<E>
 	@SuppressWarnings("unused")
 	private class Iter implements Iterator<E>
 	{
+		
+		// Data members for private inner class
+		
+		// Index of the next element
+		private int index;
+		
+		// Counter for the number of elements accessed so far 
+		private int counter = 0;
+		
+		// Create a constructor for the Iterator Interface
+		public Iter()
+		{
+			index = front;
+		}
+		
 
 		@Override
 		public boolean hasNext() {
