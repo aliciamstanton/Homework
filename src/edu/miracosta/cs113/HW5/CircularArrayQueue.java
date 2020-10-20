@@ -130,10 +130,19 @@ public class CircularArrayQueue<E> extends AbstractQueue<E> implements Queue<E>
 		return null;
 	}
 
+	
+	// Returns the method at the front of the array, without removing it from the array 
 	@Override
-	public E peek() {
-		// TODO Auto-generated method stub
+	public E peek() 
+	{
+		// If there is nothing in the array - then we should return null
+		if(size == 0)
+		{
 		return null;
+		}
+		
+		// Otherwise return the item that is currently at the front of the array (index zero)
+		return theData[front];
 	}
 
 	@Override
