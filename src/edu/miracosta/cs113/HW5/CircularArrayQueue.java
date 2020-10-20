@@ -222,10 +222,15 @@ public class CircularArrayQueue<E> extends AbstractQueue<E> implements Queue<E>
 		return elementToReturn;
 	}
 	
-	// Removes an element from the head of the queue - TO DO 
+	// Removes an element from the head of the queue
+	// Can use a call to poll to remove the element from the array 
 	public E remove()
 	{
-		return null;
+		// Pick off an element from the array 
+		E elementRemoved = this.poll();
+		
+		// Return it from this method 
+		return elementRemoved;
 	}
 	
 	// As clarified in text - must implement the Iterator<E> interface in order to fully implement the Queue<E> interface 
