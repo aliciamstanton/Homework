@@ -1,9 +1,6 @@
 package edu.miracosta.cs113.HW5;
 
-import java.util.AbstractQueue;
-import java.util.Iterator;
-import java.util.Queue;
-
+import java.util.*;
 public class CircularArrayQueue<E> extends AbstractQueue<E> implements Queue<E> 
 {
 	
@@ -207,10 +204,25 @@ public class CircularArrayQueue<E> extends AbstractQueue<E> implements Queue<E>
 			return counter < size;
 		}
 
+		// Returns the next element in the array/queue as long as hasNext() does not return null 
 		@Override
-		public E next() {
-			// TODO Auto-generated method stub
-			return null;
+		public E next() 
+		{
+			if(!hasNext())
+			{
+				throw new NoSuchElementException();
+			}
+			
+			// If there are more elements then we want to access them 
+			E nextValue = theData[index];
+			
+			index = (index + 1) % capacity;
+			
+			// Increment the counter to indicate how many elements we have already accessed
+			counter++;
+			
+			
+			return nextValue;
 		}
 		
 	}
