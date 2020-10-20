@@ -225,8 +225,19 @@ public class CircularArrayQueue<E> extends AbstractQueue<E> implements Queue<E>
 			return nextValue;
 		}
 		
-	}
+		
+		// Method that would remove an item but is not supported using the queue 
+		@Override 
+		public void remove()
+		{
+			// Cannot remove unless it is from the front, throw new exception
+			throw new UnsupportedOperationException();
+			
+		}
+		
+		
+	} // End of inner Iterator<E> interface 
 
 	
 
-}
+} // End of CircularArrayQueue Class 
