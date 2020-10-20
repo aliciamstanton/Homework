@@ -6,6 +6,30 @@ import java.util.Queue;
 
 public class CircularArrayQueue<E> extends AbstractQueue<E> implements Queue<E> 
 {
+	
+	// Data Members - Taken from Text Implementation
+	
+	// Front of the queue 
+	private int front;
+	
+	// Index for the rear of the queue
+	private int back;
+	
+	// Current size of the queue
+	private int size;
+	
+	// Current capacity of the queue
+	private int capacity;
+	
+	// Default Capacity for the queue
+	private static final int DEFAULT_CAPACITY = 10;
+	
+	// Underlying array to hold the data 
+	private E[] theData;
+	
+	
+	
+	
 
 	public CircularArrayQueue(int initialCapacity) 
 	{
