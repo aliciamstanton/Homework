@@ -179,6 +179,25 @@ public class CircularArrayQueue<E> extends AbstractQueue<E> implements Queue<E>
 	}
 	
 	
+	// Other methods that need to be implemented - TO DO 
+	public boolean add(E e)
+	{
+		return false;
+		
+	}
+	
+	// Retrieves an element but does not remove it from the head of the queue - TO DO 
+	public E element()
+	{
+		return null;
+	}
+	
+	// Removes an element from the head of the queue - TO DO 
+	public E remove()
+	{
+		return null;
+	}
+	
 	// As clarified in text - must implement the Iterator<E> interface in order to fully implement the Queue<E> interface 
 	
 	private class Iter implements Iterator<E>
