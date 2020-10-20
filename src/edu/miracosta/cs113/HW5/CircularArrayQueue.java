@@ -86,6 +86,7 @@ public class CircularArrayQueue<E> extends AbstractQueue<E> implements Queue<E>
 	}
 	
 	// Method to increase the capacity of the circular array 
+	
 	@SuppressWarnings("unchecked")
 	private void reallocate() 
 	{
