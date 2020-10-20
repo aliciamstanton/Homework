@@ -133,8 +133,7 @@ public class CircularArrayQueue<E> extends AbstractQueue<E> implements Queue<E>
 		{
 			return null;
 		}
-		else
-		{
+		
 			// Get the element at the front
 			E result = theData[front];
 			
@@ -145,9 +144,8 @@ public class CircularArrayQueue<E> extends AbstractQueue<E> implements Queue<E>
 			size--;
 			
 			// Return the item that was removed from the array 
-			
 			return result;
-		}
+		
 		
 		
 	}
