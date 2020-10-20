@@ -167,6 +167,7 @@ public class CircularArrayQueue<E> extends AbstractQueue<E> implements Queue<E>
 		return theData[front];
 	}
 
+	// Required in order to fully implement the Queue Interface 
 	@Override
 	public Iterator<E> iterator() {
 		// TODO Auto-generated method stub
