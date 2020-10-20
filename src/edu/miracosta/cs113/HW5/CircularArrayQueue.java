@@ -201,11 +201,10 @@ public class CircularArrayQueue<E> extends AbstractQueue<E> implements Queue<E>
 			// Return true to indicate that this addition was successful 
 			return true;	
 		}
-	
-		
 		
 	}
 	
+	// Method required to be able to use IllegalStateException above
 	private boolean IllegalStateException() 
 	{
 		return true;
