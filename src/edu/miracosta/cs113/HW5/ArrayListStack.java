@@ -49,7 +49,9 @@ public class ArrayListStack<E> implements StackInterface<E>
     public E peek()
     {
     	
-    	return null;
+    	// ArrayList has a get method that we can use to retrieve the 
+    	// first element without removing it or affecting the size
+    	return stack.get(0);
     	
     }
 
