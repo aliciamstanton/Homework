@@ -24,7 +24,19 @@ public class ArrayListStack<E> implements StackInterface<E>
      */
     public boolean empty() 
     {
+    	// If stack is empty return true 
+    	if(stack.isEmpty())
+    	{
+    		return true;
+    	}
+    	
+    	// If not empty then return false, i.e. there are elements in the arrayList
+    	else 
+    	{
+    	
     	return false;
+    	
+    	}
     	
     }
     	
