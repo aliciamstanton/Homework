@@ -63,7 +63,15 @@ public class ArrayListStack<E> implements StackInterface<E>
     public E pop()
     {
     	
-    	return null;
+    	// Grab the first element in the ArrayList
+    	E firstItem = stack.get(0);
+    	
+    	// Then we want to remove it from the arrayList
+    	stack.remove(firstItem);
+    	
+    	// Return the item that was removed from the arrayList 
+    	
+    	return firstItem;
     	
     }
 
