@@ -49,13 +49,31 @@ public class ArrayListStack<E> implements StackInterface<E>
     public E peek()
     {
     	
+    	if(stack.size() == 0)
+    	{
+    		return EmptyStackException();
+    	}
+    	
+    	else
+    	{
     	// ArrayList has a get method that we can use to retrieve the 
-    	// first element without removing it or affecting the size
+    	// first element without removing it or affecting the size - should work only 
+    	// if the stack has elements in it to be returned 
     	return stack.get(0);
+    	
+    	}
     	
     }
 
-    /**
+    private E EmptyStackException() 
+    {
+		
+		return null;
+	}
+
+
+
+	/**
      * Returns the object at the top of the stack and removes it
      *
      * @return reference of removed object from top of stack
