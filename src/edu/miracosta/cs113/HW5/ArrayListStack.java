@@ -84,7 +84,12 @@ public class ArrayListStack<E> implements StackInterface<E>
     public E push(E obj)
     {
     	
-    	return null;
+    	// Want to emulate placing an item on top of the stack - which means that we need
+    	// to add at the index zero 
+    	stack.add(0, obj);
     	
+    	// need to return the item that was placed on the top of the stack/front of the arrayList
+    	return obj;
+    		
     }
 }
