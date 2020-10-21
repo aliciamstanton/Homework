@@ -5,6 +5,17 @@ import java.util.*;
 
 public class ArrayListStack<E> implements StackInterface<E> 
 {
+	// Create an arrayList using generics to implement the stack 
+	ArrayList<E> stack;
+	
+	
+	// Constructor for the arrayList
+	public ArrayListStack()
+	{
+		stack = new ArrayList<E>();
+	}
+	
+	
 
     /**
      * Returns true if the stack is empty; otherwise, returns false
