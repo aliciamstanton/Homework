@@ -111,7 +111,7 @@ public class CircularArrayQueue<E> extends AbstractQueue<E> implements Queue<E>
 		front = 0;
 		
 		// Re-assign the back to the new size of the array less 1
-		back = size - 1;
+		back = this.size - 1;
 		
 		// Re-define the capacity
 		capacity = newCapacity;
