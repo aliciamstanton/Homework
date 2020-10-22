@@ -78,6 +78,15 @@ public class ArrayListStack<E> implements StackInterface<E>
     public E pop()
     {
     	
+    	// Need to consider what happens if the stack is empty 
+    	if(stack.size() == 0)
+    	{
+    		throw new EmptyStackException();
+    	}
+    	
+    	// Otherwise return and remove the first element in the arrayList 
+    	else 
+    	{
     	// Grab the first element in the ArrayList
     	E firstItem = stack.get(0);
     	
@@ -87,6 +96,8 @@ public class ArrayListStack<E> implements StackInterface<E>
     	// Return the item that was removed from the arrayList 
     	
     	return firstItem;
+    	
+    	}
     	
     }
 
