@@ -2,6 +2,7 @@ package edu.miracosta.cs113.HW5;
 
 // Import statement
 import java.util.*;
+import java.util.EmptyStackException;
 
 public class ArrayListStack<E> implements StackInterface<E> 
 {
@@ -51,7 +52,7 @@ public class ArrayListStack<E> implements StackInterface<E>
     	
     	if(stack.size() == 0)
     	{
-    		return EmptyStackException();
+    		 throw new EmptyStackException();
     	}
     	
     	else
@@ -65,11 +66,7 @@ public class ArrayListStack<E> implements StackInterface<E>
     	
     }
 
-    private E EmptyStackException() 
-    {
-		
-		return null;
-	}
+  
 
 
 
