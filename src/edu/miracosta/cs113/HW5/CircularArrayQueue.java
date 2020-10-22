@@ -133,7 +133,7 @@ public class CircularArrayQueue<E> extends AbstractQueue<E> implements Queue<E>
 		}
 		
 			// Get the element at the front
-			E result = theData[0];
+			E result = theData[front];
 			
 			// Re-define the front of the array 
 			front = (front + 1) % capacity;
