@@ -7,7 +7,7 @@ public class CircularArrayQueue<E> extends AbstractQueue<E> implements Queue<E>
 	// Data Members - Taken from Text Implementation
 	
 	// Front of the queue 
-	private int front;
+	private int front = 0;
 	
 	// Index for the rear of the queue
 	private int back;
