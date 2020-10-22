@@ -222,6 +222,14 @@ public class CircularArrayQueue<E> extends AbstractQueue<E> implements Queue<E>
 	// Can use a call to poll to remove the element from the array 
 	public E remove()
 	{
+		
+		// Need to consider if the array/queue is currently empty
+		if(this.size() == 0)
+		{
+			throw new NoSuchElementException();
+		}
+		
+		
 		// Pick off an element from the array 
 		E elementRemoved = this.poll();
 		
