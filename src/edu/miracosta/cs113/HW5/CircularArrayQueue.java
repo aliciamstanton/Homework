@@ -99,7 +99,7 @@ public class CircularArrayQueue<E> extends AbstractQueue<E> implements Queue<E>
 		// Copy all the elements from the original array to the new (bigger) array 
 		int j = front;
 		
-		for(int i = 0; i < size; i++)
+		for(int i = 0; i < this.size; i++)
 		{
 			// Copy element by element 
 			newData[i] = theData[j];
