@@ -230,7 +230,7 @@ public class CircularArrayQueue<E> extends AbstractQueue<E> implements Queue<E>
 	}
 	
 	// Removes an element from the head of the queue
-	// Can use a call to poll to remove the element from the array 
+	
 	public E remove()
 	{
 		
@@ -242,7 +242,9 @@ public class CircularArrayQueue<E> extends AbstractQueue<E> implements Queue<E>
 		
 		
 		// Pick off an element from the array 
-		E elementRemoved = this.poll();
+		//E elementRemoved = this.poll();
+		
+		E elementRemoved = theData[0];
 		
 		// Return it from this method 
 		return elementRemoved;
