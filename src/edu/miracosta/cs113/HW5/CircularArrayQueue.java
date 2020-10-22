@@ -211,6 +211,14 @@ public class CircularArrayQueue<E> extends AbstractQueue<E> implements Queue<E>
 	// Should be able to use peek, since this does not remove the element from the array 
 	public E element()
 	{
+		
+		// Need to consider if the current array/queue is empty
+		if(this.size() == 0)
+		{
+			throw new NoSuchElementException();
+		}
+		
+		
 		// Call the peek method to see if there is an item in the array 
 		E elementToReturn = peek();
 		
