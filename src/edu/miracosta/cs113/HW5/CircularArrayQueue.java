@@ -190,7 +190,7 @@ public class CircularArrayQueue<E> extends AbstractQueue<E> implements Queue<E>
 		// First check that the underlying array is not at capacity 
 		if(size == capacity)
 		{
-			return IllegalStateException();
+			throw new IllegalStateException();
 		}
 		
 		// If there is room in the underlying array then we can use offer method 
@@ -204,11 +204,7 @@ public class CircularArrayQueue<E> extends AbstractQueue<E> implements Queue<E>
 		
 	}
 	
-	// Method required to be able to use IllegalStateException above
-	private boolean IllegalStateException() 
-	{
-		return true;
-	}
+
 
 
 	// Retrieves an element but does not remove it from the head of the queue 
