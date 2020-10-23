@@ -93,8 +93,10 @@ public class PalindromeTest {
     		
     		// Create two empty stacks that we can use to compare each string 
     		// Use a Character wrapper class as the data type
-    		ArrayListStack<Character> firstHalf;
-    		ArrayListStack<Character> secondHalf;
+    		ArrayListStack<Character> firstHalf = new ArrayListStack<Character>();
+    		ArrayListStack<Character> secondHalf = new ArrayListStack<Character>();
+    		
+    		
     		
     		
     		
