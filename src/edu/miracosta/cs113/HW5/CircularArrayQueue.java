@@ -228,11 +228,17 @@ public class CircularArrayQueue<E> extends AbstractQueue<E> implements Queue<E>
 		}
 		
 		
-		// Call the peek method to see if there is an item in the array 
+		/*// Call the peek method to see if there is an item in the array 
 		E elementToReturn = peek();
 		
 		// If so, return it, otherwise it will return null 
-		return elementToReturn;
+		return elementToReturn;*/
+		
+		E result = theData[front];
+		
+		return result;
+		
+		
 	}
 	
 	// Removes an element from the head of the queue
