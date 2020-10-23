@@ -297,7 +297,7 @@ public class CircularArrayQueue<E> extends AbstractQueue<E> implements Queue<E>
 			}
 			
 			// If there are more elements then we want to access them 
-			E nextValue = theData[index];
+			E nextValue = theData[index++];
 			
 			index = (index + 1) % capacity;
 			
