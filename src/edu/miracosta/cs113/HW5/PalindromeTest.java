@@ -91,6 +91,11 @@ public class PalindromeTest {
     		// Remove whitespace
     		s = s.replaceAll("\\s", "");
     		
+    		// Create two empty stacks that we can use to compare each string 
+    		// Use a Character wrapper class as the data type
+    		ArrayListStack<Character> firstHalf;
+    		ArrayListStack<Character> secondHalf;
+    		
     		
     		
     		
