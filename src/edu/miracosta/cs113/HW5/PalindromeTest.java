@@ -148,35 +148,45 @@ public class PalindromeTest {
     		
     		// At this point, both stacks should have the same number of characters
     		
+    		// Now begin comparing characters individually by creating two empty 
+    		// Characters. One will correspond to firstHalf and the other will
+    		// correspond to secondHalf
     		
+    			Character firstHalfComparison;
+    			Character secondHalfComparison;
+    			
+    			// Create a boolean value that we can constantly update
+    			// as we compare letters 
+    			boolean palindromeTruth = true;
+    			
+    			for(int i = 0; i < halfwayPoint; i++)
+    			{
+    				
+    				// Pop a character from the top of each stack
+    				firstHalfComparison = firstHalf.pop();
+    				
+    				// Pop a character from the second stack
+    				secondHalfComparison = secondHalf.pop();
+    				
+    				// Now we need to compare that these items are the same
+    				// Can use "==" because characters can be compared based
+    				// on ASCII value 
+    				if(firstHalfComparison == secondHalfComparison)
+    				{
+    					palindromeTruth = true;
+    				}
+    				else
+    				{
+    					palindromeTruth = false;
+    				}
+    			}
     		
-    		
-    		
-    		
-    		
-    		
-    		
-    		
-    		
-    		
-    		
-    		
-    		
-    		
-    		
-    		
-    		
-    		
-    		
-    		
-    		
-    		
+    			// Now we can return the final result on if the item is a palindrome
+    			return palindromeTruth;
     	
     	}
     
-    	// Change this later 
-        return false;
-
+    	
     } // End of method isPalindrome
 
     @Test
