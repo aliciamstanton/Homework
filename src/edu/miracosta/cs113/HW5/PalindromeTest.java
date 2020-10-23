@@ -97,7 +97,27 @@ public class PalindromeTest {
     		ArrayListStack<Character> secondHalf = new ArrayListStack<Character>();
     		
     		
+    		// Now we want to take the string and put it in the first stack a character at a time
+    		// Create a single character 
+    		Character singleChar;
     		
+    		// Create an integer that clarifies the length of the string
+    		int stringLength = s.length();
+    		
+    		// Iterate over the length of the string and place each character in the firstHalf Stack
+    		for(int i = 0; i < stringLength; i++)
+    		{
+    			
+    			// Take the character at the beginning 
+    			singleChar = s.charAt(0);
+    			
+    			// push it onto the first stack
+    			firstHalf.push(singleChar);
+    			
+    			// Navigate to the next character in the string
+    			s = s.substring(1);
+    			
+    		}
     		
     		
     		
