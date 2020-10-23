@@ -188,16 +188,17 @@ public class CircularArrayQueue<E> extends AbstractQueue<E> implements Queue<E>
 	// Inserts a specific element into the queue (can use offer) if possible 
 	// If there is no space and the underlying array is at capacity then throw
 	// an IllegalStateException 
+	@Override
 	public boolean add(E item)
 	{
 		
 		// First check that the underlying array is not at capacity 
 		if(size == capacity)
 		{
-			//throw new IllegalStateException();
+			throw new IllegalStateException();
 			
-			reallocate();
-			return true;
+			//reallocate();
+			
 		}
 		
 		// If there is room in the underlying array then we can use offer method 
