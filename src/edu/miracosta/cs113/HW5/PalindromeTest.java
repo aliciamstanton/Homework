@@ -40,10 +40,38 @@ public class PalindromeTest {
      * @param s a string comprised of any character
      * @return returns true if a palindrome (ignoring whitespace and case sensitivity), false otherwise
      */
-    private boolean isPalindrome(String s) {
-
-        // TODO:
-        // Implement this method body using your ArrayListStack. Be mindful of your algorithm!
+    private boolean isPalindrome(String s) 
+    {
+    	
+    	// Need to consider if the string is null - Should throw IllegalArgumentException
+    	// based on test clarification below
+    	if(s == null)
+    	{
+    		throw new IllegalArgumentException();
+   
+    	}
+    	
+    	// Then we can consider if the string has a length of 0 - no  letters to compare
+    	// Should always return true as a palindrome
+    	else if(s.length() == 0)
+    	{
+    		return true;
+    	}
+    	
+    	// Then we can consider if the string has a length of 1, you'd be comparing a single
+    	// character to itself - always a palindrome
+    	else if(s.length() == 1)
+    	{
+    		return true;
+    	}
+    	
+    	
+    	// If none of the above cases apply, then we should implement stacks to compare them 
+    	else
+    		
+    	
+    	
+    
         return false;
 
     } // End of method isPalindrome
