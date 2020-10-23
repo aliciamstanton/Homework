@@ -81,10 +81,41 @@ public class PalindromeTest {
     	
     	// If none of the above cases apply, then we should implement stacks to compare them 
     	else
+    	{
+    		// First we need to clean the strings so that they no longer contain 
+    		// whitespace and capitalization
+    		
+    		// Remove uppercase 
+    		s = s.toLowerCase();
+    		
+    		// Remove whitespace
+    		s = s.replaceAll("\\s", "");
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
     		
     	
-    	
+    	}
     
+    	// Change this later 
         return false;
 
     } // End of method isPalindrome
