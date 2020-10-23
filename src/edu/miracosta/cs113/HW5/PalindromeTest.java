@@ -190,7 +190,8 @@ public class PalindromeTest {
     } // End of method isPalindrome
 
     @Test
-    public void testErrors() {
+    public void testErrors() 
+    {
         try {
             isPalindrome(null);
             fail("Checking null to see if it's a palindrome should throw IllegalArgumentException!");
@@ -198,42 +199,48 @@ public class PalindromeTest {
     }
 
     @Test
-    public void testSimpleTrueCases() {
+    public void testSimpleTrueCases() 
+    {
         for (int i = 0; i < SIMPLE_TRUE.length; i ++) {
             assertTrue((i + " This test is a palindrome"), isPalindrome(SIMPLE_TRUE[i]));
         }
     }
 
     @Test
-    public void testSimpleFalseCases() {
+    public void testSimpleFalseCases() 
+    {
         for (int i = 0; i < SIMPLE_FALSE.length; i ++) {
             assertFalse((i + " This test is NOT a palindrome"), isPalindrome(SIMPLE_FALSE[i]));
         }
     }
 
     @Test
-    public void testWhitespaceTrueCases() {
+    public void testWhitespaceTrueCases() 
+    {
         for (int i = 0; i < WHITE_SPACE_TRUE.length; i ++) {
             assertTrue((i + " This test is a palindrome"), isPalindrome(WHITE_SPACE_TRUE[i]));
         }
     }
 
     @Test
-    public void testWhitespaceFalseCases() {
+    public void testWhitespaceFalseCases() 
+    {
         for (int i = 0; i < WHITE_SPACE_FALSE.length; i ++) {
             assertFalse((i + " This test is NOT a palindrome"), isPalindrome(WHITE_SPACE_FALSE[i]));
         }
     }
 
     @Test
-    public void testCaseSensitivityCases() {
+    public void testCaseSensitivityCases() 
+    {
         for (int i = 0; i < CASE_SENSITIVE_TRUE.length; i ++) {
             assertTrue((i + " This test is a palindrome"), isPalindrome(CASE_SENSITIVE_TRUE[i]));
         }
     }
 
     @Test
-    public void testComplexCases() {
+    public void testComplexCases() 
+    {
         for (int i = 0; i < COMPLEX_TRUE.length; i ++) {
             assertTrue((i + " This test is a palindrome"), isPalindrome(COMPLEX_TRUE[i]));
         }
