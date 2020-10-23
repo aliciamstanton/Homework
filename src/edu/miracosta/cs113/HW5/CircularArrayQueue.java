@@ -143,7 +143,7 @@ public class CircularArrayQueue<E> extends AbstractQueue<E> implements Queue<E>
 			front = (front + 1) % capacity;
 			
 			// Decrement the size 
-			size--;
+			this.size--;
 			
 			// Return the item that was removed from the array 
 			return result;
@@ -253,13 +253,21 @@ public class CircularArrayQueue<E> extends AbstractQueue<E> implements Queue<E>
 		}
 		
 		
-		// Pick off an element from the array 
+		/*// Pick off an element from the array 
 		E elementRemoved = this.poll();
 		
 		
 		
 		// Return it from this method 
-		return elementRemoved;
+		return elementRemoved; */
+		
+		E result = theData[front];
+		front = (front + 1) % capacity;
+		size--;
+		return result;
+		
+		
+		
 	}
 	
 	// As clarified in text - must implement the Iterator<E> interface in order to fully implement the Queue<E> interface 
