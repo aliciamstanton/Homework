@@ -253,20 +253,13 @@ public class CircularArrayQueue<E> extends AbstractQueue<E> implements Queue<E>
 		}
 		
 		
-		/*// Pick off an element from the array 
+		// Pick off an element from the array 
 		E elementRemoved = this.poll();
 		
 		
 		
 		// Return it from this method 
-		return elementRemoved; */
-		
-		E result = theData[front];
-		front = (front + 1) % capacity;
-		size--;
-		return result;
-		
-		
+		return elementRemoved; 
 		
 	}
 	
