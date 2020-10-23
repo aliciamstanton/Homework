@@ -129,8 +129,25 @@ public class PalindromeTest {
     		// Iterate over the first half of the firstHalf Stack
     		for(int i = 0; i < halfwayPoint; i++)
     		{
+    			// Grab a single character from the firstHalf
+    			popCharacter = firstHalf.pop();
+    			
+    			// Then push it into the secondHalf Stack
+    			secondHalf.push(popCharacter);
     			
     		}
+    		
+    		// Before we can start comparing, we need to make sure that the stacks
+    		// are the same length and that the revised string is not odd in length
+    		if(stringLength % 2 == 1)
+    		{
+    			// If odd, then we need to pop off an additional character 
+    			// from the firstHalf
+    			firstHalf.pop();
+    		}
+    		
+    		// At this point, both stacks should have the same number of characters
+    		
     		
     		
     		
