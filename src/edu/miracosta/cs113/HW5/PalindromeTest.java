@@ -65,6 +65,19 @@ public class PalindromeTest {
     		return true;
     	}
     	
+    	// Can also consider if there are only two letters. Can compare individually
+    	else if(s.length() == 2)
+    	{
+    		if(s.charAt(0) == s.charAt(1))
+    		{
+    			return true;
+    		}
+    		else 
+    		{
+    			return false;
+    		}
+    	}
+    	
     	
     	// If none of the above cases apply, then we should implement stacks to compare them 
     	else
