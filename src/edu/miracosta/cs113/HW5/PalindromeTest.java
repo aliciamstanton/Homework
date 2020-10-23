@@ -101,7 +101,8 @@ public class PalindromeTest {
     		// Create a single character 
     		Character singleChar;
     		
-    		// Create an integer that clarifies the length of the string
+    		// Create an integer that clarifies the length of the string with no spaces 
+    		// or uppercase letters
     		int stringLength = s.length();
     		
     		// Iterate over the length of the string and place each character in the firstHalf Stack
@@ -118,6 +119,20 @@ public class PalindromeTest {
     			s = s.substring(1);
     			
     		}
+    		
+    		// Now we need to split the string into two stacks 
+    		int halfwayPoint = stringLength / 2;
+    		
+    		// Create another character
+    		Character popCharacter;
+    		
+    		// Iterate over the first half of the firstHalf Stack
+    		for(int i = 0; i < halfwayPoint; i++)
+    		{
+    			
+    		}
+    		
+    		
     		
     		
     		
