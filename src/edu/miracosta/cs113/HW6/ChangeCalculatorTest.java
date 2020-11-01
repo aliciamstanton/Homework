@@ -1,7 +1,7 @@
 package edu.miracosta.cs113.HW6;
 
 
-import edu.miracosta.cs113.change.ChangeCalculator;
+import edu.miracosta.cs113.HW6.ChangeCalculator;
 
 import org.junit.Test;
 
@@ -24,6 +24,7 @@ import static org.junit.Assert.fail;
  * @author King 
  * @version 1.0
  */
+@SuppressWarnings("unused")
 public class ChangeCalculatorTest {
 
     /** Expected name of text file to be returned by ChangeCalculator.printCombinationsToFile(int). */
