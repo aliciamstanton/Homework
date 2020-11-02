@@ -25,7 +25,8 @@ public class ChangeCalculator
      * @param cents a monetary value in cents
      * @return the total number of unique combinations of coins of which the given value is comprised
      */
-    public static int calculateChange(int cents) {
+    public static int calculateChange(int cents) 
+    {
         // TODO:
         // Implement a recursive solution following the given documentation.
 
@@ -41,7 +42,8 @@ public class ChangeCalculator
      *
      * @param cents a monetary value in cents
      */
-    public static void printCombinationsToFile(int cents) {
+    public static void printCombinationsToFile(int cents) 
+    {
         // TODO:
         // This when calculateChange is complete. Note that the text file must be created within this directory.
     }
