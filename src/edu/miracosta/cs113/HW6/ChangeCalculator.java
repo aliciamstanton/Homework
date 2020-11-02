@@ -1,3 +1,5 @@
+
+// Package where file can be found 
 package edu.miracosta.cs113.HW6;
 
 /**
