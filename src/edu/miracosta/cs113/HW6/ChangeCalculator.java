@@ -10,7 +10,8 @@ package edu.miracosta.cs113.HW6;
  * NOTE: An additional method, printCombinationsToFile(int), has been added for the equivalent tester file to
  * verify that all given coin combinations are unique.
  */
-public class ChangeCalculator {
+public class ChangeCalculator 
+{
 
     /**
      * Wrapper method for determining all possible unique combinations of quarters, dimes, nickels, and pennies that
