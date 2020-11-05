@@ -37,8 +37,14 @@ public class ChangeCalculator
 	private static ArrayList<Integer> combinations = new ArrayList<>();
 	
 	
+	// 	Empty Constructor
+	public ChangeCalculator()
+	{
+		
+	}
 	
 	
+	// Calculate Change Method 
     public static int calculateChange(int cents) 
     {
         // TODO:
