@@ -57,6 +57,18 @@ public class ChangeCalculator
     // Additional method to calculate combinations
     public static int calculateChange(int cents, int count, ArrayList<Integer> combinations)
     {
+    	
+    	// Create values for each coin
+    	int quarters = 0;
+    	int dimes = 0;
+    	int nickels = 0;
+    	int pennies = 0;
+    	
+    	
+    	
+    	
+    	
+    	
     	return - 1;
     }
 
