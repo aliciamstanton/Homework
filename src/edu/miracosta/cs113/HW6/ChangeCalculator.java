@@ -44,7 +44,14 @@ public class ChangeCalculator
         // TODO:
         // Implement a recursive solution following the given documentation.
 
-        return -1;
+        // Recursive call to method 
+    	return calculateChange(cents, 0, combinations);
+    }
+    
+    // Additional method to calculate combinations
+    public static int calculateChange(int cents, int count, ArrayList<Integer> combinations)
+    {
+    	return - 1;
     }
 
     /**
