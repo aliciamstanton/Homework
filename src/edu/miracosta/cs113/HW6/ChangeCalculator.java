@@ -5,6 +5,7 @@ package edu.miracosta.cs113.HW6;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.*;
+import java.util.*;
 
 /**
  * ChangeCalculator : Class containing the recursive method calculateChange, which determines and prints all
@@ -31,6 +32,13 @@ public class ChangeCalculator
      * @param cents a monetary value in cents
      * @return the total number of unique combinations of coins of which the given value is comprised
      */
+	
+	// Data Structure of choice - ArrayList
+	private static ArrayList<Integer> combinations = new ArrayList<>();
+	
+	
+	
+	
     public static int calculateChange(int cents) 
     {
         // TODO:
