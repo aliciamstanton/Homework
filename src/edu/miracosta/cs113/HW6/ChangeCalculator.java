@@ -66,10 +66,42 @@ public class ChangeCalculator
     	
     	if(cents == 0)
     	{
+    		// Initialize the variables to zero, if the base case is true 
     		 quarters = 0;
     		 dimes = 0;
     		 nickels = 0;
     		 pennies = 0;
+    		 
+    		 
+    		 // Update counters as appropriate in the arrayList
+    		 for(int coin : combinations)
+    		 {
+    			 // Quarters - Increment the quarter counter
+    			 if(coin == 25)
+    			 {
+    				 quarters++;
+    			 }
+    			 
+    			 // Dimes - Increment the dimes counter
+    			 if(coin == 10)
+    			 {
+    				 dimes++;
+    			 }
+    			 
+    			 // Nickels - Increment the nickel counter
+    			 if(coin == 5)
+    			 {
+    				 nickels++;
+    			 }
+    			 
+    			 // Pennies - Increment the pennies counter
+    			 if(coin == 1)
+    			 {
+    				 pennies++;
+    			 }
+    		 }
+    		 
+    		 // Print out the result 
     		 
     	}
     	
