@@ -35,6 +35,7 @@ public class ChangeCalculator
 	
 	// Data Structure of choice - ArrayList
 	private static ArrayList<Integer> combinations = new ArrayList<>();
+	int quarters, dimes, nickels, pennies;
 	
 	
 	// 	Empty Constructor
@@ -58,12 +59,19 @@ public class ChangeCalculator
     public static int calculateChange(int cents, int count, ArrayList<Integer> combinations)
     {
     	
-    	// Create values for each coin
-    	int quarters = 0;
-    	int dimes = 0;
-    	int nickels = 0;
-    	int pennies = 0;
+    	// Create coin variables
+    	int quarters, dimes, nickels, pennies;
     	
+    	// Create a base case for when cents = 0;
+    	
+    	if(cents == 0)
+    	{
+    		 quarters = 0;
+    		 dimes = 0;
+    		 nickels = 0;
+    		 pennies = 0;
+    		 
+    	}
     	
     	
     	
