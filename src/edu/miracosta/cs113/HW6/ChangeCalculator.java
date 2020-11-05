@@ -48,6 +48,12 @@ public class ChangeCalculator
     {
         // TODO:
         // This when calculateChange is complete. Note that the text file must be created within this directory.
+    	
+    	// Call the recursive method
+    	calculateChange(cents);
+    	
+    	// Create the text file in the directory
+    	String outputFile = "src/edu.miracosta.cs113/CoinCombinations.txt";
     }
 
 } // End of class ChangeCalculator
