@@ -64,6 +64,21 @@ public class ChangeCalculator
     	{
     		// Open the file stream
     		File fileOut = new File(outputFile);
+    		
+    		// Create a file writer
+    		FileWriter newFile = new FileWriter(fileOut);
+    		
+    		// Create a for loop that will iterate over each item in the data structure
+    		
+    		
+    		// Close the file stream
+    		newFile.close();
+    	}
+    	
+    	// Catch the exception
+    	catch(IOException e)
+    	{
+    		System.out.println(e);
     	}
     }
 
