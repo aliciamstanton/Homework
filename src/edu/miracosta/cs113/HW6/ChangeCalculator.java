@@ -2,6 +2,10 @@
 // Package where file can be found 
 package edu.miracosta.cs113.HW6;
 
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.*;
+
 /**
  * ChangeCalculator : Class containing the recursive method calculateChange, which determines and prints all
  * possible coin combinations representing a given monetary value in cents.
@@ -54,6 +58,13 @@ public class ChangeCalculator
     	
     	// Create the text file in the directory
     	String outputFile = "src/edu.miracosta.cs113/CoinCombinations.txt";
+    	
+    	// Make a try/catch block that will make sure the file is available
+    	try
+    	{
+    		// Open the file stream
+    		File fileOut = new File(outputFile);
+    	}
     }
 
 } // End of class ChangeCalculator
