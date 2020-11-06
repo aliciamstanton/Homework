@@ -109,6 +109,22 @@ public class ChangeCalculator
     		 
     	}
     	
+    	// Else case 
+    	else
+    	{
+    		if(cents >= FACE_VALUE[count])
+    		{
+    			combinations.add(FACE_VALUE[count]);
+    			calculateChange(cents - FACE_VALUE[count], count, combinations);
+    			combinations.remove(combinations.size() - 1);
+    		}
+    		
+    		if(count + 1< FACE_VALUE.length)
+    		{
+    			calculateChange(cents, count + 1, combinations);
+    		}
+    	}
+    	
     	
     	
     	
