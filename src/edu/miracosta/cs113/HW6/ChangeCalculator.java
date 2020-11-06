@@ -126,10 +126,7 @@ public class ChangeCalculator
     	}
     	
     	
-    	
-    	
-    	
-    	return - 1;
+    	return -1;
     }
 
     /**
