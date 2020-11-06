@@ -83,19 +83,19 @@ public class ChangeCalculator
     			 }
     			 
     			 // Dimes - Increment the dimes counter
-    			 if(coin == 10)
+    			 else if(coin == 10)
     			 {
     				 dimes++;
     			 }
     			 
     			 // Nickels - Increment the nickel counter
-    			 if(coin == 5)
+    			 else if(coin == 5)
     			 {
     				 nickels++;
     			 }
     			 
     			 // Pennies - Increment the pennies counter
-    			 if(coin == 1)
+    			 else if(coin == 1)
     			 {
     				 pennies++;
     			 }
