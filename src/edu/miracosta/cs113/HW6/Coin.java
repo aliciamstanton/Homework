@@ -89,5 +89,46 @@ public class Coin
 		quarters = getQuarters() + 1;
 	}
 	
+	
+	// Equals Method
+	public boolean equals(Object obj)
+	{
+		
+		// Self check
+		if(this == obj)
+		{
+			return true;
+		}
+		
+		// Null check
+		if(obj == null)
+		{
+			return false;
+		}
+		
+		// Type check
+		if(this.getClass() != obj.getClass()) 
+		{
+			return false;
+		}
+		
+		// Typecast
+		Coin change = (Coin) obj;
+		
+		
+		// Property check
+		if(this.getPennies() == change.getPennies() && this.getNickels() == change.getNickels()
+				&& this.getDimes() == change.getDimes() && this.getQuarters() == change.getQuarters())
+		{
+			return true;
+		}
+		
+		else
+		{
+			return false;
+		}
+		
+	}
+	
 
 }
