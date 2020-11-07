@@ -10,6 +10,13 @@ public class Coin
 	int quarters, dimes, nickels, pennies;
 	
 	// Full Constructor
+	public Coin()
+	{
+		this.quarters = 0;
+		this.dimes = 0;
+		this.nickels = 0;
+		this.pennies = 0;
+	}
 	
 
 }
