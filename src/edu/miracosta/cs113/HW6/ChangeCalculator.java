@@ -109,6 +109,19 @@ public class ChangeCalculator
     			// Recursive Call
     			currentCount += calculateChange((cents - 5), 1, temp);
     		}
+    		
+    		// Dimes
+    		if(cents % 10 == 0 && cents >= 10)
+    		{
+    			// Temp coin
+    			Coin temp = new Coin(newCoin);
+    			
+    			// Add dime
+    			temp.addDime();
+    			
+    			// Recursive call
+    			currentCount += calculateChange((cents - 10), 1, temp);
+    		}
     	}
     	
     	
