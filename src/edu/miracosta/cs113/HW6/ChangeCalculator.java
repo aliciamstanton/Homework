@@ -94,7 +94,20 @@ public class ChangeCalculator
     			temp.addPenny();
     			
     			// Recursive call
-    			calculateChange((cents - 1), 1, temp);
+    			currentCount += calculateChange((cents - 1), 1, temp);
+    		}
+    		
+    		// Nickels
+    		if(cents % 5 == 0 && cents >= 5)
+    		{
+    			// Create a temp
+    			Coin temp = new Coin (newCoin);
+    			
+    			// Add a nickel
+    			temp.addNickel();
+    			
+    			// Recursive Call
+    			currentCount += calculateChange((cents - 5), 1, temp);
     		}
     	}
     	
