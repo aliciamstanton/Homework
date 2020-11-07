@@ -18,5 +18,24 @@ public class Coin
 		pennies = 0;
 	}
 	
+	// Copy Constructor
+	public Coin(Coin newCoin)
+	{
+		// Copy pennies
+		this.pennies = newCoin.getPennies();
+		
+		// Copy nickels
+		this.nickels = newCoin.getNickels();
+		
+		// Copy dimes
+		this.dimes = newCoin.getDimes();
+		
+		// Copy Quarters
+		this.quarters = newCoin.getQuarters();
+		
+		
+		
+	}
+	
 
 }
