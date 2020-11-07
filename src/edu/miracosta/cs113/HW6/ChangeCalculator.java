@@ -122,6 +122,19 @@ public class ChangeCalculator
     			// Recursive call
     			currentCount += calculateChange((cents - 10), 1, temp);
     		}
+    		
+    		// Quarters
+    		if(cents % 25 == 0 && cents >= 25)
+    		{
+    			// Create temp
+    			Coin temp = new Coin(newCoin);
+    			
+    			// Add quarter
+    			temp.addQuarter();
+    			
+    			// Recursive call
+    			currentCount += calculateChange((cents - 25), 1, temp);
+    		}
     	}
     	
     	
