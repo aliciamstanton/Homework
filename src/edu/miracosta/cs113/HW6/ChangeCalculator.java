@@ -34,15 +34,9 @@ public class ChangeCalculator
      */
 	
 	// Data Structure of choice - ArrayList
-	private static ArrayList<Integer> combinations = new ArrayList<>();
+	private static ArrayList<Coin> combinations = new ArrayList<>();
 	
-	//Static values for coin names 
-	static int quarters, dimes, nickels, pennies;
-	
-	// Create static denominations for each coin
-	static final int[] FACE_VALUE = {25, 10, 5, 1};
-	
-	
+
 	// 	Empty Constructor
 	public ChangeCalculator()
 	{
