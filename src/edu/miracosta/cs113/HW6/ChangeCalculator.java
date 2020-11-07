@@ -135,17 +135,14 @@ public class ChangeCalculator
     			// Recursive call
     			currentCount += calculateChange((cents - 25), 1, temp);
     		}
+    		
+    		// Update the count
+    		count = currentCount;
+    		
+    		// return the count
+    		return count;
     	}
-    	
-    	
-    	
-    	
-    	
-    	
-
-    	
-    	
-    	return -1;
+    
     }
 
     /**
