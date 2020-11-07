@@ -130,5 +130,20 @@ public class Coin
 		
 	}
 	
+	
+	// To String Method
+	public String toString()
+	{
+		// Create an empty string
+		String denominations = "Quarters Dimes Nickels Pennies \n";
+		
+		// Format the string with the current object denominatons
+		denominations += String.format(Integer.toString(getQuarters()) + " " + 
+		getDimes() + " " + getNickels() + " " + getPennies());
+		
+		// Return the string
+		return denominations;
+	}
+	
 
 }
