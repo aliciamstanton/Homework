@@ -58,6 +58,23 @@ public class ChangeCalculator
     public static int calculateChange(int cents, int count, Coin newCoin)
     {
     	
+    	// Base Case
+    	if(cents == 0)
+    	{
+    		// Need to check if the combination is already in the ArrayList
+    		if(combinations.contains(newCoin))
+    		{
+    			return 0;
+    		}
+    		
+    		// Otherwise we can add it to the arrayList
+    		else
+    		{
+    			combinations.add(newCoin);
+    			return 1;
+    		}
+    	}
+    	
 
     	
     	
