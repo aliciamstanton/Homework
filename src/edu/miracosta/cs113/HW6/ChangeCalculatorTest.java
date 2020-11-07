@@ -1,6 +1,6 @@
 package edu.miracosta.cs113.HW6;
 
-import edu.miracosta.cs113.change.ChangeCalculator;
+import edu.miracosta.cs113.HW6.ChangeCalculator;
 
 import org.junit.Test;
 
