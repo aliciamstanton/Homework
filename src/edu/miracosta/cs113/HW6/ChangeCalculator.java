@@ -75,6 +75,34 @@ public class ChangeCalculator
     		}
     	}
     	
+    	
+    	// If we are not at the base case then we can recurse until we reach zero cents
+    	else
+    	{
+    		// Create a counter 
+    		int currentCount = 0;
+    		
+    		// Create a base case that will check for each coin 
+    		
+    		// Pennies
+    		if(cents >= 1)
+    		{
+    			// Create a temp coin
+    			Coin temp = new Coin(newCoin);
+    			
+    			// Add a penny
+    			temp.addPenny();
+    			
+    			// Recursive call
+    			calculateChange((cents - 1), 1, temp);
+    		}
+    	}
+    	
+    	
+    	
+    	
+    	
+    	
 
     	
     	
