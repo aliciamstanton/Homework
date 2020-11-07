@@ -31,10 +31,35 @@ public class Coin
 		this.dimes = newCoin.getDimes();
 		
 		// Copy Quarters
-		this.quarters = newCoin.getQuarters();
+		this.quarters = newCoin.getQuarters();	
 		
-		
-		
+	}
+	
+	
+	// Getter Methods 
+	
+	// Pennies
+	public int getPennies()
+	{
+		return this.pennies;
+	}
+	
+	// Nickels
+	public int getNickels()
+	{
+		return this.nickels;
+	}
+	
+	// Dimes
+	public int getDimes()
+	{
+		return this.dimes;
+	}
+	
+	// Quarters
+	public int getQuarters()
+	{
+		return this.quarters;
 	}
 	
 
