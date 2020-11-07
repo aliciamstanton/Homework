@@ -62,5 +62,32 @@ public class Coin
 		return this.quarters;
 	}
 	
+	
+	// Counter Incrementers
+	
+	// AddPenny
+	public void addPenny()
+	{
+		pennies = getPennies() + 1;
+	}
+	
+	// AddNickel
+	public void addNickel()
+	{
+		nickels = getNickels() + 1;
+	}
+	
+	// AddDimes
+	public void addDime()
+	{
+		dimes = getDimes() + 1;
+	}
+	
+	// AddQuarter
+	public void addQuarter()
+	{
+		quarters = getQuarters() + 1;
+	}
+	
 
 }
