@@ -20,3 +20,57 @@ Date: November 10, 2020
 3) Yes, Figure 5.19 shows the shortest path to the exit of the maze.
 
 
+
+Programming
+
+1) 
+	import java.awt.Color;
+	
+	public interface GridColors
+	{
+		Color PATH = Color.white;
+		Color TEMPORARY = Color.black;
+		Color ABNORMAL = Color.light_gray;
+		Color BACKGROUND = Color.dark_gray;
+	}
+	
+	
+
+
+
+2) 
+	public resetTemp(int x, int y)
+	{
+		// Make sure that the coordinate is within bounds
+		if(x >= maze.getNCols() || y >= maze.getNRows())
+		{
+			return;
+		}
+		
+		else 
+		{
+			// Check the coordinates
+			if(maze.getColor(x,y).equals(TEMPORARY))
+			{
+				maze.recolor(x,y,BACKGROUND);
+			}
+			
+			// Move to the next row
+			resetTemp(x, y+1);
+			
+			// Move to the next column 
+			resetTemp(x+1, y);
+		}
+		
+	}
+	
+
+	3) 
+		public void restore()
+		{
+			// Call resetTemp - starting at top left corner
+			resetTemp(0,0);
+			
+			// Then recolor
+			maze.recolor(PATH, BACKGROUND);
+		}
