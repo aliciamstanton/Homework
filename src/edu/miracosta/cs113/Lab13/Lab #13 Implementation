@@ -5,3 +5,18 @@ Date: November 10, 2020
 
 
 
+1) If the second/third conditions were evaluated before the first, 
+	you may be out of bounds with the (x,y) coordinates. If the 
+	third condition is executed before the second, you've failed
+	to check whether the current cell has already been visited
+	or is part of the barrier.
+	
+
+2) The order in which the neighbor cells are tested does not matter,
+	and this order will not change the path through the maze.
+
+	
+	
+3) Yes, Figure 5.19 shows the shortest path to the exit of the maze.
+
+
