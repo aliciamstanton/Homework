@@ -52,8 +52,24 @@ public class Graph
 		return matrix.toString();
 	}
 	
+// End of Class Definition - Driver Below 
+
+
+
+// Driver 
+public static void main(String args[])
+{
+	// Create a graph
+	Graph newGraph = new Graph(5);
+	
+	// Add each of the edges
+	newGraph.addEdge(0, 1);
+	newGraph.addEdge(0, 2);
+	newGraph.addEdge(1, 2);
+	newGraph.addEdge(2, 0);
+	newGraph.addEdge(2, 3);
 	
 	
-	
+}
 
 }
