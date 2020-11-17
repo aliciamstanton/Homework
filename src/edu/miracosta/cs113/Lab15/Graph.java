@@ -34,6 +34,24 @@ public class Graph
 	}
 	
 	
+	// Method to print the matrix
+	public String toString()
+	{
+		StringBuilder matrix = new StringBuilder();
+		
+		for(int i = 0; i < numberOfVertices; i++)
+		{
+			matrix.append(i + ": ");
+			for(boolean j : adjacencyMatrix[i])
+			{
+				matrix.append((j? 1: 0) + " ");
+			}
+			matrix.append("\n");
+		}
+		
+		return matrix.toString();
+	}
+	
 	
 	
 	
