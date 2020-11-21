@@ -98,6 +98,28 @@ public class BinaryTree<E> implements Serializable
 		return sb.toString();
 	}
 	
+	// PreOrderTraverse Method
+	private void preOrderTraverse(Node<E> node, int depth, StringBuilder sb)
+	{
+		for(int i = 1; i < depth; i++)
+		{
+			sb.append(" ");
+		}
+		
+		
+		if(node == null)
+		{
+			sb.append("null \n");
+		}
+		
+		else
+		{
+			sb.append(node.toString() + "\n");
+			preOrderTraverse(node.left, depth + 1, sb);
+			preOrderTraverse(node.right, depth + 1, sb);
+		}
+	}
+	
 	
 	
 	
