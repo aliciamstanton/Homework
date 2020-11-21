@@ -9,6 +9,18 @@ import java.io.*;
 public class BinaryTree<E> implements Serializable 
 {
 	
+	// Protected root node 
+	protected Node<E> root;
+	
+	// No - Parameter Constructor 
+	public BinaryTree()
+	{
+		
+		// Set the root to nothing, indicating no items are in the tree
+		// at this time 
+		root = null;
+	}
+	
 	
 	
 	
@@ -38,6 +50,14 @@ public class BinaryTree<E> implements Serializable
 			this.left = null;
 			this.right = null;
 		}
+		
+		
+		// To String Method
+		public String toString()
+		{
+			return data.toString();
+		}
+		
 	} // End of Inner Node Class 
 
 } // End of BinaryTree Class 
