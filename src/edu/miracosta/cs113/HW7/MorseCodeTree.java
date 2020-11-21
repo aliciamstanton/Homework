@@ -7,12 +7,15 @@ package edu.miracosta.cs113.HW7;
  *
  * @version 1.0
  */
-public class MorseCodeTree extends BinaryTree<Character> {
+public class MorseCodeTree extends BinaryTree<Character> 
+{
 
     // TODO:
     // Build this class, which includes the parent BinaryTree implementation in addition to
     // the `translateFromMorseCode` and `readMorseCodeTree` methods. Documentation has been suggested for the former,
     // where said exceptional cases are to be handled according to the corresponding unit tests.
+	
+	
 
     /**
      * Non-recursive method for translating a String comprised of morse code values through traversals
@@ -27,8 +30,15 @@ public class MorseCodeTree extends BinaryTree<Character> {
      * @param morseCode The given input representing letters in Morse code
      * @return a String representing the decoded values from morseCode
      */
-    public String translateFromMorseCode(String morseCode) {
+    public String translateFromMorseCode(String morseCode) 
+    {
         return "";
+    }
+    
+    // Method for readMorseCodeTree 
+    public void readMorseCodeTree()
+    {
+    	
     }
 
 } // End of class MorseCodeTree
