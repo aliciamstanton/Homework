@@ -82,6 +82,12 @@ public class BinaryTree<E> implements Serializable
 	}
 	
 	
+	// Is Leaf Method
+	public boolean isLeaf()
+	{
+		return (root.left == null && root.right == null);
+	}
+	
 	
 	
 	
