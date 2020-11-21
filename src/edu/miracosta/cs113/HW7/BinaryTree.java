@@ -21,6 +21,12 @@ public class BinaryTree<E> implements Serializable
 		root = null;
 	}
 	
+	// Second Constructor that builds tree with a given node at the root
+	protected BinaryTree(Node<E> root)
+	{
+		this.root = root;
+	}
+	
 	
 	
 	
