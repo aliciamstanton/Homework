@@ -141,6 +141,12 @@ public class BinaryTree<E> implements Serializable
 		
 	}
 	
+	// Get Data Method - indicated by Unit Test 
+	public E getData()
+	{
+		return this.root.data;
+	}
+	
 	
 	
 	
