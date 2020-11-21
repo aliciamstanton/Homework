@@ -29,10 +29,15 @@ public class BinaryTree<E> implements Serializable
 		// Protected Node(s) to represent left and right individually 
 		protected Node<E> left;
 		protected Node<E> right;
-	}
-	
-	
-	
-	
+		
+		
+		// Constructor for Node<E>
+		public Node(E data)
+		{
+			this.data = data;
+			this.left = null;
+			this.right = null;
+		}
+	} // End of Inner Node Class 
 
-}
+} // End of BinaryTree Class 
