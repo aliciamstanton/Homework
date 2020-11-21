@@ -88,6 +88,16 @@ public class BinaryTree<E> implements Serializable
 		return (root.left == null && root.right == null);
 	}
 	
+	// toSting method 
+	public String toString()
+	{
+		StringBuilder sb = new StringBuilder();
+		
+		preOrderTraverse(root, 1, sb);
+		
+		return sb.toString();
+	}
+	
 	
 	
 	
