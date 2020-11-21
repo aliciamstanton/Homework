@@ -3,6 +3,7 @@ package edu.miracosta.cs113.HW7;
 
 // Import statements - provided in slides
 import java.io.*;
+import java.util.Scanner;
 
 
 
@@ -120,6 +121,25 @@ public class BinaryTree<E> implements Serializable
 		}
 	}
 	
+	
+	// Method to read binaryTree
+	public static BinaryTree<String> readBinaryTree(Scanner scan)
+	{
+		String data = scan.next();
+		
+		if(data.contentEquals("null"))
+		{
+			return null;
+		}
+		
+		else
+		{
+			BinaryTree<String> leftTree = readBinaryTree(scan);
+			BinaryTree<String> rightTree = readBinaryTree(scan);
+			return new BinaryTree<String>(data, leftTree, rightTree);
+		}
+		
+	}
 	
 	
 	
