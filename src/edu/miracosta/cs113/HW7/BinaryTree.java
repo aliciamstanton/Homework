@@ -28,6 +28,32 @@ public class BinaryTree<E> implements Serializable
 	}
 	
 	
+	// Additional constructor that builds a tree from a data value and two trees
+	public BinaryTree(E data, BinaryTree<E> leftTree, BinaryTree<E> rightTree)
+	{
+		root = new Node<E>(data);
+		
+		if(leftTree != null)
+		{
+			root.left = leftTree.root;
+		}
+		else
+		{
+			root.left = null;
+		}
+		
+		
+		if(rightTree != null)
+		{
+			root.right = rightTree.root;
+		}
+		
+		else
+		{
+			root.right = null;
+		}
+	}
+	
 	
 	
 	
