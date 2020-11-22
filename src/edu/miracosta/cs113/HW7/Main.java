@@ -43,6 +43,15 @@ public class Main
 			// Get the user response 
 			userResponse = keyboard.nextInt();
 			
+			
+			// Create a switch statement that will run based
+			// on the userResponse 
+			
+			switch(userResponse)
+			{
+			
+			}
+			
 		
 		
 		
