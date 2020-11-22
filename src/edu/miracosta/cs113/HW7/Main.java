@@ -3,6 +3,11 @@ package edu.miracosta.cs113.HW7;
 // provide import statements
 import java.util.*;
 
+// Create import statements for File Stream
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.File;
+
 
 
 
@@ -24,6 +29,9 @@ public class Main
 		
 		// Create a Scanner to allow user input 
 		Scanner keyboard = new Scanner(System.in);
+		
+		// Create a scanner that will open the file stream
+		Scanner inputFile;
 		
 		// String to hold the users response for fileName
 		String fileName = "";
@@ -71,6 +79,19 @@ public class Main
 					
 					// Prompt the user for a file name 
 					fileName = keyboard.next();
+					
+					
+					// Attempt to open the file 
+					try 
+					{
+						inputFile = new Scanner(new FileInputStream(fileName));
+					}
+					
+					// Catch if we can't find the file 
+					catch(FileNotFoundException e)
+					{
+						System.out.println("File was not found.");
+					}
 					
 					break;
 				}
