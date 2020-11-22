@@ -94,7 +94,15 @@ public class Main
 						{
 							// TO DO 
 						}
+						
+						// Provide a blank line for formatting/spacing 
+						System.out.println("\n");
+						
+						// Close the file 
+						inputFile.close();
 					}
+					
+					
 					
 					// Catch if we can't find the file 
 					catch(FileNotFoundException e)
