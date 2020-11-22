@@ -79,7 +79,16 @@ public class Main
 				{
 					System.out.println("Please enter in a line of morse code you'd like to translate: ");
 					userMorseToDecipher = keyboard.nextLine();
+					break;
 					
+				}
+				
+				default:
+				{
+					System.out.println("The input provided does not match one of the options");
+					System.out.print("Please enter a valid option: ");
+					userResponse = keyboard.nextInt();
+					break;
 				}
 			
 			}
