@@ -19,6 +19,9 @@ public class Main
 		
 		// Create int to drive user response
 		int userResponse = 0;
+		
+		// Create a Scanner to allow user input 
+		Scanner keyboard = new Scanner(System.in);
 	
 	
 	
