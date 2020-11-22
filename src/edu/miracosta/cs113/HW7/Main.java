@@ -131,10 +131,7 @@ public class Main
 			
 			}
 			
-		
-		
-		
-		
+
 		} while(userResponse != 4);
 	
 
