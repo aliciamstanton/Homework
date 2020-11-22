@@ -69,7 +69,17 @@ public class Main
 				case 1:
 				{
 					System.out.println("Printing morse code/alphabet table.");
-				break;
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					break;
 				}
 			
 				case 2: 
