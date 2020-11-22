@@ -22,8 +22,10 @@ public class Main
 		
 		// Create a Scanner to allow user input 
 		Scanner keyboard = new Scanner(System.in);
-	
-	
+		
+		
+		// Welcome the user 
+		System.out.println("Welcome to the MorseCode Translator! \n");
 	
 		// Create a do - while loop to read and execute user input 
 		do 
