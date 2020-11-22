@@ -5,6 +5,8 @@ import java.util.*;
 
 
 
+
+
 // This functions as the driver for the MorseCode Homework
 public class Main 
 {
@@ -22,6 +24,9 @@ public class Main
 		
 		// Create a Scanner to allow user input 
 		Scanner keyboard = new Scanner(System.in);
+		
+		// String to hold the users response for fileName
+		String fileName = "";
 		
 		
 		// Welcome the user 
@@ -49,6 +54,21 @@ public class Main
 			
 			switch(userResponse)
 			{
+			
+				case 1:
+				{
+					System.out.println("Printing morse code/alphabet table.");
+				break;
+				}
+			
+				case 2: 
+				{
+					System.out.print("Please enter the name of a file you'd like to translate"
+							+ "from morse code to plaintext: ");
+					
+					// Prompt the user for a file name 
+					fileName = keyboard.next();
+				}
 			
 			}
 			
