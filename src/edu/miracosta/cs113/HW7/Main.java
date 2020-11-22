@@ -28,6 +28,9 @@ public class Main
 		// String to hold the users response for fileName
 		String fileName = "";
 		
+		// Create a string that will hold any user defined text to translate in the console 
+		String userMorseToDecipher = "";
+		
 		
 		// Welcome the user 
 		System.out.println("Welcome to the MorseCode Translator! \n");
@@ -68,6 +71,15 @@ public class Main
 					
 					// Prompt the user for a file name 
 					fileName = keyboard.next();
+					
+					break;
+				}
+				
+				case 3:
+				{
+					System.out.println("Please enter in a line of morse code you'd like to translate: ");
+					userMorseToDecipher = keyboard.nextLine();
+					
 				}
 			
 			}
