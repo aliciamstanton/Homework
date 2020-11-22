@@ -29,9 +29,16 @@ public class Main
 		do 
 		{
 			
-			// Provide a menu of options for the user 
-			System.out.println("Please select one of the options below:");
+			// Show menu options to the user 
+			System.out.println("1. Test output for all morse code letters.");
+			System.out.println("2. Enter an input textFile name with morse code to decode.");
+			System.out.println("3. Enter a line of morse code through the console to decode.");
+			System.out.println("4. Exit the program.");
 			
+			// Provide a menu of options for the user 
+			System.out.println("Please select one of the options above:");
+			
+			// Get the user response 
 			userResponse = keyboard.nextInt();
 			
 		
