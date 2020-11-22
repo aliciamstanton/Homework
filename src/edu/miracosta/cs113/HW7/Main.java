@@ -85,6 +85,15 @@ public class Main
 					try 
 					{
 						inputFile = new Scanner(new FileInputStream(fileName));
+						
+						// If we can succesfully open the file then we can start decoding
+						System.out.println("Decoding, please hold...");
+						
+						// Continue reading from the file until we reach the end 
+						while(inputFile.hasNext())
+						{
+							// TO DO 
+						}
 					}
 					
 					// Catch if we can't find the file 
