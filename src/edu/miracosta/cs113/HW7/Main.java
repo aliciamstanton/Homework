@@ -32,6 +32,8 @@ public class Main
 			// Provide a menu of options for the user 
 			System.out.println("Please select one of the options below:");
 			
+			userResponse = keyboard.nextInt();
+			
 		
 		
 		
