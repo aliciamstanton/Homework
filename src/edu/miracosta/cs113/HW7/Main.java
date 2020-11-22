@@ -1,5 +1,8 @@
 package edu.miracosta.cs113.HW7;
 
+// provide import statements
+import java.util.*;
+
 
 
 // This functions as the driver for the MorseCode Homework
@@ -8,8 +11,6 @@ public class Main
 	// Main method 
 	public static void main(String[]args)
 	{
-		
-		
 		
 		
 		// Create the morseCodeTree 
@@ -24,6 +25,10 @@ public class Main
 		// Create a do - while loop to read and execute user input 
 		do 
 		{
+			
+			// Provide a menu of options for the user 
+			System.out.println();
+			
 		
 		
 		
