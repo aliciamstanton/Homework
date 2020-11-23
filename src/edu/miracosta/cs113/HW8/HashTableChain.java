@@ -100,7 +100,21 @@ public class HashTableChain<K, V> implements Map<K,V>
 		return this.numKeys;
 	}
 	
-	
+	// Additional Inner Class - Provided in Text 
+	private class EntrySet extends AbstractSet<Map.Entry<K,V>>
+	{
+		@Override
+		public int size()
+		{
+			return numKeys;
+		}
+		
+		@Override 
+		public Iterator<Map.Entry<K, V>> iterator()
+		{
+			return new SetIterator();
+		}
+	}
 	
 	
 	// Inner Class Entry - from Text 
