@@ -20,18 +20,6 @@ public class HashTableChain<K, V> implements Map<K,V>
 	
 	
 	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 	// Inner Class Entry - from Text 
 	private static class Entry<K,V> 
 	{
@@ -69,5 +57,42 @@ public class HashTableChain<K, V> implements Map<K,V>
 		}
 			
 	}
+	
+	
+	
+	
+	// Constructor
+	public HashTableChain()
+	{
+		table = new LinkedList[CAPACITY];
+	}
+	
+	// Get Method
+	@Override
+	public V get(Object key)
+	{
+		int index = key.hashCode() % table.length;
+		if(index < 0)
+		{
+			index += table.length;
+		}
+		
+		if(table[index] == null)
+		{
+			return null;
+		}
+		
+		return null;
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 
 }
