@@ -82,10 +82,55 @@ public class HashTableChain<K, V> implements Map<K,V>
 			return null;
 		}
 		
+		for(Entry<K,V> nextItem : table[index])
+		{
+			if(nextItem.key.equals(key))
+			{
+				return nextItem.value;
+			}
+		}
+		
 		return null;
 	}
 	
-	
+	// Put Method 
+	@Override 
+	public V put(K key, V value)
+	{
+		int index = key.hashCode() % table.length;
+		if(index < 0)
+		{
+			index += table.length;
+		}
+		
+		if(table[index] == null)
+		{
+			// Create a new LinkedList at table[index]
+			table[index] = new LinkedList<Entry<K, V>>();
+		}
+		
+		for(Entry<K,V> nextItem : table[index])
+		{
+			if(nextItem.key.equals(key))
+			{
+				V oldVal = nextItem.value;
+				nextItem.setValue(value);
+				return oldVal;
+			}
+			
+		}
+		
+		table[index].addFirst(new Entry<K,V>(key,value));
+		numKeys++;
+		if(numKeys > (LOAD_THRESHOLD * table.length))
+		{
+			rehash();
+		}
+		
+		return null;
+		
+		
+	}
 	
 	
 	
