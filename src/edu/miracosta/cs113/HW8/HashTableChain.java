@@ -21,7 +21,7 @@ public class HashTableChain<K, V> implements Map<K,V>
 	
 	
 	// Inner Class Entry - from Text 
-	private static class Entry<K,V>
+	private static class Entry<K,V> implements Map.Entry<K, V>
 	{
 		
 		// Key and Value
