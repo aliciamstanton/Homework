@@ -6,6 +6,18 @@ import java.util.*;
 public class HashTableChain<K, V> implements Map<K,V>
 {
 	
+	// Generating the table 
+	private LinkedList<Entry<K,V>>[] table;
+	
+	// Number of keys 
+	private int numKeys;
+	
+	// Capacity
+	private static final int CAPACITY = 101;
+	
+	// Maximum load factor
+	private static final double LOAD_THRESHOLD = 3.0;
+	
 	
 	
 	
