@@ -121,12 +121,64 @@ public class HashTableChain<K, V> implements Map<K,V>
 	private class SetIterator implements Iterator<Map.Entry<K, V>>
 	{
 		
+		int index = 0;
+		Iterator<Entry<K,V>> newIterator = null;
+		
+		Entry<K,V> lastItem =  null;
+		
+		public java.util.Set<Entry<K,V>> entrySet()
+		{
+			return new EntrySet();
+		}
+		
+		@Override 
+		public boolean hasNext()
+		{
+			if(newIterator != null)
+			{
+				if(newIterator.hasNext()) 
+				{
+					return true;
+				}
+				
+				else 
+				{
+					newIterator = null;
+					index++;
+				}
+			}
+			
+			while(index < table.length && table[index] == null)
+			{
+				index++;
+			}
+			
+			if(index == table.length)
+			{
+				return false;
+			}
+			
+			newIterator = table[index].iterator();
+			return newIterator.hasNext();
+		}
 		
 		
+		// Next Method
+		@Override 
+		public Entry<K,V> next()
+		{
+			lastItem = newIterator.next();
+			return lastItem;
+		}
 		
 		
-		
-		
+		// Remove method
+		@Override
+		public void remove()
+		{
+			newIterator.remove();
+			lastItem = null;
+		}	
 		
 	}
 	
