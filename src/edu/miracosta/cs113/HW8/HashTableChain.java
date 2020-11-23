@@ -117,6 +117,20 @@ public class HashTableChain<K, V> implements Map<K,V>
 	}
 	
 	
+	// Additional Inner Class for SetIterator 
+	private class SetIterator implements Iterator<Map.Entry<K, V>>
+	{
+		
+		
+		
+		
+		
+		
+		
+		
+	}
+	
+	
 	// Inner Class Entry - from Text 
 		private static class Entry<K,V> implements Map.Entry<K,V>
 		{
