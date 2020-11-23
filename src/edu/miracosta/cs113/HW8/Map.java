@@ -6,11 +6,26 @@ import java.util.Set;
 public interface Map<K, V> 
 {
 	// Must implement entire interface except for putAll() and values() methods 
-	
-	
+
 	// Method stubs from Oracle ------
-	
-	
+
+	public interface Entry<K, V> 
+	{
+				
+		// Method to retrieve key
+		public K getKey();
+		
+				
+		// Method to retrieve value
+		public V getValue();
+			
+				
+		// Method to set the value
+		public V setValue(V val);
+				
+
+	}
+
 	// Clear Method 
 	public void clear();
 	
