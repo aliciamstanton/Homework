@@ -37,7 +37,7 @@ public interface Map<K, V>
 	public boolean containsValue(Object value);
 	
 	// Entry Set method 
-	//public Set<Map.Entry<K,V>> entrySet();
+	public Set<Map.Entry<K,V>> entrySet();
 	
 	// Equals Method
 	public boolean equals(Object o);
