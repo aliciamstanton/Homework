@@ -94,6 +94,14 @@ public class HashTableChain<K, V> implements Map<K,V>
 		
 	}
 	
+	// Provide implementation for Size 
+	public int size()
+	{
+		return this.numKeys;
+	}
+	
+	
+	
 	
 	// Inner Class Entry - from Text 
 		private static class Entry<K,V> implements Map.Entry<K,V>
