@@ -66,9 +66,36 @@ public class MorseCodeTree extends BinaryTree<Character>
     		}
     	}
     	
+    	// Once we have ensured that the coded message has items we can read, then we 
+    	// need to separate it into individual tokens to decode 
     	
+    	// Create a StringTokenizer 
+    	StringTokenizer morseToken = new StringTokenizer(encodedMessage, " ");
     	
-        return "";
+    	// Create a new message that will eventually be returned from this method 
+    	String decodedMessage = " ";
+    	
+    	// Iterate over the tokens until there are no tokens left
+    	while(morseToken.hasMoreTokens())
+    	{
+    		// Create a temp character to hold 
+    		char tempToken = ' ';
+    		
+    		// DECODE THE TOKEN - TO DO
+    		
+    		if(tempToken != '!')
+    		{
+    			// Append 
+    			decodedMessage += tempToken;
+    		}
+    		
+    		else 
+    		{
+    			continue;
+    		}
+    	}
+    	
+        return decodedMessage;
     }
     
     // Method for readMorseCodeTree 
