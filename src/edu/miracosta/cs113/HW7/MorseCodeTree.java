@@ -85,6 +85,50 @@ public class MorseCodeTree extends BinaryTree<Character>
 	public void insertNodeIntoTree(String newLineFromFile)
 	{
 		
+		String [] arrayOfString = newLineFromFile.split("");
+		Node<Character> tempRoot = root;
+		
+		// Determine the node location 
+		for(int i = 2; i < arrayOfString.length - 1; i++)
+		{
+			
+			if(arrayOfString[i].contentEquals("*"))
+			{
+				tempRoot = tempRoot.left;
+			}
+			
+			else if(arrayOfString[i].contentEquals("-"))
+			{
+				tempRoot = tempRoot.right;
+			}
+			else 
+			{
+				continue;
+			}	
+			
+		}
+		
+		
+		
+		
+		// Then insert the node in the tree 
+		if(arrayOfString[arrayOfString.length - 1].equals("*"))
+		{
+			
+			Node<Character> nodeForInsert = new Node<Character>(arrayOfString[0].charAt(0)); 
+			tempRoot.left = nodeForInsert;
+			
+		}
+		
+		else if(arrayOfString[arrayOfString.length - 1].equals("-"))
+		{
+			
+			Node<Character> nodeForInsert = new Node<Character>(arrayOfString[0].charAt(0));
+			tempRoot.right = nodeForInsert;
+	
+		}
+		
+		
 	}
 	
 	
