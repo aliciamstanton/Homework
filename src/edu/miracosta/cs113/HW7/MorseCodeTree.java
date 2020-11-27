@@ -34,7 +34,32 @@ public class MorseCodeTree extends BinaryTree<Character>
      *
      * @param morseCode The given input representing letters in Morse code
      * @return a String representing the decoded values from morseCode
+     * 
+     * 
      */
+	
+	
+	// Constructor for MorseCode Tree 
+	public MorseCodeTree()
+	{
+		
+		// Create the tree from the text file 
+		createTree();
+		
+	}
+	
+	// Method to create the tree from file 
+	public void createTree()
+	{
+		
+	}
+	
+	
+	
+	
+	
+	
+	
     public String translateFromMorseCode(String encodedMessage) 
     {
     	
