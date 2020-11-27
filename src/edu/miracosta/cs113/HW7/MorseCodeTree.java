@@ -52,6 +52,27 @@ public class MorseCodeTree extends BinaryTree<Character>
 	public void createTree()
 	{
 		
+		File file = new File("src/edu/miracosta/cs113/HW7/MorseAlphabet.txt");
+		
+		// Try - Catch to make sure that we can read the file 
+		try
+		{
+			BufferedReader morseReader = new BufferedReader(new FileReader(file));
+			
+			String newMorse;
+			
+			while((newMorse = morseReader.readLine()) != null)
+			{
+				insertNodeIntoTree(newMorse);
+			}
+		}
+		
+		catch(FileNotFoundException e)
+		{
+			System.out.println("File not Found");
+		}
+			
+		
 	}
 	
 	
