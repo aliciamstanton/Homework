@@ -15,6 +15,8 @@ import java.io.*;
 public class MorseCodeTree extends BinaryTree<Character> 
 {
 
+	
+	String [] arrayOfString;
     // TODO:
     // Build this class, which includes the parent BinaryTree implementation in addition to
     // the `translateFromMorseCode` and `readMorseCodeTree` methods. Documentation has been suggested for the former,
@@ -85,7 +87,7 @@ public class MorseCodeTree extends BinaryTree<Character>
 	public void insertNodeIntoTree(String newLineFromFile)
 	{
 		
-		String [] arrayOfString = newLineFromFile.split("");
+		arrayOfString = newLineFromFile.split("");
 		Node<Character> tempRoot = root;
 		
 		// Determine the node location 
@@ -130,9 +132,6 @@ public class MorseCodeTree extends BinaryTree<Character>
 		
 		
 	}
-	
-	
-	
 	
 	
 	
@@ -203,6 +202,11 @@ public class MorseCodeTree extends BinaryTree<Character>
     // Method for readMorseCodeTree 
     public void readMorseCodeTree()
     {
+    	
+    	
+    	
+    	
+    	
     	
     }
 
