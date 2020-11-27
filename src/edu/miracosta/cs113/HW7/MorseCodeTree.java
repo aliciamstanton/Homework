@@ -71,7 +71,19 @@ public class MorseCodeTree extends BinaryTree<Character>
 		{
 			System.out.println("File not Found");
 		}
+		
+		catch(IOException e)
+		{
+			System.out.println("Other error detected.");
+		}
 			
+		
+	}
+	
+	
+	// Method to insert the node at the correct location in the tree
+	public void insertNodeIntoTree(String newLineFromFile)
+	{
 		
 	}
 	
