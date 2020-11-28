@@ -61,19 +61,6 @@ public class HashTableChain<K, V> implements Map<K,V>
 	
 	
 	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 	// Get Method
 	@Override
 	public V get(Object key)
@@ -217,6 +204,33 @@ public class HashTableChain<K, V> implements Map<K,V>
 		numKeys = 0;
 	}
 	
+	
+	
+	@Override 
+	public boolean containsKey(Object key)
+	{
+		int index = key.hashCode() % table.length;
+		
+		if(index < 0)
+		{
+			index += table.length;
+		}
+		
+		if(table[index] == null)
+		{
+			return false;
+		}
+		
+		for(Entry<K,V> entry : table[index])
+		{
+			if(entry.getKey().equals(key))
+			{
+				return true;
+			}
+		}
+		
+		return false;
+	}
 	
 	
 	
