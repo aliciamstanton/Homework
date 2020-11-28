@@ -327,6 +327,35 @@ public class HashTableChain<K, V> implements Map<K,V>
 	}
 	
 	
+	// Equals method 
+	@Override 
+	public boolean equals(Object obj)
+	{
+		if(obj == this)
+		{
+			return true;
+		}
+		
+		if(obj == null)
+		{
+			return false;
+		}
+		
+		// Typecast
+		Hashtable newHash = (Hashtable) obj;
+		
+		if(newHash.equals(this))
+		{
+			return true;
+		}
+		
+		else 
+		{
+			return false;
+		}
+	}
+	
+	
 	
 	
 	// Additional Inner Class - Provided in Text 

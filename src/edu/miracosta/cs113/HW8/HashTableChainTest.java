@@ -22,7 +22,7 @@ import java.util.Set;
 public class HashTableChainTest {
 
     /** Map implementation using integer values with String keys. */
-    private Map<String, Integer> hashTable;
+    private HashTableChain<String, Integer> hashTable;
 
     /** Helper method using Map's put() to place a given number of unique key-value pairs into this Map. */
     private void populateMapWithPut(int numElements) {
