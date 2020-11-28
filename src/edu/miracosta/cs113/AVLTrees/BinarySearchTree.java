@@ -85,6 +85,67 @@ public class BinarySearchTree< E extends Comparable<E>> extends BinaryTree<E> im
 	}
 	
 	
+	// Delete method 
+	public E delete(E target)
+	{
+		root = delete(root, target);
+		return deleteReturn;
+	}
+	
+	// Recursive Delete Method
+	private Node<E> delete(Node<E> localRoot, E item)
+	{
+		if(localRoot == null)
+		{
+			deleteReturn = null;
+			return localRoot;
+		}
+		
+		int compResult = item.compareTo(localRoot.data);
+		if(compResult < 0)
+		{
+			localRoot.left = delete(localRoot.left, item);
+			return localRoot;
+		}
+		else if(compResult > 0)
+		{
+			localRoot.right = delete(localRoot.right, item);
+			return localRoot;
+			
+		}
+		
+		else 
+		{
+			deleteReturn = localRoot.data;
+			if(localRoot.left == null)
+			{
+				return localRoot.right;
+			}
+			else if(localRoot.right == null)
+			{
+				
+				return localRoot.left;
+			
+			}
+			else 
+			{
+				if(localRoot.left.right == null)
+				{
+					localRoot.data = localRoot.left.data;
+					localRoot.left = localRoot.left.left;
+					return localRoot;
+				}
+				
+				else 
+				{
+					localRoot.data = findLargestChild(localRoot.left);
+					return localRoot;
+				}
+			}
+		}	
+		
+	}
+	
 	
 
 }
