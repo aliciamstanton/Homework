@@ -1,8 +1,7 @@
 package edu.miracosta.cs113.AVLTrees;
 
-/*import edu.miracosta.cs113.Before;
-import edu.miracosta.cs113.BinarySearchTree;
-import edu.miracosta.cs113.Test; */
+import edu.miracosta.cs113.Before;
+import edu.miracosta.cs113.Test; 
 
 /**
  * BinarySearchTreeTest : Tester class for a binary search tree implementation.
