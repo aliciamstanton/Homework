@@ -183,19 +183,7 @@ public class MorseCodeTree extends BinaryTree<Character>
 		return nodeInTree.data;
 	}
 	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+
 	// Method to translate from MorseCode to plainText 
 	
     public String translateFromMorseCode(String encodedMessage) 
@@ -244,7 +232,8 @@ public class MorseCodeTree extends BinaryTree<Character>
     		// Create a temp character to hold 
     		char tempToken = ' ';
     		
-    		// DECODE THE TOKEN - TO DO
+    		// DECODE THE TOKEN 
+    		tempToken = characterDecoder(morseToken.nextToken(), root);
     		
     		if(tempToken != '!')
     		{
