@@ -161,6 +161,18 @@ public class BinarySearchTree< E extends Comparable<E>> extends BinaryTree<E> im
 			return findLargestChild(parent.right);
 		}
 	}
+
+	@Override
+	public boolean contains(E target) 
+	{
+		return (find(target) != null);
+	}
+
+	@Override
+	public boolean remove(E target) {
+		// TODO Auto-generated method stub
+		return false;
+	}
 	
 	
 
