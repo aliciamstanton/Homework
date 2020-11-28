@@ -233,6 +233,27 @@ public class HashTableChain<K, V> implements Map<K,V>
 	}
 	
 	
+	// Re-hash method 
+	private void rehash()
+	{
+		LinkedList<Entry<K,V>>[] oldTable = table;
+		
+		table = new LinkedList[oldTable.length * 2 + 1];
+		numKeys = 0;
+		
+		for(LinkedList<Entry<K,V>> list : oldTable)
+		{
+			if(list != null)
+			{
+				for(Entry<K,V> entry : list)
+				{
+					put(entry.getKey(), entry.getValue());
+				}
+			}
+		}
+	}
+	
+	
 	
 	
 	
