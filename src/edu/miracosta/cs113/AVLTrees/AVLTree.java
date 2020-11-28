@@ -100,6 +100,24 @@ public class AVLTree<E extends Comparable<E>> extends BinarySearchTreeWithRotate
 	
 	
 	// Method for rebalanceRight 
+	private AVLNode<E> rebalanceRight(AVLNode<E> localRoot)
+	{
+		AVLNode<E> rightChild = (AVLNode<E>) localRoot.right;
+		
+		if(rightChild.balance > AVLNode.BALANCED)
+		{
+			decrementBalance(rightChild);
+			decrementBalance(localRoot);
+			decrementBalance(localRoot);
+			
+			return (AVLNode<E>) rotateLeft(localRoot);
+		}
+		
+		
+		
+		
+		
+	}
 	
 	
 	
