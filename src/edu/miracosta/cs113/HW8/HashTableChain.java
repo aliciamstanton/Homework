@@ -145,6 +145,21 @@ public class HashTableChain<K, V> implements Map<K,V>
 		return this.numKeys;
 	}
 	
+	
+	@Override 
+	public Set<Map.Entry<K, V>> entrySet()
+	{
+		return new EntrySet();
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	// Additional Inner Class - Provided in Text 
 	private class EntrySet extends AbstractSet<Map.Entry<K,V>>
 	{
@@ -171,7 +186,7 @@ public class HashTableChain<K, V> implements Map<K,V>
 		
 		Entry<K,V> lastItem =  null;
 		
-		public java.util.Set<Entry<K,V>> entrySet()
+		public Set<Entry<K,V>> entrySet()
 		{
 			return new EntrySet();
 		}
