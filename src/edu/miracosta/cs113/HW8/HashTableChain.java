@@ -178,6 +178,38 @@ public class HashTableChain<K, V> implements Map<K,V>
 	
 	
 	
+	@Override 
+	public boolean containsValue(Object value)
+	{
+		for(int i = 0; i < table.length; i++)
+		{
+			if(table[i] == null)
+			{
+				// Skip
+			}
+			
+			else
+			{
+				for(Entry<K,V> nextItem : table[i])
+				{
+					if(nextItem.getValue().equals(value))
+					{
+						return true;
+					}
+				}
+			}
+		}
+		
+		return false;
+	}
+	
+	
+	
+	
+	
+	
+	
+	
 	// Additional Inner Class - Provided in Text 
 	private class EntrySet extends AbstractSet<Map.Entry<K,V>>
 	{
