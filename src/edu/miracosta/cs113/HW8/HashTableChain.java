@@ -254,6 +254,45 @@ public class HashTableChain<K, V> implements Map<K,V>
 	}
 	
 	
+	// Remove method 
+	@Override 
+	public V remove(Object key)
+	{
+		int index = key.hashCode() % table.length;
+		
+		if(index < 0)
+		{
+			index += table.length;
+		}
+		
+		if(table[index] == null)
+		{
+			return null;
+		}
+		
+		for(Entry<K,V> entry : table[index])
+		{
+			if(entry.getKey().equals(key))
+			{
+				V value = entry.getValue();
+				table[index].remove(entry);
+				numKeys--;
+				
+				if(table[index].isEmpty())
+				{
+					
+					table[index] = null;
+				}
+				
+				return value;
+				}
+		}
+		
+		return null;
+		
+	}
+	
+	
 	
 	
 	
