@@ -143,19 +143,31 @@ public class AVLTree<E extends Comparable<E>> extends BinarySearchTreeWithRotate
 		}	
 		
 	}
-	
-	
-	
-	
-	
-	
+
 	
 	// Method for decrementBalance
+	private void decrementBalance(AVLNode<E> node)
+	{
+		node.balance--;
+		
+		if(node.balance == AVLNode.BALANCED)
+		{
+			increase = false;
+		}
+	}
 	
 	
 	// Method for incrementBalance
 	
-	
+	private void incrementBalance(AVLNode<E> node)
+	{
+		node.balance++;
+		
+		if(node.balance == AVLNode.BALANCED)
+		{
+			increase = false;
+		}
+	}
 	
 	
 	
