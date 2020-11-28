@@ -75,26 +75,32 @@ public class AVLTree<E extends Comparable<E>> extends BinarySearchTreeWithRotate
 			
 			if(leftRightChild.balance < AVLNode.BALANCED)
 			{
-				leftChild.balance = AVLNode.BALANCED;
-				leftRightChild.balance = AVLNode.BALANCED;
-				localRoot.balance = AVLNode.RIGHT_HEAVY;
+				incrementBalance(leftRightChild);
+				incrementBalance(localRoot);
 			}
 			
-			else
+			else if(leftRightChild.balance > AVLNode.BALANCED)
 			{
-				leftChild.balance = AVLNode.LEFT_HEAVY;
-				leftRightChild.balance = AVLNode.BALANCED;
-				localRoot.balance = AVLNode.BALANCED;
+				decrementBalance(leftRightChild);
+				decrementBalance(leftChild);
 			}
+			
+			decrementBalance(leftChild);
+			localRoot.left = rotateLeft(localRoot.left);
+			incrementBalance(localRoot);
+			incrementBalance(localRoot);
+			
+			return (AVLNode<E>) rotateRight(localRoot);
 		}
 		
 		else 
 		{
-			leftChild.balance = AVLNode.BALANCED;
-			localRoot.balance = AVLNode.BALANCED;
+			incrementBalance(leftChild);
+			incrementBalance(localRoot);
+			incrementBalance(localRoot);
+			
+			return (AVLNode<E>) rotateRight(localRoot);
 		}
-		
-		return (AVLNode<E>) rotateRight(localRoot);
 	}
 	
 	
