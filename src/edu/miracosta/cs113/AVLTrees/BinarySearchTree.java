@@ -169,9 +169,9 @@ public class BinarySearchTree< E extends Comparable<E>> extends BinaryTree<E> im
 	}
 
 	@Override
-	public boolean remove(E target) {
-		// TODO Auto-generated method stub
-		return false;
+	public boolean remove(E target) 
+	{
+		return (delete(target) != null);
 	}
 	
 	
