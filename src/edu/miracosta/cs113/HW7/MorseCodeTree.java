@@ -134,7 +134,35 @@ public class MorseCodeTree extends BinaryTree<Character>
 	}
 	
 	
+	// Method to process portions of the message with the binary Tree 
+	public char characterDecoder(String currentMessage, Node<Character> nodeInTree)
+	{
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		return 'a';
+	}
 	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	// Method to translate from MorseCode to plainText 
 	
     public String translateFromMorseCode(String encodedMessage) 
     {
