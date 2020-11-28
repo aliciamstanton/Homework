@@ -40,10 +40,15 @@ public class MorseCodeTree extends BinaryTree<Character>
      * 
      */
 	
+	// Create a node 
+	public Node<Character> root;
+	
 	
 	// Constructor for MorseCode Tree 
 	public MorseCodeTree()
 	{
+		
+		root = new Node<Character>(' ');
 		
 		// Create the tree from the text file 
 		createTree();
