@@ -27,12 +27,7 @@ public class AVLTree<E extends Comparable<E>> extends BinarySearchTreeWithRotate
 		public String toString()
 		{
 			return balance + ": " + super.toString();
-		}
-		
-		
-		
-		
-		
+		}	
 		
 	}
 }
