@@ -186,10 +186,12 @@ public class HashTableChain<K, V> implements Map<K,V>
 		
 		Entry<K,V> lastItem =  null;
 		
+		/*
+		
 		public Set<Entry<K,V>> entrySet()
 		{
 			return new EntrySet();
-		}
+		} */
 		
 		@Override 
 		public boolean hasNext()
