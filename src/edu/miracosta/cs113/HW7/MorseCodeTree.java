@@ -151,15 +151,36 @@ public class MorseCodeTree extends BinaryTree<Character>
 			
 		}
 		
-		
-		
-		
-		
-		
-		
-		
-		
-		return 'a';
+		// Otherwise we have more items to process 
+		else 
+		{
+			
+			currentValue = currentMessage.charAt(0);
+			currentMessage = currentMessage.substring(1, currentMessage.length());
+			
+			if(currentValue == '*')
+			{
+				if(nodeInTree != null)
+				{
+					nodeInTree = nodeInTree.left;
+					return characterDecoder(currentMessage, nodeInTree);
+				}
+			}
+			
+			else if(currentValue == '-')
+			{
+				if(nodeInTree != null)
+				{
+					nodeInTree = nodeInTree.right;
+					return characterDecoder(currentMessage, nodeInTree);
+				}
+				
+			}
+					
+					
+		}
+	
+		return nodeInTree.data;
 	}
 	
 	
