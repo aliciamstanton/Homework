@@ -357,6 +357,9 @@ public class HashTableChain<K, V> implements Map<K,V>
 	
 	
 	
+
+	// ****** Additional Inner Classes Below this were provided in the text *********
+	
 	
 	// Additional Inner Class - Provided in Text 
 	private class EntrySet extends AbstractSet<Map.Entry<K,V>>
@@ -479,12 +482,6 @@ public class HashTableChain<K, V> implements Map<K,V>
 				return oldVal;
 			}
 				
-		}
-		
-	
-	
-	
-	
-	
+		}	
 
 }
