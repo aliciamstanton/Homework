@@ -29,6 +29,51 @@ public class HashTableChain<K, V> implements Map<K,V>
 		table = new LinkedList[CAPACITY];
 	}
 	
+	
+	
+	
+	@Override 
+	public int hashCode()
+	{
+		Hashtable<K,V> test = new Hashtable<>();
+		
+		for(int i = 0; i < table.length; i++)
+		{
+			if(table[i] == null)
+			{
+				// Do Nothing 
+			}
+			else 
+			{
+				for(Entry<K,V> nextItem : table[i])
+				{
+					if(nextItem != null)
+					{
+						test.put(nextItem.key, nextItem.value);
+					}
+				}
+			}
+		}
+		
+		return test.hashCode();
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	// Get Method
 	@Override
 	public V get(Object key)
