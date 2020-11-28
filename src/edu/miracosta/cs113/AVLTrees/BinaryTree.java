@@ -356,4 +356,9 @@ public class BinaryTree<E> implements Serializable {
 
     } // End of class Node
 
+	public boolean add(E item) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
 } // End of class BinaryTree
