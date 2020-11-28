@@ -205,6 +205,18 @@ public class HashTableChain<K, V> implements Map<K,V>
 	
 	
 	
+	// Clear method 
+	@Override
+	public void clear()
+	{
+		for(int i = 0; i < table.length; i++)
+		{
+			table[i] = null;
+		}
+		
+		numKeys = 0;
+	}
+	
 	
 	
 	
