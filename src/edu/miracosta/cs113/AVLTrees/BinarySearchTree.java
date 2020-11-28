@@ -146,6 +146,22 @@ public class BinarySearchTree< E extends Comparable<E>> extends BinaryTree<E> im
 		
 	}
 	
+	// Find largestChild method 
+	private E findLargestChild(Node<E> parent)
+	{
+		if(parent.right.right == null)
+		{
+			E returnValue = parent.right.data;
+			parent.right = parent.right.left;
+			return returnValue;
+		}
+		
+		else
+		{
+			return findLargestChild(parent.right);
+		}
+	}
+	
 	
 
 }
