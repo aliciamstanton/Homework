@@ -26,7 +26,7 @@ public class MorseCodeTree extends BinaryTree<Character>
 	public MorseCodeTree()
 	{
 		
-		root = new Node<Character>(' ');
+		root = new Node<Character>('-');
 		
 		// Create the tree from the text file 
 		createTree();
