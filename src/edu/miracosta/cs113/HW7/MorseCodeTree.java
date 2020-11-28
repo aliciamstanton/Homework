@@ -17,30 +17,8 @@ public class MorseCodeTree extends BinaryTree<Character>
 
 	
 	String [] arrayOfString;
-    // TODO:
-    // Build this class, which includes the parent BinaryTree implementation in addition to
-    // the `translateFromMorseCode` and `readMorseCodeTree` methods. Documentation has been suggested for the former,
-    // where said exceptional cases are to be handled according to the corresponding unit tests.
 	
-	
-
-    /**
-     * Non-recursive method for translating a String comprised of morse code values through traversals
-     * in the MorseCodeTree.
-     *
-     * The given input is expected to contain morse code values, with '*' for dots and '-' for dashes, representing
-     * only letters in the English alphabet.
-     *
-     * This method will also handle exceptional cases, namely if a given token's length exceeds that of the tree's
-     * number of possible traversals, or if the given token contains a character that is neither '*' nor '-'.
-     *
-     * @param morseCode The given input representing letters in Morse code
-     * @return a String representing the decoded values from morseCode
-     * 
-     * 
-     */
-	
-	// Create a node 
+    // Create a node 
 	public Node<Character> root;
 	
 	
