@@ -138,6 +138,19 @@ public class MorseCodeTree extends BinaryTree<Character>
 	public char characterDecoder(String currentMessage, Node<Character> nodeInTree)
 	{
 		
+		// First create a character that we will take from the message 
+		char currentValue;
+		
+		// First check to see if we have already processed the entire text 
+		if(currentMessage.length() == 0)
+		{
+			if(nodeInTree != null)
+			{
+				return nodeInTree.data;
+			}
+			
+		}
+		
 		
 		
 		
