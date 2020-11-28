@@ -301,6 +301,30 @@ public class HashTableChain<K, V> implements Map<K,V>
 		return numKeys == 0;
 	}
 	
+	// ToString method 
+	@Override 
+	public String toString()
+	{
+		String toReturn = "";
+		
+		for(int i = 0; i < table.length; i++)
+		{
+			if(table[i] == null)
+			{
+				// Skip
+			}
+			
+			else 
+			{
+				for(Entry<K,V> nextItem : table[i])
+				{
+					toReturn += nextItem.getValue() + "\n";
+				}
+			}
+		}
+		
+		return toReturn;
+	}
 	
 	
 	
