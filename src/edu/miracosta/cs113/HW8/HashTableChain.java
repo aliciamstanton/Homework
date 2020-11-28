@@ -294,6 +294,15 @@ public class HashTableChain<K, V> implements Map<K,V>
 	
 	
 	
+	//Is Empty method 
+	@Override 
+	public boolean isEmpty()
+	{
+		return numKeys == 0;
+	}
+	
+	
+	
 	
 	
 	// Additional Inner Class - Provided in Text 
