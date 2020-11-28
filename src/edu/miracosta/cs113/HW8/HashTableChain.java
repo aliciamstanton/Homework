@@ -154,6 +154,44 @@ public class HashTableChain<K, V> implements Map<K,V>
 	
 	
 	
+	@Override 
+	public Set<K> keySet()
+	{
+		Set<K> keySet = new HashSet<K>(size());
+		
+		for(LinkedList<Entry<K,V>> list : table)
+		{
+			if(list != null)
+			{
+				for(Entry<K,V> entry : list)
+				{
+					if(entry != null)
+					{
+						keySet.add(entry.getKey());
+					}
+				}
+			}
+		}
+		
+		return keySet;
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 	
 	
