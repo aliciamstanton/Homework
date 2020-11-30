@@ -7,7 +7,7 @@ import java.util.*;
 
 
 // Class Definition
-public class DoubleLinkedList<E> extends AbstractSequentialList<E>
+public class DoubleLinkedList<E> implements List<E>
 {  
 	// Data fields
     	private Node<E> head = null;   // points to the head of the list
@@ -24,6 +24,8 @@ public class DoubleLinkedList<E> extends AbstractSequentialList<E>
     		tail = null;
     		size = 0;
     	}
+    	
+    	
    
    // Adds element at a specific index within the double-linked list 
 
@@ -431,6 +433,104 @@ public class DoubleLinkedList<E> extends AbstractSequentialList<E>
     }
     
   }// end of inner class ListIter
+
+
+
+@Override
+public boolean isEmpty() {
+	// TODO Auto-generated method stub
+	return false;
+}
+
+@Override
+public boolean contains(Object o) {
+	// TODO Auto-generated method stub
+	return false;
+}
+
+@Override
+public Object[] toArray() {
+	// TODO Auto-generated method stub
+	return null;
+}
+
+@Override
+public <T> T[] toArray(T[] a) {
+	// TODO Auto-generated method stub
+	return null;
+}
+
+@Override
+public boolean add(E e) {
+	// TODO Auto-generated method stub
+	return false;
+}
+
+@Override
+public boolean remove(Object o) {
+	// TODO Auto-generated method stub
+	return false;
+}
+
+@Override
+public boolean containsAll(Collection<?> c) {
+	// TODO Auto-generated method stub
+	return false;
+}
+
+@Override
+public boolean addAll(Collection<? extends E> c) {
+	// TODO Auto-generated method stub
+	return false;
+}
+
+@Override
+public boolean addAll(int index, Collection<? extends E> c) {
+	// TODO Auto-generated method stub
+	return false;
+}
+
+@Override
+public boolean removeAll(Collection<?> c) {
+	// TODO Auto-generated method stub
+	return false;
+}
+
+@Override
+public boolean retainAll(Collection<?> c) {
+	// TODO Auto-generated method stub
+	return false;
+}
+
+@Override
+public void clear() {
+	// TODO Auto-generated method stub
+	
+}
+
+@Override
+public E set(int index, E element) {
+	// TODO Auto-generated method stub
+	return null;
+}
+
+@Override
+public int indexOf(Object o) {
+	// TODO Auto-generated method stub
+	return 0;
+}
+
+@Override
+public int lastIndexOf(Object o) {
+	// TODO Auto-generated method stub
+	return 0;
+}
+
+@Override
+public List<E> subList(int fromIndex, int toIndex) {
+	// TODO Auto-generated method stub
+	return null;
+}
   
 }// end of class DoubleLinkedList
 
