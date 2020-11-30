@@ -28,7 +28,7 @@ public class DoubleLinkedList<E> implements List<E>
     	
    
    // Adds element at a specific index within the double-linked list 
-
+  @Override
   public void add(int index, E obj)
   { 
 	  listIterator(index).add(obj); // taken from text 
@@ -168,7 +168,9 @@ public class DoubleLinkedList<E> implements List<E>
   
   
   
-
+  /* List Iterators */
+  
+  
   public Iterator<E> iterator() 
   { 
 	  return new ListIter(0); 
