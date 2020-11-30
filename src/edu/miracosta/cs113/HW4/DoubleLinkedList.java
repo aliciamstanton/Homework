@@ -202,6 +202,13 @@ public class DoubleLinkedList<E> extends AbstractSequentialList<E>
         {   
         	data = dataItem;   
         }
+        
+        private Node(E dataItem, Node<E> nextRef, Node<E> previousRef)
+        {
+        	data = dataItem;
+        	next = nextRef;
+        	prev = previousRef;
+        }
   }  // end class Node
   
   
