@@ -49,7 +49,7 @@ public class ArrayListStack<E> implements StackInterface<E>
      */
     public E peek()
     {
-    	
+    	// If there are no items in the stack, then you are unable to peek any element 
     	if(stack.size() == 0)
     	{
     		 throw new EmptyStackException();
