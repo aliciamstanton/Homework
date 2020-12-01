@@ -168,6 +168,47 @@ public class DoubleLinkedList<E> implements List<E>
   
   
   
+  
+  @Override
+  public boolean isEmpty() {
+  	// TODO Auto-generated method stub
+  	return false;
+  }
+
+  @Override
+  public boolean contains(Object o) {
+  	// TODO Auto-generated method stub
+  	return false;
+  }
+
+
+  @Override
+  public void clear() {
+  	// TODO Auto-generated method stub
+  	
+  }
+
+  @Override
+  public E set(int index, E element) {
+  	// TODO Auto-generated method stub
+  	return null;
+  }
+
+  @Override
+  public int indexOf(Object o) {
+  	// TODO Auto-generated method stub
+  	return 0;
+  }
+
+  @Override
+  public int lastIndexOf(Object o) {
+  	// TODO Auto-generated method stub
+  	return 0;
+  }
+
+  
+  
+  
   /* List Iterators */
   
   
@@ -270,40 +311,55 @@ public class DoubleLinkedList<E> implements List<E>
     
 
     // Returns true, if a call to next will not throw an exception - taken from text 
+    @Override
     public boolean hasNext() 
     {   
-    	//return true; 
-    	
+    	// Returns true if there is another element in the DLL 
     	return nextItem != null;
-    	
     	
     } 
     
     
     // Will return true if there is a previous element and no exception will be thrown 
+    @Override
     public boolean hasPrevious()
     {   
-    	return (nextItem == null && size != 0) || nextItem.prev != null;
+    	// If the head is null, then the list is empty therefore there can be no previous element 
+    	if(head == null)
+    	{
+    		return false;
+    	}
     	
+    	// If the previous element for the next item is null, then return false 
+    	else if(nextItem.prev == null)
+    	{
+    		return false;
+    	}
     	
-    	//return false;  
+    	// Otherwise return true 
+    	else 
+    	{
+    		return true;
+    	}
+    	 
     } 
     
     
+    // Returns the index one less than the current place in the DLL 
+    @Override
     public int previousIndex()
     {  
-    	
     	return index - 1;
-    	
-    	//return 0;   
     } 
     
     
+    
+    // Returns the index one more than the current place in the DLL 
+    @Override
     public int nextIndex() 
     { 
     	return index;
     	
-    	//return 0;   
     } 
     
     
@@ -322,7 +378,7 @@ public class DoubleLinkedList<E> implements List<E>
     
     // Provides the next element in the double-linked list
     // if no such element exists, then an exception is thrown - taken from text
-    
+    @Override
     public E next()
     {  
     	// If there is no other element - throw exception 
@@ -340,12 +396,12 @@ public class DoubleLinkedList<E> implements List<E>
     		return lastItemReturned.data;
     	}
     	
-        //return lastItemReturned.data; 
     }
     
     
     // Returns the previous element in the double-linked list
     // If no element exists, then a new exception is thrown - taken from text 
+    @Override
     public E previous() 
     {  
     	
@@ -374,21 +430,23 @@ public class DoubleLinkedList<E> implements List<E>
     	
     	// Return the data in the item to be returned 
     	return lastItemReturned.data;
-    	
-    	//return lastItemReturned.data; 
 
     }
 
     
     // Adds a new item between the item that will be returned through next and the item
-    // that would be returned through previous. 
+    // that would be returned through previous.
+    @Override 
     public void add(E obj)
     {
     	
     	// First determine if the double linked list is empty - if so, it becomes the head 
     	if(head == null)
     	{
+    		// Make a new node that will become the head 
     		head = new Node<E>(obj);
+    		
+    		// If the list was originally empty then there is only one element and the head is also the tail 
     		tail = head;
     	}
     	
@@ -425,6 +483,7 @@ public class DoubleLinkedList<E> implements List<E>
     	}
     	
     	// If none of the above is true, then the item is being added at NEITHER the head or tail
+    	// and will be added somewhere in the middle of the DLL 
     	else
     	{
     		// Create a new node
@@ -443,7 +502,6 @@ public class DoubleLinkedList<E> implements List<E>
     	size++;
     	index++;
     	lastItemReturned = null;
-
     		
     }
     
@@ -451,101 +509,8 @@ public class DoubleLinkedList<E> implements List<E>
 
 
 
-@Override
-public boolean isEmpty() {
-	// TODO Auto-generated method stub
-	return false;
-}
 
-@Override
-public boolean contains(Object o) {
-	// TODO Auto-generated method stub
-	return false;
-}
 
-@Override
-public Object[] toArray() {
-	// TODO Auto-generated method stub
-	return null;
-}
-
-@Override
-public <T> T[] toArray(T[] a) {
-	// TODO Auto-generated method stub
-	return null;
-}
-
-@Override
-public boolean add(E e) {
-	// TODO Auto-generated method stub
-	return false;
-}
-
-@Override
-public boolean remove(Object o) {
-	// TODO Auto-generated method stub
-	return false;
-}
-
-@Override
-public boolean containsAll(Collection<?> c) {
-	// TODO Auto-generated method stub
-	return false;
-}
-
-@Override
-public boolean addAll(Collection<? extends E> c) {
-	// TODO Auto-generated method stub
-	return false;
-}
-
-@Override
-public boolean addAll(int index, Collection<? extends E> c) {
-	// TODO Auto-generated method stub
-	return false;
-}
-
-@Override
-public boolean removeAll(Collection<?> c) {
-	// TODO Auto-generated method stub
-	return false;
-}
-
-@Override
-public boolean retainAll(Collection<?> c) {
-	// TODO Auto-generated method stub
-	return false;
-}
-
-@Override
-public void clear() {
-	// TODO Auto-generated method stub
-	
-}
-
-@Override
-public E set(int index, E element) {
-	// TODO Auto-generated method stub
-	return null;
-}
-
-@Override
-public int indexOf(Object o) {
-	// TODO Auto-generated method stub
-	return 0;
-}
-
-@Override
-public int lastIndexOf(Object o) {
-	// TODO Auto-generated method stub
-	return 0;
-}
-
-@Override
-public List<E> subList(int fromIndex, int toIndex) {
-	// TODO Auto-generated method stub
-	return null;
-}
   
 }// end of class DoubleLinkedList
 
