@@ -194,7 +194,7 @@ public class DoubleLinkedList<E> implements List<E>
 	  return new ListIter( (ListIter) iter);  
   }
 
-  // Inner Classes
+  // Inner Classes - Node 
   private static class Node<E>
   {     
 	  	private E data;
@@ -202,11 +202,14 @@ public class DoubleLinkedList<E> implements List<E>
         private Node<E> prev = null;
 
         
-        private Node(E dataItem)  //constructor
+        // Partial Constructor 
+        private Node(E dataItem) 
         {   
         	data = dataItem;   
         }
         
+        
+        // Full Constructor 
         private Node(E dataItem, Node<E> nextRef, Node<E> previousRef)
         {
         	data = dataItem;
@@ -223,11 +226,14 @@ public class DoubleLinkedList<E> implements List<E>
   {
         private Node<E> nextItem;      // the current node
         private Node<E> lastItemReturned;   // the previous node
-        private int index = 0;   // 
+        private int index = 0;   // The current index 
 
+     
         
-    public ListIter(int i)  // constructor for ListIter class
+    // Full Constructor for List Iterator   
+    public ListIter(int i)  
     {   
+    	// If the index is less than zero or greater than the size of the DLL, then throw an exception
     	if (i < 0 || i > size)
         {     
     		throw new IndexOutOfBoundsException("Invalid index " + i); 
