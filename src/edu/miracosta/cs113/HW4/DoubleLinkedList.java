@@ -5,6 +5,9 @@ package edu.miracosta.cs113.HW4;
 // Import all items in the Java.util package 
 import java.util.*;
 
+import DoubleLinkedList.DoubleListIterator;
+
+
 
 // Class Definition
 public class DoubleLinkedList<E> implements List<E>
@@ -17,13 +20,35 @@ public class DoubleLinkedList<E> implements List<E>
     	
     	
     	
-   // Default Constructor
+   // Default Constructor - Set the head and tail to null and start the list size off as zero 
     	public DoubleLinkedList()
     	{
     		head = null;
     		tail = null;
     		size = 0;
     	}
+  
+    	
+    	@Override
+    	  public ListIter iterator() 
+    	  { 
+    		 
+    		return new ListIter();
+    	  }
+    	  
+    	  @Override
+    	  public ListIter listIterator() 
+    	  { 
+    		 
+    		  return new ListIter();
+    	  }
+    	  
+    	  
+    	  public ListIter listIterator(int index)
+    	  {
+    		  return new ListIter(index);
+    	  }
+    	  
     	
     	
    
@@ -39,13 +64,19 @@ public class DoubleLinkedList<E> implements List<E>
   public void addFirst(E obj) 
   { 
 	 // Can use the list iterator, similar to above and specify the index as zero
-	  listIterator(0).add(obj);
-	  
+	  listIterator().add(obj);
 	  
   }
   
+  @Override
+  public boolean add(E obj)
+  {
+	  listIterator().add(obj);
+	  return true;
+  }
+  
 
-  // Adds an element at the end of the double-linked list 
+  // Adds an element at the end of the double-linked list
   public void addLast(E obj) 
   { 
 	  // Can use the list iterator, similiar to add method and specify the index using size
@@ -56,10 +87,25 @@ public class DoubleLinkedList<E> implements List<E>
   }
 
   // Returns the element at a specified index 
+  @Override
   public E get(int index) 
   { 	
-	  ListIterator<E> iter = listIterator(index); 
+	  ListIter iter = new ListIter(index); 
+	  boolean doesNextExist = iter.hasNext();
+	  
+	  if(doesNextExist == false)
+	  {
+		 throw new IndexOutOfBoundsException();
+	  }
+	  
+	  else 
+	  {
       	return iter.next();
+	  } 
+	  
+	  
+	  
+	  
   }
   
   
@@ -78,43 +124,93 @@ public class DoubleLinkedList<E> implements List<E>
 
   
   // Return the size of the double-linked list 
+  @Override
   public int size() 
   {  
 	  
-	  return this.size();
+	  return size;
 	  
-	 // return -1; 
+
   } 
 
   
   // Remove the element at a specific index 
+  @Override
   public E remove(int index)
   {    
+	  
+	  // Create a value that we can return from this method 
 	  E returnValue = null;
-        ListIterator<E> iter = listIterator(index);
-        
-        if (iter.hasNext())
-        {   returnValue = iter.next();
-            iter.remove();
-        }
-        
-        else 
-        {  
-        	throw new IndexOutOfBoundsException();  
-        }
-        
-        return returnValue;
+	  
+	  
+	  // Create an iterator that will allow us to iterate over the list 
+	  ListIter iter = new ListIter(index);
+	  
+	  // Want to make sure that the index is within bounds 
+	  if(index < 0)
+	  {
+		  throw new IndexOutOfBoundsException();
+	  }
+	  else if(index >= size)
+	  {
+		  throw new IndexOutOfBoundsException();
+	  }
+	  
+	  // If neither of the above applies, then we have a valid index and can work on removing an item 
+	  // First consider if there is a next item 
+	  if(iter.hasNext())
+	  {
+		// If so, grab it as the value that we are going to return and remove   
+		  returnValue = iter.next();
+		  
+		  // Call remove to remove it from the DLL 
+		  iter.remove();
+		  
+		  // Return the value that was removed 
+		  return returnValue;
+		  
+	  }
+	  
+	  // If there is no next item to return then throw a new IllegalStateException 
+	  else 
+	  {
+		  throw new IllegalStateException();
+	  }  
+	  
   }
   
   
-  // Equals method for DoubleLinkedList Class
+  @Override
+	public boolean remove(Object o) 
+  {
+		int sizeNow = size ;
+		int indexNow = indexOf(o) ;
+		if (indexNow < 0 || indexNow >= size()) {
+			return false ;
+		}
+		ListIter mover = new ListIter(indexNow) ;
+		if (mover.hasNext()) {
+			mover.next();
+		}
+		else {
+			throw new IndexOutOfBoundsException();
+		}
+		mover.remove() ;
+		if (sizeNow == (size() -1)) {
+			return false ;
+		}
+		else {
+			return true ;
+		}
+		
+	} 
+  
+  
+  
+  // Equals method for DoubleLinkedList Class - Compares to DLL Nodes 
+  @Override
   public boolean equals(Object other)
   {
-	  // Self check 
-	  if(this == other)
-	  {
-		  return true;
-	  }
 	  
 	  // Null check
 	  if(other == null)
@@ -122,44 +218,81 @@ public class DoubleLinkedList<E> implements List<E>
 		  return false;
 	  }
 	  
-	  // Class check 
-	  if(this.getClass() != other.getClass())
+	  // Check to see if both are instances of a LinkedList, if not, then they cannot be equal 
+	  boolean isLinkedList = other instanceof DoubleLinkedList;
+	  
+	  if(isLinkedList == false)
+	  {
+		  return false;
+	  }
+	 
+	 
+	  // Typecast
+	  DoubleLinkedList d = (DoubleLinkedList) other;
+	  
+	  
+	  // If the lists are not the same size, then they cannot be equal 
+	  if(size() != d.size())
 	  {
 		  return false;
 	  }
 	  
-	  // Typecast
-	  DoubleLinkedList d = (DoubleLinkedList) other;
+	  // If they are the same size, then we need to compare each element within the DLL's
 	  
-	  return false;
+	  // Create a node that will point to the head 
+	  Node<E> currentPosition = head;
+	  
+	  // Iterate over the entire DLL to see if the other list (d) contains the same elements 
+	  while(currentPosition != null)
+	  {
+		  if(d.contains(currentPosition.data))
+		  {
+			  currentPosition = currentPosition.next;
+		  }
+		  else 
+		  {
+			  return false;
+		  }
+		  
+	  }
+	  
+	  return true;  
+	  
   }
   
   // Implementing toString
+  @Override
   public String toString()
   {
 	  
 	  
 	  // Create a string that we can use to print content
-	  String currentPosition = " ";
+	  String currentPosition = "";
 	  
-	  // Iterate over the loop while there is still another list item
-	  while(listIterator().hasNext())
+	  
+	  // Create a node that will allow us to iterate over the list 
+	  Node<E> currentListPosition = head;
+	  
+	  // If the list is empty, i.e. the head is null then we can append something empty to the string 
+	  if(isEmpty() == true)
 	  {
-		  
-		  // Append to the currentPosition
-		  currentPosition += listIterator().next().toString();
-		  
-		  // Want to make sure that there is space/differentiation between variables if another exists
-		  if(listIterator().hasNext()) 
-		  {
-			  
-			  // Add space 
-			  currentPosition += ", ";
-			  
-		  }
-		  
+		  currentPosition += "";
 	  }
 	  
+	  // Otherwise, there are items in the list that we need to print out to the console 
+	  else
+	  {
+		  // While there are still items left in the DLL to grab, we should append them to the string 
+		  while(currentListPosition != null)
+		  {
+			   currentPosition += currentListPosition.data + ", ";
+			   
+			   // Iterate to the next item
+			   currentListPosition = currentListPosition.next;
+		  }
+		  
+		  currentPosition = currentPosition.substring(0, currentPosition.length() - 2);
+	  }
 	  
 	  // Return the string statement 
 	  return currentPosition;  
@@ -168,42 +301,165 @@ public class DoubleLinkedList<E> implements List<E>
   
   
   
-  
+  // Method to see if the DLL is empty 
   @Override
-  public boolean isEmpty() {
-  	// TODO Auto-generated method stub
+  public boolean isEmpty() 
+  {
+	  
+	 // If the size is zero, then the list is empty and/or the head is null then the list is also empty 
+  	if(size == 0 || head == null)
+  	{
+  		return true;
+  	}
+  	
   	return false;
   }
 
+  // Method to confirm whether a value can be found in the DLL 
   @Override
-  public boolean contains(Object o) {
-  	// TODO Auto-generated method stub
+  public boolean contains(Object o) 
+  {
+  	int isAvailable = indexOf(o);
+  	
+  	if(isAvailable != -1)
+  	{
+  		return true;
+  	}
   	return false;
   }
 
 
+  	// Method to remove all elements from the DLL 
   @Override
-  public void clear() {
-  	// TODO Auto-generated method stub
+  public void clear() 
+  {
+	  // Make the head null 
+	  head = null;
+	  tail = head;
+	  size = 0;
+  	
   	
   }
 
   @Override
-  public E set(int index, E element) {
-  	// TODO Auto-generated method stub
-  	return null;
+  public E set(int index, E element) 
+  {
+  	// First make sure that the index we've received is valid
+	  
+	  int currentSize = size();
+	  
+	  // Top most index that we can set 
+	  currentSize--;
+	  
+	  if(index > currentSize)
+	  {
+		  throw new IndexOutOfBoundsException();
+	  }
+	  
+	  // Otherwise, we can try and reset the element 
+	  else
+	  {
+		  // Create a new list iterator - use the index to specify where we will start iterating 
+		  ListIter newIter = new ListIter(index);
+		  
+		  // Create a new node that will hold the value that we are going to return as we are resetting it 
+		  Node<E> infoToBeReset = new Node<E>();
+		  
+		  newIter.next();
+		  
+		  // Set the data of the node that we are going to reset, prior to adding new data 
+		  infoToBeReset.data = newIter.lastItemReturned.data;
+		  
+		  // Now reset the data 
+		  newIter.set(element);
+		  
+		  // Return the data from the old node 
+		  return infoToBeReset.data;
+		  
+	  }
+	  
+  }
+
+  
+  // Method that iterates over DLL to find if a node's data matches that of the object we are looking for 
+  @Override
+  public int indexOf(Object o) 
+  {
+	  // Create a counter that starts at zero 
+	  int counter = 0;
+	  
+	  // If the object is null, then it cannot be in the DLL 
+	  if(o == null)
+	  {
+		  return - 1;
+	  }
+	  
+	  else 
+	  {
+		  // Create a new node that will point to the head of the DLL 
+		  Node currentPosition = head;
+		  
+		  // Iterate over the DLL until we reach the value we are looking for 
+		  while(currentPosition != null)
+		  {
+			 if(o.equals(currentPosition.data))
+			 {
+				 // Return the current counter 
+				 return counter;
+			 }
+			 
+			 // Update the counter to continue iterating through the list 
+			 counter++;
+			 
+			 // Move the iterator to the next element
+			 currentPosition = currentPosition.next;
+		  }
+		  
+		  // If we reach the end and have not been able to find the index of the element, then return -1 
+		  return - 1;
+	  }
+  	
   }
 
   @Override
-  public int indexOf(Object o) {
-  	// TODO Auto-generated method stub
-  	return 0;
-  }
-
-  @Override
-  public int lastIndexOf(Object o) {
-  	// TODO Auto-generated method stub
-  	return 0;
+  public int lastIndexOf(Object o) 
+  {
+  	 // Create a counter 
+	  int counter = 0;
+	  
+	  // If the item is null, then it cannot be found in the list 
+	  if(o == null)
+	  {
+		  return - 1;
+	  }
+	  
+	  // Otherwise we can iterate from the end, since this is a DLL 
+	  else 
+	  {
+		  Node currentPosition = tail;
+		  
+		  // Iterate from the back to the front until we find the first instance of the variable 
+		  // we are looking for as this will be closest to the end ofthe list 
+		  while(currentPosition != null)
+		  {
+			  // Compare the data with the data in the current Node of the DLL 
+			  if(o.equals(currentPosition.data))
+			  {
+				  int finalIndex = size - counter  - 1;
+				  return finalIndex;
+				  
+			  }
+			  
+			  // Continue to update the counter 
+			  counter++;
+			  
+			  // Set the iterator to look at the previous value as we are iterating from the tail to the front 
+			  currentPosition = currentPosition.prev;
+		  }
+	  }
+	  
+	  // If all else fails, the item is not in the DLL and you can return -1 
+	  return - 1;
   }
 
   
@@ -212,41 +468,34 @@ public class DoubleLinkedList<E> implements List<E>
   /* List Iterators */
   
   
-  public Iterator<E> iterator() 
-  { 
-	  return new ListIter(0); 
-  }
   
-  
-  public ListIterator<E> listIterator() 
-  { 
-	  return new ListIter(0);  
-  }
-  
-  
-  public ListIterator<E> listIterator(int index)
-  {
-	  return new ListIter(index);
-  }
-  
-  
-  public ListIterator<E> listIterator(ListIterator<E> iter)
+  public ListIter listIterator(ListIter iter)
   {     
 	  return new ListIter( (ListIter) iter);  
   }
 
-  // Inner Classes - Node 
+  // Inner Classes - Node - MATCHES 
   private static class Node<E>
   {     
 	  	private E data;
         private Node<E> next = null;
         private Node<E> prev = null;
+        
+        // Empty Constructor
+        private Node()
+        {
+        	data = null;
+        	next = null;
+        	prev = null;
+        }
 
         
         // Partial Constructor 
         private Node(E dataItem) 
         {   
-        	data = dataItem;   
+        	data = dataItem; 
+        	next = null;
+        	prev = null;
         }
         
         
@@ -268,6 +517,18 @@ public class DoubleLinkedList<E> implements List<E>
         private Node<E> nextItem;      // the current node
         private Node<E> lastItemReturned;   // the previous node
         private int index = 0;   // The current index 
+        
+        
+     // Empty Constructor
+        public ListIter()
+        {
+        	lastItemReturned = null;
+        	nextItem = head;
+        	for(index = 0; index < size(); index++)
+        	{
+        		nextItem = nextItem.next;
+        	}
+        }
 
      
         
@@ -324,23 +585,32 @@ public class DoubleLinkedList<E> implements List<E>
     @Override
     public boolean hasPrevious()
     {   
-    	// If the head is null, then the list is empty therefore there can be no previous element 
-    	if(head == null)
+    	
+    	// If the size of the list is zero, then there are no elements and there cannot be a previous element 
+    	if(size == 0)
     	{
     		return false;
     	}
     	
-    	// If the previous element for the next item is null, then return false 
-    	else if(nextItem.prev == null)
-    	{
-    		return false;
-    	}
+    	// If nextItem returns null, but the list size is greater than zero - then there should be a previous element 
+        else if  (nextItem == null ) 
+        { 
+            return true ;
+        } 
     	
-    	// Otherwise return true 
-    	else 
-    	{
-    		return true;
-    	}
+    	
+    	// If the previous item to the next one returns null, then there is no previous element 
+        else if (nextItem.prev == null)
+        { 
+            return false;
+        }
+
+    	// Any other conditions should return true 
+        else 
+        {
+            return true;
+        }
+    	
     	 
     } 
     
@@ -363,16 +633,69 @@ public class DoubleLinkedList<E> implements List<E>
     } 
     
     
+    // Sets the data in the last node to a new value 
+    @Override
     public void set(E o)  
     { 
     	
-    }  // not implemented
+    	if(lastItemReturned == null)
+    	{
+    		throw new IllegalStateException();
+    	}
+    	
+    	else if(lastItemReturned != null)
+    	{
+    		// Create a new node 
+    		Node <E> newNode = new Node<E>(o);
+    		
+    		// Set the data in the node of the last item returned to the new item we are passing in 
+    		lastItemReturned.data = newNode.data;
+    		
+    	}
+    	
+    	
+    	
+    }  
     
-    
+    @Override
     public void remove()
     {
     	
-    }      // not implemented
+    	if (head == null) { // empty list
+			throw new IllegalStateException() ;
+		}
+		else if (lastItemReturned == null) { // no step over
+			throw new IllegalStateException() ;
+		}
+		else if (lastItemReturned.prev == null && nextItem == null) {
+			head = null ;
+			tail = null ;
+			size = 0 ;
+			index = 0 ;
+		}
+		else if (lastItemReturned.prev == null) {
+			nextItem.prev = head ;
+			head = nextItem ;
+			size-- ;
+			index-- ;
+		}
+		else if (nextItem == null) { // tail
+			lastItemReturned.prev.next = null ;
+			tail = lastItemReturned.prev ;
+			index-- ;
+			size-- ;
+		}
+		else {
+			lastItemReturned.prev.next = nextItem ;
+			nextItem.prev = lastItemReturned.prev ;
+			size-- ;
+			index-- ;	
+			System.out.println("In the remove");
+
+		}
+		lastItemReturned = null; 
+    	
+    }     
     
     
     
@@ -506,11 +829,6 @@ public class DoubleLinkedList<E> implements List<E>
     }
     
   }// end of inner class ListIter
-
-
-
-
-
   
 }// end of class DoubleLinkedList
 
