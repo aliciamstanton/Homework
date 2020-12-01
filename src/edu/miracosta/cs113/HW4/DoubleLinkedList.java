@@ -241,17 +241,24 @@ public class DoubleLinkedList<E> implements List<E>
     	
         lastItemReturned = null;
  
-        if (i == size)     // Special case of last item
+        
+        // If the index is equal to the size of the list, then there is no next item to return, i.e. null 
+        if (i == size)     
         {    
-        	index = size;     nextItem = null;     
+        	index = size;    
+        	nextItem = null;     
         } 
         
-        else          // start at the beginning
+        // Otherwise, we can start from the beginning aod iterate over the entire DLL 
+        else          
         {   
         	nextItem = head;
-            for (index = 0; index < i; index++)  nextItem = nextItem.next;   
-        }// end else
-    }  // end constructor
+            for (index = 0; index < i; index++)  
+            {
+            	nextItem = nextItem.next;   
+            }
+        }
+    }  
 
     
     // Copy Constructor for ListIter class 
