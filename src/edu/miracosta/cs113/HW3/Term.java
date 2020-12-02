@@ -22,17 +22,9 @@ public class Term implements Comparable, Cloneable
 		this.coefficient = 1;
 	}
 	
-	/*// Full Constructor
-	Term(int coefficient, int exponent)
-	{
-		this.exponent = exponent;
-		this.coefficient = coefficient;
-	} */
 	
 	
-	
-	
-	// Secondary Full Constructor - using setAll Method
+	//  Full Constructor - using setAll Method
 	public Term(int coefficient, int exponent)
 	{
 		this.setAll(coefficient, exponent);
@@ -176,10 +168,12 @@ public class Term implements Comparable, Cloneable
 	@Override
 	public Object clone()
 	{
+		// Try to use the parent definition of the clone method, rather than defining another 
 		try
 		{
 			return super.clone();
 		}
+		// If this doesn't work, then return null
 		catch(CloneNotSupportedException e)
 		{
 			return null;
@@ -189,11 +183,13 @@ public class Term implements Comparable, Cloneable
 	
 	
 	
-	// Set All
+	// Set All - Sets both the coefficient and exponent in one place 
 	public void setAll(int coefficient, int exponent)
 	{
 		// Set the coefficient 
 		this.setCoefficient(coefficient);
+		
+		// Set the exponent 
 		this.setExponent(exponent);	
 	}
 	
@@ -302,10 +298,15 @@ public class Term implements Comparable, Cloneable
 		// Type cast to the respective class
 		Term termCompare = (Term) other;
 		
+		
+		// If the current exponent is bigger than the exponent of the term we are
+		// trying to compare then order them accordingly in the polynomail
 		if(this.exponent > termCompare.getExponent()) 
 		{
 			return 1;
 		}
+		
+		
 		else if(this.exponent < termCompare.getExponent()) 
 		{
 			return - 1;
