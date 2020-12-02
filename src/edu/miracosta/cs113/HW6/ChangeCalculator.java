@@ -163,7 +163,7 @@ public class ChangeCalculator
     	calculateChange(cents);
     	
     	// Create the text file in the directory
-    	String outputFile = "src/edu.miracosta.cs113/CoinCombinations.txt";
+    	String outputFile = "src/edu.miracosta.cs113/HW6/CoinCombinations.txt";
     	
     	// Make a try/catch block that will make sure the file is available
     	try
