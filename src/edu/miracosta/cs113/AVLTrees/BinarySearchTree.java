@@ -5,9 +5,10 @@ package edu.miracosta.cs113.AVLTrees;
 // Implementation of the BinarySearchTree Class 
 @SuppressWarnings("Serial")
 
-
+// Class signature as recommended by the text 
 public class BinarySearchTree< E extends Comparable<E>> extends BinaryTree<E> implements SearchTree<E>
 {
+	// Protected instance members 
 	protected boolean addReturn;
 	protected E deleteReturn;
 	
@@ -17,12 +18,18 @@ public class BinarySearchTree< E extends Comparable<E>> extends BinaryTree<E> im
 	// Find Method 
 	public E find(E target)
 	{
+		// Starts from the root, looking for a specific target element 
 		return find(root, target);
 	}
 	
 	// Recursive find method 
+	// Create a local root node, and a target to find - search separate portions of the 
+	// tree until you find the target you're looking for.
+	// Recursion will break down portions of the tree until the element 
+	// can be found, or will return null if the item is not present in the tree 
 	private E find(Node<E> localRoot, E target)
 	{
+		// 
 		if(localRoot == null)
 		{
 			return null;
