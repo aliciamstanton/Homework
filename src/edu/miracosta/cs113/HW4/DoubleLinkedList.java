@@ -635,10 +635,10 @@ public class DoubleLinkedList<E> implements List<E>
     
     // Sets the data in the last node to a new value 
     @Override
-    public void set(E o)  
+    public void set(E item)  
     { 
     	
-    	if(lastItemReturned == null)
+    	/*if(lastItemReturned == null)
     	{
     		throw new IllegalStateException();
     	}
@@ -649,14 +649,25 @@ public class DoubleLinkedList<E> implements List<E>
     		Node <E> newNode = new Node<E>(o);
     		
     		// Set the data in the node of the last item returned to the new item we are passing in 
-    		lastItemReturned.data = newNode.data;
+    		lastItemReturned.data = o;
     		
-    	}
+    	} */
+    	
+    	
+        
+            if (lastItemReturned == null) 
+            {
+                throw new IllegalStateException();
+            }
+            lastItemReturned.data = item;
+        
+    	
+    	
     	
     	
     	
     }  
-    
+
     @Override
     public void remove()
     {

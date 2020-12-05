@@ -1,7 +1,18 @@
 package edu.miracosta.cs113.AVLTrees;
 
-import edu.miracosta.cs113.Before;
-import edu.miracosta.cs113.Test; 
+//import edu.miracosta.cs113.Before;
+//import edu.miracosta.cs113.Test; 
+
+import org.junit.Test;
+
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.fail;
+
+import org.junit.Before;
+
+import static org.junit.Assert.*;
 
 /**
  * BinarySearchTreeTest : Tester class for a binary search tree implementation.
