@@ -29,25 +29,37 @@ public class BinarySearchTree< E extends Comparable<E>> extends BinaryTree<E> im
 	// can be found, or will return null if the item is not present in the tree 
 	private E find(Node<E> localRoot, E target)
 	{
-		// 
+		// If the local root has not been initialized, and contains no data
 		if(localRoot == null)
 		{
+			// Then we have nothing to return and we can return null
 			return null;
 		}
 		
 		
 		// Compare the target with the data field at the root 
 		int compResult = target.compareTo(localRoot.data);
-			
+		
+		
+		// If compareTo returns zero, this is the data we are looking for 
+		// and we should return the data. 
 		if(compResult == 0)
 		{
 			return localRoot.data;
 			
 		}
+		
+		// If compareTo returns -1, then we want to look at the left side of the 
+		// BinarySearchTree in hopes of finding our target. Call the find method 
+		// on the left-half of the binarySearchTree 
 		else if(compResult < 0)
 		{
 			return find(localRoot.left, target);
 		}
+		
+		// If we have not found the data at the root, or through recursively 
+		// checking the left side of the tree then we should check the right 
+		// side of the tree 
 		else
 		{
 			return find(localRoot.right, target);
