@@ -206,7 +206,7 @@ public class BinarySearchTree< E extends Comparable<E>> extends BinaryTree<E> im
 		
 	}
 	
-	// Find largestChild method 
+	// Find largestChild method - 
 	private E findLargestChild(Node<E> parent)
 	{
 		if(parent.right.right == null)
