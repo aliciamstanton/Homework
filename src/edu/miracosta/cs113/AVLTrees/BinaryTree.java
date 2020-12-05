@@ -1,7 +1,7 @@
 package edu.miracosta.cs113.AVLTrees;
 
 
-
+// Import statements recommended by text 
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
@@ -13,14 +13,16 @@ import java.util.Scanner;
  *
  * @param <E> Generic to hold any data type
  */
-public class BinaryTree<E> implements Serializable {
+public class BinaryTree<E> implements Serializable 
+{
     /** The root node of this tree. */
     protected Node<E> root;
 
     /**
      * Default constructor to build an empty BinaryTree.
      */
-    public BinaryTree() {
+    public BinaryTree() 
+    {
         root = null;
     }
 
@@ -29,7 +31,8 @@ public class BinaryTree<E> implements Serializable {
      *
      * @param root the root node of this tree
      */
-    protected BinaryTree(Node<E> root) {
+    protected BinaryTree(Node<E> root) 
+    {
         this.root = root;
     }
 
@@ -40,7 +43,8 @@ public class BinaryTree<E> implements Serializable {
      * @param leftTree left subtree of root
      * @param rightTree right subtree of root
      */
-    public BinaryTree(E data, BinaryTree<E> leftTree, BinaryTree<E> rightTree) {
+    public BinaryTree(E data, BinaryTree<E> leftTree, BinaryTree<E> rightTree) 
+    {
         // Set root to a new Node with the given data
         root = new Node<E>(data);
 
@@ -66,7 +70,8 @@ public class BinaryTree<E> implements Serializable {
      *
      * @return The left subtree, or null if either the root or left subtree is null
      */
-    public BinaryTree<E> getLeftSubtree() {
+    public BinaryTree<E> getLeftSubtree() 
+    {
         if (root != null && root.left != null) {
             return new BinaryTree<E>(root.left);
         }
@@ -80,7 +85,8 @@ public class BinaryTree<E> implements Serializable {
      *
      * @return The right subtree, or null if either the root or left subtree is null
      */
-    public BinaryTree<E> getRightSubtree() {
+    public BinaryTree<E> getRightSubtree() 
+    {
         if (root != null && root.right != null){
             return new BinaryTree<E>(root.right);
         }
@@ -94,7 +100,8 @@ public class BinaryTree<E> implements Serializable {
      *
      * @return true if the root has no children
      */
-    public boolean isLeaf() {
+    public boolean isLeaf() 
+    {
         return (root.left == null && root.right == null);
     }
 
@@ -103,7 +110,8 @@ public class BinaryTree<E> implements Serializable {
      *
      * @return The data stored in the root
      */
-    public E getData() {
+    public E getData() 
+    {
         return root.data;
     }
 
@@ -116,7 +124,8 @@ public class BinaryTree<E> implements Serializable {
      * @param scan The Scanner attached to the input file
      * @return The binary tree constructed from the given input
      */
-    public static BinaryTree<String> readBinaryTree(Scanner scan) {
+    public static BinaryTree<String> readBinaryTree(Scanner scan) 
+    {
         // Read a line and trim leading and trailing spaces.
         if (!scan.hasNext()) {
             return null;
@@ -143,7 +152,8 @@ public class BinaryTree<E> implements Serializable {
      * @param depth The current level in depth of this tree
      * @param sb The String buffer which accumulates the output
      */
-    private void preOrderTraverse(Node<E> node, int depth, StringBuilder sb) {
+    private void preOrderTraverse(Node<E> node, int depth, StringBuilder sb) 
+    {
         for (int i = 1; i < depth; i++) {
             sb.append(" ");
         }
@@ -160,7 +170,8 @@ public class BinaryTree<E> implements Serializable {
     }
 
     @Override
-    public String toString() {
+    public String toString() 
+    {
         StringBuilder sb = new StringBuilder();
         preOrderTraverse(root, 1, sb);
         return sb.toString();
@@ -175,7 +186,8 @@ public class BinaryTree<E> implements Serializable {
      * @author Christopher Martin
      * @version 1.0
      */
-    public String toString2() {
+    public String toString2() 
+    {
         // Use StringBuilder to save memory/time while dynamically building up the output String.
         StringBuilder output = new StringBuilder();
 
@@ -330,7 +342,8 @@ public class BinaryTree<E> implements Serializable {
      *
      * @param <E> Generic to hold any data type
      */
-    protected static class Node<E> implements Serializable {
+    protected static class Node<E> implements Serializable 
+    {
         /** The constituent data for this Node. */
         protected E data;
         /** The Node's left subtree. */
