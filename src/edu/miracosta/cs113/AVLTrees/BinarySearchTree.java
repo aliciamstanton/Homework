@@ -68,11 +68,11 @@ public class BinarySearchTree< E extends Comparable<E>> extends BinaryTree<E> im
 	}
 	
 	
-	
-	
-	// Add method 
+	// Add method - returns true if the value was successfully inserted into the AVL Tree
+	// Returns false if the value was not inserted into the AVL Tree 
 	public boolean add(E item)
 	{
+		// Add the element at the root 
 		root = add(root, item);
 		return addReturn;
 	}
@@ -80,24 +80,36 @@ public class BinarySearchTree< E extends Comparable<E>> extends BinaryTree<E> im
 	// Recursive Add Method 
 	private Node<E> add(Node<E> localRoot, E item)
 	{
+		
+		// If the root is null, then we can automatically return true and create 
+		// a new node that will add the new item 
 		if(localRoot == null)
 		{
 			addReturn = true;
 			return new Node<E>(item);
 		}
 		
+		// Otherwise we can make comparisons using the compareTo method 
 		else if(item.compareTo(localRoot.data)== 0)
 		{
+			// If compareTo returns 0 then we won't be adding the item 
+			// to the AVL tree, because it already exists in the tree 
+			// at the localRoot 
 			addReturn = false;
 			return localRoot;
 		}
 		
+		// If compareTo returns -1, then it would reside on the left-side 
+		// of the AVL tree 
 		else if(item.compareTo(localRoot.data) < 0)
 		{
+			// Add it to the left side of the local root and return the local root 
 			localRoot.left = add(localRoot.left, item);
 			return localRoot;
 		}
 		
+		// If compareTo returns 1, then the itme will be added to the right of the 
+		// local root node 
 		else 
 		{
 			localRoot.right = add(localRoot.right, item);
@@ -109,6 +121,7 @@ public class BinarySearchTree< E extends Comparable<E>> extends BinaryTree<E> im
 	// Delete method 
 	public E delete(E target)
 	{
+		// Returns the value that was deleted 
 		root = delete(root, target);
 		return deleteReturn;
 	}
@@ -116,38 +129,64 @@ public class BinarySearchTree< E extends Comparable<E>> extends BinaryTree<E> im
 	// Recursive Delete Method
 	private Node<E> delete(Node<E> localRoot, E item)
 	{
+		// If the root is null, then we are unable to return the item that was
+		// deleted from the AVL tree 
 		if(localRoot == null)
 		{
 			deleteReturn = null;
 			return localRoot;
 		}
 		
+		
+		// otherwise we can try and find the element within the AVL tree 
 		int compResult = item.compareTo(localRoot.data);
+		
+		// If compareTo returns -1, then the item would be found to
+		// the left-side of the root node (left side of the binary search tree)
 		if(compResult < 0)
 		{
+			// Delete the data on the left node of the root 
 			localRoot.left = delete(localRoot.left, item);
+			
+			// return it 
 			return localRoot;
 		}
+		
+		// If comapreTo returns 1, then the item would be found on the right 
+		// side of the binarySearchTree. 
 		else if(compResult > 0)
 		{
+			// Grab the data on the right node of the root 
 			localRoot.right = delete(localRoot.right, item);
+			
+			// return it 
 			return localRoot;
 			
 		}
 		
+		
+		// Otherwise we need to determine if there is data available 
+		// to delete from the node 
 		else 
 		{
 			deleteReturn = localRoot.data;
+			// If the left side of the node is null
+			// then we can return the right side of the node 
 			if(localRoot.left == null)
 			{
 				return localRoot.right;
 			}
+			
+			// If there is nothing in the right side of the node 
+		    // Then we can return the left side of the node 
 			else if(localRoot.right == null)
 			{
 				
 				return localRoot.left;
 			
 			}
+			
+			// If both items are null then we move to the next node 
 			else 
 			{
 				if(localRoot.left.right == null)
