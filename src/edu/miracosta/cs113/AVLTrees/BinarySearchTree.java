@@ -206,9 +206,14 @@ public class BinarySearchTree< E extends Comparable<E>> extends BinaryTree<E> im
 		
 	}
 	
-	// Find largestChild method - 
+	// Find largestChild method - Goal of this method is to go through all right 
+	// nodes and find the first right node that doesn't have a right child node
+	// for itself. 
 	private E findLargestChild(Node<E> parent)
 	{
+		
+		// If the node that is to the right two levels down from the parent 
+		// is null, then we want to take the one before it. 
 		if(parent.right.right == null)
 		{
 			E returnValue = parent.right.data;
@@ -216,18 +221,26 @@ public class BinarySearchTree< E extends Comparable<E>> extends BinaryTree<E> im
 			return returnValue;
 		}
 		
+		// Otherwise, we want to continue down the right-side and continue
+		// looking at the right child of the rightmost node 
 		else
 		{
 			return findLargestChild(parent.right);
 		}
 	}
 
+	
+	// Method that searches for a value in the BinarySearchTree and 
+	// if it finds it, then it is returned, otherwise null is returned
 	@Override
 	public boolean contains(E target) 
 	{
 		return (find(target) != null);
 	}
 
+	// Look for a target element and if found, call the delete method, 
+	// remove it and return true. If the item is null then we are unable
+	// to remove anything and cannot call the delete method. Return false 
 	@Override
 	public boolean remove(E target) 
 	{
