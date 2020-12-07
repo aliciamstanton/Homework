@@ -108,36 +108,54 @@ public class HashTableChain<K, V> implements Map<K,V>
 	@Override 
 	public V put(K key, V value)
 	{
+		// Determine the index where we want to enter a new key/value pair 
 		int index = key.hashCode() % table.length;
+		
+		// If the index is less than zero, then add the length of the table to update the index 
 		if(index < 0)
 		{
 			index += table.length;
 		}
 		
+		// If the current key/value at this index is null
 		if(table[index] == null)
 		{
 			// Create a new LinkedList at table[index]
 			table[index] = new LinkedList<Entry<K, V>>();
 		}
 		
+		// Range-based for loop that will iterate over each key/value pair 
 		for(Entry<K,V> nextItem : table[index])
 		{
+			// If the key specified as a parameter matches one already in the table then we want to update the 
+			// value at this entry 
 			if(nextItem.key.equals(key))
 			{
+				// Grab the old value at this item 
 				V oldVal = nextItem.value;
+				
+				// Reset the value with the new value (passed as a parameter)
 				nextItem.setValue(value);
+				
+				// Return the old value to the user 
 				return oldVal;
 			}
 			
 		}
 		
+		
 		table[index].addFirst(new Entry<K,V>(key,value));
+		
+		// Update the number of keys in the hashtable 
 		numKeys++;
+		
+		// If there are too many keys for the table, then we rehash the table 
 		if(numKeys > (LOAD_THRESHOLD * table.length))
 		{
 			rehash();
 		}
 		
+		// Otherwise return null 
 		return null;
 		
 		
