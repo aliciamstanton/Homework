@@ -329,36 +329,48 @@ public class HashTableChain<K, V> implements Map<K,V>
 	@Override 
 	public V remove(Object key)
 	{
+		// Create an index using the hashcode and the length of the table 
 		int index = key.hashCode() % table.length;
 		
+		// If the index of the table is less than zero, then we add the length of the table 
 		if(index < 0)
 		{
 			index += table.length;
 		}
 		
+		// If the current index is null, then we cannot remove anything and should return null 
 		if(table[index] == null)
 		{
 			return null;
 		}
 		
+		// Otherwise, iterate over each entry in the table 
 		for(Entry<K,V> entry : table[index])
 		{
+			// If the key at this entry is the key we are looking for 
 			if(entry.getKey().equals(key))
 			{
+				// Grab the value associated with that key 
 				V value = entry.getValue();
+				// Remove the entry 
 				table[index].remove(entry);
+				// Decrement the number of keys 
 				numKeys--;
 				
+				
+				// If the table is empty, then there is no key to remove 
 				if(table[index].isEmpty())
 				{
-					
+					// Indicate that this entry is null 
 					table[index] = null;
 				}
 				
+				// Return the value 
 				return value;
 				}
 		}
 		
+		// or return null 
 		return null;
 		
 	}
