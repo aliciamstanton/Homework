@@ -381,6 +381,7 @@ public class HashTableChain<K, V> implements Map<K,V>
 	@Override 
 	public boolean isEmpty()
 	{
+		// If the hashtable is empty then there are no keys 
 		return numKeys == 0;
 	}
 	
@@ -388,24 +389,31 @@ public class HashTableChain<K, V> implements Map<K,V>
 	@Override 
 	public String toString()
 	{
+		// Create an empty string to return 
 		String toReturn = "";
 		
+		// Iterate over the length of the table 
 		for(int i = 0; i < table.length; i++)
 		{
+			// If the entry is null , then skip it 
 			if(table[i] == null)
 			{
 				// Skip
 			}
 			
+			// Otherwise 
 			else 
 			{
+				// For each entry in the hashtable 
 				for(Entry<K,V> nextItem : table[i])
 				{
+					// Append the value to the string and advance to the next line 
 					toReturn += nextItem.getValue() + "\n";
 				}
 			}
 		}
 		
+		// Return the string 
 		return toReturn;
 	}
 	
