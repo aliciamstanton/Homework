@@ -164,6 +164,7 @@ public class HashTableChain<K, V> implements Map<K,V>
 	// Provide implementation for Size 
 	public int size()
 	{
+		// Return the number of keys for this hashtable 
 		return this.numKeys;
 	}
 	
