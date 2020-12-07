@@ -1,5 +1,7 @@
 package edu.miracosta.cs113.HW8;
 
+
+
 import java.util.*;
 
 // Creating a class called HashTableChain 
@@ -23,7 +25,7 @@ public class HashTableChain<K, V> implements Map<K,V>
 	
 	
 	
-	// Constructor
+	// Constructor - using the capacity of 101 listed above 
 	public HashTableChain()
 	{
 		table = new LinkedList[CAPACITY];
@@ -35,18 +37,24 @@ public class HashTableChain<K, V> implements Map<K,V>
 	@Override 
 	public int hashCode()
 	{
+		// Create a new hashtable called test with a Key and Value not yet specified 
 		Hashtable<K,V> test = new Hashtable<>();
 		
+		// Iterate over the length of the table 
 		for(int i = 0; i < table.length; i++)
 		{
+			// If the key/value at that given index is null, then continue to the next item in the hashtable 
 			if(table[i] == null)
 			{
 				// Do Nothing 
 			}
+			
+			// Otherwise, we need to add values to the hashtable at each entry 
 			else 
 			{
 				for(Entry<K,V> nextItem : table[i])
 				{
+					// 	If the next item is not null, then put a new key value pair 
 					if(nextItem != null)
 					{
 						test.put(nextItem.key, nextItem.value);
