@@ -169,6 +169,8 @@ public class HashTableChain<K, V> implements Map<K,V>
 	}
 	
 	
+	// Returns a set view of the underlying hash table (its key/value pairs) by returning 
+	// an instance of the inner class EntrySet 
 	@Override 
 	public Set<Map.Entry<K, V>> entrySet()
 	{
@@ -177,17 +179,24 @@ public class HashTableChain<K, V> implements Map<K,V>
 	
 	
 	
+	
+	// Makes a set of keys for the hashtable 
 	@Override 
 	public Set<K> keySet()
 	{
+		// Create a new set of keys called keySet, using the inner class HashSet 
 		Set<K> keySet = new HashSet<K>(size());
 		
+		// For each Entry of the linkedList 
 		for(LinkedList<Entry<K,V>> list : table)
 		{
+			// If the list entry is not null 
 			if(list != null)
 			{
+				// Then for each entry in the list 
 				for(Entry<K,V> entry : list)
 				{
+					// If not null, add the value and get the key 
 					if(entry != null)
 					{
 						keySet.add(entry.getKey());
@@ -196,6 +205,7 @@ public class HashTableChain<K, V> implements Map<K,V>
 			}
 		}
 		
+		// Return the set of keys 
 		return keySet;
 	}
 	
