@@ -211,28 +211,35 @@ public class HashTableChain<K, V> implements Map<K,V>
 	
 	
 	
+	// Method that checks to see if the value is contained in the hashtable 
 	@Override 
 	public boolean containsValue(Object value)
 	{
+		// Iterate over the length of the table 
 		for(int i = 0; i < table.length; i++)
 		{
+			// If the index at the table is null, then we do nothing 
 			if(table[i] == null)
 			{
 				// Skip
 			}
 			
+			// Otherwise, use a range based for loop and iterate over each entry in the hashtable 
 			else
 			{
 				for(Entry<K,V> nextItem : table[i])
 				{
+					// If the value of the current entry is the value we are looking for 
 					if(nextItem.getValue().equals(value))
 					{
+						// return true 
 						return true;
 					}
 				}
 			}
 		}
 		
+		// Otherwise, return false - indicating that we haven't found the value in the hashtable 
 		return false;
 	}
 	
@@ -242,11 +249,14 @@ public class HashTableChain<K, V> implements Map<K,V>
 	@Override
 	public void clear()
 	{
+		// Iterate over the length of the hashtable 
 		for(int i = 0; i < table.length; i++)
 		{
+			// Set all the items to null 
 			table[i] = null;
 		}
 		
+		// Indicate that there are no keys in the table after clear has been done 
 		numKeys = 0;
 	}
 	
@@ -255,26 +265,34 @@ public class HashTableChain<K, V> implements Map<K,V>
 	@Override 
 	public boolean containsKey(Object key)
 	{
+		// Create an index and use the length of the table to find it 
 		int index = key.hashCode() % table.length;
 		
+		// If the index is less than zero, then add the length of the table 
 		if(index < 0)
 		{
 			index += table.length;
 		}
 		
+		// If the value at the specific index is null 
 		if(table[index] == null)
 		{
+			// return false, indicating that we didn't find the key at this index 
 			return false;
 		}
 		
+		// Iterate over each entry in the table 
 		for(Entry<K,V> entry : table[index])
 		{
+			// Get the key and see if its the one we are looking for 
 			if(entry.getKey().equals(key))
 			{
+				// If so, return true 
 				return true;
 			}
 		}
 		
+		// Otherwise return false 
 		return false;
 	}
 	
@@ -282,15 +300,22 @@ public class HashTableChain<K, V> implements Map<K,V>
 	// Re-hash method 
 	private void rehash()
 	{
+		// Create a linkedList that will hold all the old entries of the hashtable 
 		LinkedList<Entry<K,V>>[] oldTable = table;
 		
+		// Make sure that the new table has enough space to accomodate new keys 
 		table = new LinkedList[oldTable.length * 2 + 1];
+		
+		// Set the number of keys to zero 
 		numKeys = 0;
 		
+		// For each entry in the old table 
 		for(LinkedList<Entry<K,V>> list : oldTable)
 		{
+			// If it is not null 
 			if(list != null)
 			{
+				// Then place it into the new table by getting the key and the value 
 				for(Entry<K,V> entry : list)
 				{
 					put(entry.getKey(), entry.getValue());
