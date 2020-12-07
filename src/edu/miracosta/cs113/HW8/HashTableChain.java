@@ -422,11 +422,14 @@ public class HashTableChain<K, V> implements Map<K,V>
 	@Override 
 	public boolean equals(Object obj)
 	{
+		// If the object we are coming to is itself then return true 
 		if(obj == this)
 		{
 			return true;
 		}
 		
+		
+		// If the object is null, then return false 
 		if(obj == null)
 		{
 			return false;
@@ -435,11 +438,13 @@ public class HashTableChain<K, V> implements Map<K,V>
 		// Typecast
 		Hashtable newHash = (Hashtable) obj;
 		
+		// If by creating a hashtable is equal to this one return true 
 		if(newHash.equals(this))
 		{
 			return true;
 		}
 		
+		// If they aren't the same then return false 
 		else 
 		{
 			return false;
