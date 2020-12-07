@@ -63,6 +63,7 @@ public class HashTableChain<K, V> implements Map<K,V>
 			}
 		}
 		
+		// Once complete, return the hashcode 
 		return test.hashCode();
 	}
 	
@@ -73,25 +74,33 @@ public class HashTableChain<K, V> implements Map<K,V>
 	@Override
 	public V get(Object key)
 	{
+		// Determine the specific index using the unique key and the remainder of the table length 
 		int index = key.hashCode() % table.length;
+		
+		// If the remainder (index) is less than zero then update the index by the length of the table 
 		if(index < 0)
 		{
 			index += table.length;
 		}
 		
+		// If the value at that index is null, then return null 
 		if(table[index] == null)
 		{
 			return null;
 		}
 		
+		// For every entry (key/value pair in the table at that index
 		for(Entry<K,V> nextItem : table[index])
 		{
+			// Return the value at the key entered in as a parameter for this method 
 			if(nextItem.key.equals(key))
 			{
 				return nextItem.value;
 			}
 		}
 		
+		// If the key we are looking to get does not match any currently in the Hashtable,
+		// then return null. We have found no values that correspond to that key 
 		return null;
 	}
 	
