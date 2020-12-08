@@ -10,8 +10,6 @@ import java.io.File;
 
 
 
-
-
 // This functions as the driver for the MorseCode Homework
 public class Main 
 {
@@ -68,22 +66,14 @@ public class Main
 			
 				case 1:
 				{
+					// Print out the morse code alphabet 
 					System.out.println("Printing morse code/alphabet table.");
-					
-					
-					
-					
-					
-					
-					
-					
-					
-					
 					break;
 				}
 			
 				case 2: 
 				{
+					// Read in a message from a file 
 					System.out.print("Please enter the name of a file you'd like to translate"
 							+ "from morse code to plaintext: ");
 					
@@ -94,6 +84,7 @@ public class Main
 					// Attempt to open the file 
 					try 
 					{
+						// Try to open the file 
 						inputFile = new Scanner(new FileInputStream(fileName));
 						
 						// If we can succesfully open the file then we can start decoding
@@ -125,6 +116,7 @@ public class Main
 				
 				case 3:
 				{
+					// Ask the user for input from the console 
 					System.out.println("Please enter in a line of morse code you'd like to translate: ");
 					userMorseToDecipher = keyboard.nextLine();
 					break;
