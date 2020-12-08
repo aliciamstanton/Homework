@@ -32,24 +32,30 @@ public class BinaryTree<E> implements Serializable
 	// Additional constructor that builds a tree from a data value and two trees
 	public BinaryTree(E data, BinaryTree<E> leftTree, BinaryTree<E> rightTree)
 	{
-		
+		// Create a new root 
 		root = new Node<E>(data);
 		
+		// If the left node is not null 
 		if(leftTree != null)
 		{
+			// Assign the left node of the root 
 			root.left = leftTree.root;
 		}
+		
+		// Otherwise, the left node of the root is null 
 		else
 		{
 			root.left = null;
 		}
 		
-		
+		// If the right tree is not null 
 		if(rightTree != null)
 		{
+			// Then assign the right node of the root 
 			root.right = rightTree.root;
 		}
 		
+		// Otherwise assign the right node to null 
 		else
 		{
 			root.right = null;
@@ -60,11 +66,14 @@ public class BinaryTree<E> implements Serializable
 	// Methods to get the LeftSubtree and RightSubtree 
 	public BinaryTree<E> getLeftSubtree()
 	{
+		// If the root is not null and the left node of the root is not null 
 		if(root != null && root.left != null)
 		{
+			// Then we can return the left subtree of the root 
 			return new BinaryTree<E>(root.left);
 		}
 		
+		// If it is null, then we must return null as there is no Left Subtree 
 		else
 		{
 			return null;
@@ -73,10 +82,14 @@ public class BinaryTree<E> implements Serializable
 	
 	public BinaryTree<E> getRightSubtree()
 	{
+		// If the root is not null, and the right node of the root is not null 
 		if(root != null && root.right != null)
 		{
+			// Then a right subtree exists and we should return it 
 			return new BinaryTree<E>(root.right);
 		}
+		
+		// Otherwise there is no right subtree and we should return null 
 		else
 		{
 			return null;
@@ -87,33 +100,42 @@ public class BinaryTree<E> implements Serializable
 	// Is Leaf Method
 	public boolean isLeaf()
 	{
+		// Returns truee if the node has no children which means that its nodes are null 
 		return (root.left == null && root.right == null);
 	}
 	
 	// toSting method 
 	public String toString()
 	{
+		// Create a string builder that will hold the string 
 		StringBuilder sb = new StringBuilder();
 		
+		// traverse the entire tree from the root 
 		preOrderTraverse(root, 1, sb);
 		
+		// Return the string representation 
 		return sb.toString();
 	}
 	
 	// PreOrderTraverse Method
 	private void preOrderTraverse(Node<E> node, int depth, StringBuilder sb)
 	{
+		// Iterate over the depth of the tree 
 		for(int i = 1; i < depth; i++)
 		{
+			// Append a space between each node 
 			sb.append(" ");
 		}
 		
 		
+		// If the node is null, then we append null to the string 
 		if(node == null)
 		{
 			sb.append("null\n");
 		}
 		
+		// Otherwise we should append the value with a new line between each
+		// iterating deeper and deeper on the left and right sides of the tree 
 		else
 		{
 			sb.append(node.toString() + "\n");
@@ -126,17 +148,26 @@ public class BinaryTree<E> implements Serializable
 	// Method to read binaryTree
 	public static BinaryTree<String> readBinaryTree(Scanner scan)
 	{
+		// Create a string and begin scanning the tree 
 		String data = scan.next();
 		
+		// If the content is null 
 		if(data.contentEquals("null"))
 		{
+			// Return that there is no data 
 			return null;
 		}
 		
+		// Otherwise 
 		else
 		{
+			// Read the left subtree 
 			BinaryTree<String> leftTree = readBinaryTree(scan);
+			
+			// Read the right subtree 
 			BinaryTree<String> rightTree = readBinaryTree(scan);
+			
+			// Return a new binary tree representation of the left and right side 
 			return new BinaryTree<String>(data, leftTree, rightTree);
 		}
 		
@@ -145,6 +176,7 @@ public class BinaryTree<E> implements Serializable
 	// Get Data Method - indicated by Unit Test 
 	public E getData()
 	{
+		// Return the data within the current root 
 		return this.root.data;
 	}
 	
