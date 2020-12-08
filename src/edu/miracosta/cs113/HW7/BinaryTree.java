@@ -110,7 +110,7 @@ public class BinaryTree<E> implements Serializable
 		
 		if(node == null)
 		{
-			sb.append("null \n");
+			sb.append("null\n");
 		}
 		
 		else
